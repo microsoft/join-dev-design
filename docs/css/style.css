@@ -47,6 +47,10 @@ footer a:hover {
 }
 
 @media only screen and (max-width: 600px) {
+    .container {
+      max-width: calc(100vw - 20vw);
+      margin: 0 auto;
+    }
     .container p {
         font-size: 18px;
     }
@@ -56,5 +60,7 @@ footer a:hover {
     }
     footer span {
         display: block;
+        margin: 0 auto;
+        max-width: calc(100vw - 20vw);
     }
 }
