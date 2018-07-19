@@ -79,16 +79,15 @@ a:hover {
     padding: 1rem 0;
 }
 
-@media only screen and (max-width: 40em) {
-    .container {
-        padding-left: 1rem;
-        padding-right: 1rem;
+@media only screen and (max-width: 600px) {
+    .container p {
+        font-size: 18px;
     }
-    .footer {
+    footer {
         text-align: unset;
-        padding: 1rem;
+        padding: 1em 0 2em;
     }
-    .footer-piece {
+    footer span {
         display: block;
     }
 }
