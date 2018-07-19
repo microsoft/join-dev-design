@@ -28,7 +28,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   opacity: 0;
-  animation: 1500ms 400ms forwards fade-in;
+  animation: 1500ms 200ms forwards fade-in;
 }
 
 header {
