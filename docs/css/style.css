@@ -1,11 +1,24 @@
 :root {
     --blue: #05A6F0;
+    --move-in-offset: 8rem;
+}
+
+@keyframes move-in {
+    from {
+        transform: translateY(var(--move-in-offset));
+        opacity: 0;
+    }
+    to {
+        transform: none;
+        opacity: 1;
+    }
 }
 
 html {
     font-size: 125%;
     font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     line-height: 1.333;
+    background-color: #080808;
 }
 
 body {
@@ -13,10 +26,12 @@ body {
     flex-flow: column nowrap;
     min-height: 100vh;
     margin: 0;
-    background-color: #080808;
     color: #BBB;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    opacity: 0;
+    transform: translateY(var(--move-in-offset));
+    animation: 1500ms 500ms forwards move-in;
 }
 
 ::-moz-selection {
