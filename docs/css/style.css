@@ -20,16 +20,6 @@ html {
 }
 
 body {
-  opacity: 1;
-  transition: 1s opacity;
-}
-
-body.fade-out {
-  opacity: 0;
-  transition: none;
-}
-
-body {
   display: flex;
   flex-flow: column nowrap;
   min-height: 100vh;
@@ -38,8 +28,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   opacity: 0;
-  animation: 1500ms 500ms forwards fade-in;
-  overflow: hidden;
+  animation: 1500ms 400ms forwards fade-in;
 }
 
 header {
