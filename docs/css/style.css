@@ -29,9 +29,6 @@ body {
     color: #BBB;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    opacity: 0;
-    transform: translateY(var(--move-in-offset));
-    animation: 1500ms 500ms forwards move-in;
 }
 
 ::-moz-selection {
@@ -58,6 +55,10 @@ a:hover {
     max-width: 32rem;
     margin: 0 auto;
     flex: 1;
+    
+  opacity: 0;
+  transform: translateY(var(--move-in-offset));
+  animation: 1500ms 500ms forwards move-in;
 }
 
 .logo-link {
