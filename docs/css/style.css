@@ -55,6 +55,7 @@ a:hover {
 }
 
 .container {
+    max-width: 80vw; 
     max-width: 32rem;
     margin: 0 auto;
     flex: 1;
@@ -92,3 +93,4 @@ a:hover {
         display: block;
     }
 }
+
