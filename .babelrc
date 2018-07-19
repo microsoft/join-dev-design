@@ -1,0 +1,28 @@
+{
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": [
+          "."
+        ],
+        "alias": {
+          "styles": "./styles"
+        },
+        "cwd": "babelrc"
+      }
+    ],
+    [
+      "babel-plugin-styled-components",
+      {
+        "ssr": true,
+        "displayName": true,
+        "preprocess": false
+      }
+    ]
+  ],
+  "presets": [
+    "next/babel"
+  ],
+  "ignore": []
+}

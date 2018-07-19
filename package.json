@@ -1,13 +1,15 @@
 {
   "name": "join-dev-design",
   "version": "1.0.0",
-  "description": "This project welcomes contributions and suggestions. Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit https://cla.microsoft.com.",
+  "description": "This project welcomes contributions and suggestions.  Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit https://cla.microsoft.com.",
   "main": "index.js",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
-    "start": "serve -s docs"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   },
   "repository": {
     "type": "git",
@@ -21,5 +23,28 @@
   "homepage": "https://github.com/Microsoft/join-dev-design#readme",
   "devDependencies": {
     "serve": "^9.2.0"
+  },
+  "dependencies": {
+    "autoprefixer": "^8.6.4",
+    "babel-plugin-module-resolver": "3.0.0",
+    "babel-plugin-styled-components": "^1.5.1",
+    "bloomer": "latest",
+    "bulma": "latest",
+    "express": "^4.16.3",
+    "glob": "7.1.2",
+    "isomorphic-unfetch": "^2.0.0",
+    "next": "6.0.3",
+    "node-fetch": "^2.1.2",
+    "node-sass": "^4.9.0",
+    "postcss-css-variables": "^0.8.1",
+    "postcss-easy-import": "^3.0.0",
+    "raw-loader": "^0.5.1",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-ga": "^2.2.0",
+    "sass-loader": "^7.0.3",
+    "style-loader": "^0.21.0",
+    "styled-components": "^3.3.2",
+    "styled-is": "^1.1.3"
   }
 }
