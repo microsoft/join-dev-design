@@ -55,6 +55,7 @@ a:hover {
 }
 
 .container {
+    max-width: 80vw; 
     max-width: 32rem;
     margin: 0 auto;
     flex: 1;
@@ -71,6 +72,11 @@ a:hover {
     display: block;
     width: 100%;
     height: auto;
+    transition: transform .2s;
+}
+
+.logo-image:hover {
+    transform: scale(1.05); 
 }
 
 .footer {
@@ -92,3 +98,5 @@ a:hover {
         display: block;
     }
 }
+
+
