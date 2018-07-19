@@ -5,11 +5,20 @@ Microsoft is hiring technical product designers and design leaders. [Learn more]
 ## Development
 
 ```shell
-$ npm install
-$ npm start
+$ yarn
+$ yarn dev
 ```
 
 There's a [Figma file](https://www.figma.com/file/Nkddv9KabDaTFtqZ5vlSzUxr/Developer-Design-Recruiting-Site?node-id=1%3A2) for the design but it's currently Microsoft internal.
+
+## Tools/Libraries used
+
+[Next.js](https://github.com/zeit/next.js/)
+
+[Styled-Components](https://www.styled-components.com/)
+
+[React](https://reactjs.org/)
+
 
 # Contributing
 
