@@ -1,6 +1,6 @@
 # Join Microsoft Developer Design
 
-Microsoft is looking for technical product designers to help create the most compelling developer tools & services on the planet. [Learn more](https://microsoft.github.io/join-dev-design/).
+Microsoft is looking for technical product designers and design leaders. [Learn more](https://microsoft.github.io/join-dev-design/).
 
 ## Development
 
