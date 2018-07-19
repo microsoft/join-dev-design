@@ -1,6 +1,6 @@
 :root {
     --blue: #05A6F0;
-    --move-in-offset: 8rem;
+    --move-in-offset: 1rem;
 }
 
 @keyframes move-in {
