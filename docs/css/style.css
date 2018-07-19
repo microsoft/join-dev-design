@@ -47,9 +47,9 @@ a:hover {
 
 .logo-link {
     display: block;
-    width: 4.5rem;
-    height: 4.5rem;
-    margin: 3rem auto 4.5rem;
+    width: 4rem;
+    height: 4rem;
+    margin: 2.5rem auto;
 }
 
 .logo-image {
