@@ -33,6 +33,7 @@
     }
 
     .container p a {
+        color: inherit;
         text-decoration: none;
         color: pink;
     }
@@ -84,7 +85,7 @@
             more.
         </p>
 
-        <p>Interested? Send a PR with any improvement to
+        <p>Interested? Join the <span id="contributors">2</span> contributors that have sent a PR with an improvement to
             <a href="https://github.com/Microsoft/join-dev-design">microsoft/join-dev-design</a> or
             <a href="mailto:dasiege@microsoft.com">email us</a>.</p>
     </div>
@@ -98,5 +99,26 @@
             <a href="https://github.com/Microsoft/join-dev-design">GitHub</a>.</span>
     </footer>
 </body>
+
+<script>
+fetch(
+  "https://api.github.com/repos/Microsoft/join-dev-design/stats/contributors"
+)
+  .then(function(response) {
+    if (response.status !== 200) {
+      console.log(
+        "Looks like there was a problem. Status Code: " + response.status
+      );
+      return;
+    }
+    response.json().then(function(data) {
+      const contributors = document.getElementById("contributors");
+      contributors.innerText = data.length;
+    });
+  })
+  .catch(function(err) {
+    console.log("Fetch Error :-S", err);
+  });
+</script>
 
 </html>
