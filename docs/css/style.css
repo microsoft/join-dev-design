@@ -60,6 +60,17 @@ a:hover {
     flex: 1;
 }
 
+.container p:not(.center){
+    text-align: justify;
+    margin-bottom: 1.1em;
+}
+
+.center {
+    text-align: center;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+}
+
 .logo-link {
     display: block;
     width: 4rem;
