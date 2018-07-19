@@ -103,9 +103,11 @@ main p:nth-child(4) {
   display: block;
   width: 4rem;
   height: 4rem;
-  margin: 2.5rem auto;
-  border-radius: 2px;
-  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), background 0.2s ease-in-out;
+  margin: 2rem auto;
+  border-radius: 1px;
+  background-color: white;
+  padding: 15px;
+  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .logo-link:hover {
