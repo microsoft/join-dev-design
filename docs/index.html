@@ -7,13 +7,23 @@
     <title>Join Microsoft Developer Design</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="SHORTCUT ICON" href="https://c.s-microsoft.com/favicon.ico?v2" type="image/x-icon">
 </head>
 
 
 <body>
+     <!--Loader-->
+			<div class="welcome">
+                    <div class="holder">
+                        <div class="preloader"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                      </div>			
+                </div>
+                <!--End Loader-->
+    		
     <div class="container">
+       
         <header>
             <a class="logo-link" href="https://microsoft.com">
                 <img class="logo-image" src="msft-square.svg" alt="Microsoft logo" width="80" height="80" />
@@ -47,6 +57,11 @@
         <span class="footer-piece">Open source on
             <a href="https://github.com/Microsoft/join-dev-design">GitHub</a>.</span>
     </footer>
+    <script>
+     $(document).ready(function(){
+      $('.welcome').fadeOut('slow', function() { $(this).css({visibility: 'hidden', opacity: 0})});
+});
+             </script>
 </body>
 
 </html>
