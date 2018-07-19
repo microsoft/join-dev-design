@@ -79,6 +79,18 @@ a:hover {
     padding: 1rem 0;
 }
 
+footer [href*="figma"]:hover {
+  color: #8420FF;
+}
+
+footer [href*="code"]:hover {
+  color: #007ACC;
+}
+
+footer [href*="github"]:hover {
+  color: #2B3137;
+}
+
 @media only screen and (max-width: 40em) {
     .container {
         padding-left: 1rem;
