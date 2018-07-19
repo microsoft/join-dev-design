@@ -1,0 +1,25 @@
+{
+  "name": "join-dev-design",
+  "version": "1.0.0",
+  "description": "This project welcomes contributions and suggestions.  Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit https://cla.microsoft.com.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "serve -s docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Microsoft/join-dev-design.git"
+  },
+  "author": "David Siegel <dasiege@microsoft.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Microsoft/join-dev-design/issues"
+  },
+  "homepage": "https://github.com/Microsoft/join-dev-design#readme",
+  "devDependencies": {
+    "serve": "^9.2.0"
+  }
+}
