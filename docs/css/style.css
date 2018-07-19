@@ -1,49 +1,82 @@
-body {
+:root {
+    --blue: #05A6F0;
+    --move-in-offset: 1rem;
+}
+
+@keyframes move-in {
+    from {
+        transform: translateY(var(--move-in-offset));
+        opacity: 0;
+    }
+    to {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+html {
+    font-size: 125%;
+    font-family: Inconsolata, Consolas, monospace;
+    line-height: 1.25;
     background-color: #080808;
+}
+
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: 100vh;
+    margin: 0;
     color: #BBB;
-    font-family: sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    opacity: 0;
+    transform: translateY(var(--move-in-offset));
+    animation: 1500ms 500ms forwards move-in;
+}
+
+::-moz-selection {
+    color: white;
+    background-color: var(--blue);
+}
+
+::selection {
+    color: white;
+    background-color: var(--blue);
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    transition: 150ms color;
+}
+
+a:hover {
+    color: var(--blue);
 }
 
 .container {
-    max-width: 600px;
-    min-height: calc(100vh - 80px);
+    max-width: 32rem;
     margin: 0 auto;
+    flex: 1;
 }
 
-.container img {
-    margin: 40px auto;
+.logo-link {
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    margin: 2.5rem auto;
+}
+
+.logo-image {
+    display: block;
     width: 100%;
+    height: auto;
 }
 
-.container p {
-    font-size: 19px;
-    line-height: 1.3em;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    margin-bottom: 1.1em;
-}
-
-.container p a {
-    text-decoration: none;
-    color: pink;
-}
-
-.container p a:hover {
-    color: lightblue;
-}
-
-footer {
-    color: #999;
+.footer {
+    font-size: 80%;
     text-align: center;
-    height: 40px;
-}
-
-footer a {
-    color: #DDD;
-    text-decoration: none;
-}
-footer a:hover {
-    color: lightblue;
+    padding: 1rem 0;
 }
 
 @media only screen and (max-width: 600px) {
