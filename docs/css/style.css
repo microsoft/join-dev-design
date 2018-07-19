@@ -16,8 +16,8 @@
 
 html {
     font-size: 125%;
-    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    line-height: 1.333;
+    font-family: Inconsolata, Consolas, monospace;
+    line-height: 1.25;
     background-color: #080808;
 }
 
