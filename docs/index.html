@@ -11,9 +11,9 @@
 
 <style>
     body {
-        background-color: black;
-        color: #DDD;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        background-color: #080808;
+        color: #BBB;
+        font-family: sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
 
     .container {
@@ -28,8 +28,11 @@
     }
 
     .container p {
-        font-weight: 300;
-        font-size: 22px;
+        font-size: 19px;
+        line-height: 1.3em;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        margin-bottom: 1.1em;
     }
 
     .container p a {
@@ -38,7 +41,7 @@
     }
 
     .container p a:hover {
-        color: salmon;
+        color: lightblue;
     }
 
     footer {
@@ -50,6 +53,9 @@
     footer a {
         color: #DDD;
         text-decoration: none;
+    }
+    footer a:hover {
+        color: lightblue;
     }
 
     @media only screen and (max-width: 600px) {
@@ -69,7 +75,7 @@
 <body>
     <div class="container">
         <a href="https://microsoft.com">
-            <img src="msft-square.svg" alt="Microsoft logo" width="100" height="100" />
+            <img src="msft-square.svg" alt="Microsoft logo" width="80" height="80" />
         </a>
         <p>Microsoft is looking for designers who code to help create the most compelling developer tools &amp; services on
             the planet.
