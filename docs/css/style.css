@@ -72,6 +72,11 @@ a:hover {
     display: block;
     width: 100%;
     height: auto;
+    transition: transform .2s;
+}
+
+.logo-image:hover {
+    transform: scale(1.05); 
 }
 
 .footer {
@@ -93,4 +98,5 @@ a:hover {
         display: block;
     }
 }
+
 
