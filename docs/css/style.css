@@ -29,9 +29,6 @@ body {
     color: #BBB;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    opacity: 0;
-    transform: translateY(var(--move-in-offset));
-    animation: 1500ms 500ms forwards move-in;
 }
 
 ::-moz-selection {
@@ -58,6 +55,10 @@ a:hover {
     max-width: 32rem;
     margin: 0 auto;
     flex: 1;
+    
+  opacity: 0;
+  transform: translateY(var(--move-in-offset));
+  animation: 1500ms 500ms forwards move-in;
 }
 
 .logo-link {
@@ -79,8 +80,19 @@ a:hover {
     padding: 1rem 0;
 }
 
-@media only screen and (max-width: 600px) {
+footer [href*="figma"]:hover {
+  color: #8420FF;
+}
 
+footer [href*="code"]:hover {
+  color: #007ACC;
+}
+
+footer [href*="github"]:hover {
+  color: #2B3137;
+}
+
+@media only screen and (max-width: 40em) {
     .container {
         max-width: calc(100vw - 20vw);
         margin: 0 auto;
