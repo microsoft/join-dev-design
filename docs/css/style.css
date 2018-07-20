@@ -160,7 +160,7 @@ footer [href*="code"]:hover {
 }
 
 footer [href*="github"]:hover {
-  color: #2B3137;
+  color: #6cc644;
 }
 
 @media only screen and (max-width: 40em) {
