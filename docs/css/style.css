@@ -1,6 +1,9 @@
 :root {
-  --blue: #05a6f0;
-  --link-color: #FFBA08;
+  --red: #f35325;
+  --green: #81BC06;
+  --blue: #05A6f0;
+  --yellow: #FFBA08;
+  --link-color: var(--yellow);
   --move-in-offset: 20px;
   --move-in-animation: 1s both move-in;
   --move-in-base-delay: 100ms;
@@ -67,8 +70,8 @@ body {
   flex-flow: column nowrap;
   min-height: calc(100vh - 10px);
   margin: 5px;
-  color: #BBB;
-  background-color: rgba(18, 18, 18, 1);
+  color: hsl(199, 96%, 96%);
+  background-color: hsl(199, 96%, 8%);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -96,6 +99,7 @@ a:hover {
 .container {
   max-width: 32rem;
   margin: 0 auto;
+  padding-top: 10vh;
   flex: 1;
 }
 
@@ -115,7 +119,7 @@ header hr {
   border: 0;
   height: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   width: 97%;
   animation: var(--move-in-animation);
   animation-delay: 250ms;
@@ -186,6 +190,7 @@ footer [href*="github"]:hover {
   .container {
     max-width: calc(100vw - 20vw);
     margin: 0 auto;
+    padding-top: 5vh;
   }
 
   .container p {
