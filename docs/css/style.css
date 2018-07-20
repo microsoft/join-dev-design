@@ -20,17 +20,36 @@
 }
 
 @keyframes logo-tiles-in {
-  0%   { opacity: 0; filter: grayscale(1) hue-rotate(100deg); }
-  25%  { opacity: 1; }
-  50%  { opacity: 1; }
-  55%  { opacity: 0; }
-  60%  { opacity: 1; filter: grayscale(1) hue-rotate(100deg); }
-  100% { opacity: 1; filter: grayscale(0) hue-rotate(0deg); }
+  0% {
+    opacity: 0;
+    filter: grayscale(1) hue-rotate(100deg);
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+    filter: grayscale(1) hue-rotate(100deg);
+  }
+  100% {
+    opacity: 1;
+    filter: grayscale(0) hue-rotate(0deg);
+  }
 }
 
 @keyframes logo-tiles-hover {
-  from { filter: hue-rotate(0deg) }
-  to   { filter: hue-rotate(360deg) }
+  from {
+    filter: hue-rotate(0deg)
+  }
+  to {
+    filter: hue-rotate(360deg)
+  }
 }
 
 html {
@@ -105,9 +124,17 @@ main p {
   animation-delay: calc(var(--move-in-base-delay) * 5);
 }
 
-main p:nth-child(2) { animation-delay: calc(var(--move-in-base-delay) * 6) }
-main p:nth-child(3) { animation-delay: calc(var(--move-in-base-delay) * 7) }
-main p:nth-child(4) { animation-delay: calc(var(--move-in-base-delay) * 8) }
+main p:nth-child(2) {
+  animation-delay: calc(var(--move-in-base-delay) * 6)
+}
+
+main p:nth-child(3) {
+  animation-delay: calc(var(--move-in-base-delay) * 7)
+}
+
+main p:nth-child(4) {
+  animation-delay: calc(var(--move-in-base-delay) * 8)
+}
 
 .logo-link {
   display: block;
@@ -115,8 +142,6 @@ main p:nth-child(4) { animation-delay: calc(var(--move-in-base-delay) * 8) }
   height: 4rem;
   margin: 2rem auto;
 }
-
-.logo-link:hover { animation: 1s both logo-tiles-hover linear infinite; }
 
 .logo-image {
   display: block;
@@ -140,10 +165,62 @@ main p:nth-child(4) { animation-delay: calc(var(--move-in-base-delay) * 8) }
   animation: var(--logo-tiles-in-animation);
 }
 
-.logo-tile--red    { background-color: #F35325; }
-.logo-tile--green  { background-color: #81BC06; animation-delay: var(--logo-tiles-in-delay); }
-.logo-tile--blue   { background-color: #05A6F0; animation-delay: calc(var(--logo-tiles-in-delay) * 2); }
-.logo-tile--yellow { background-color: #FFBA08; animation-delay: calc(var(--logo-tiles-in-delay) * 3); }
+.logo-tile--red {
+  background-color: #F35325;
+}
+
+.logo-tile--lightred {
+  background-color: rgb(238, 118, 84);
+}
+
+.logo-tile--red:active {
+  background-color: rgb(238, 118, 84);
+}
+
+.logo-tile--green {
+  background-color: #81BC06;
+  animation-delay: var(--logo-tiles-in-delay);
+}
+
+.logo-tile--lightgreen {
+  background-color: rgb(166, 214, 62);
+  animation-delay: var(--logo-tiles-in-delay);
+}
+
+.logo-tile--green:active {
+  background-color: rgb(166, 214, 62);
+  animation-delay: var(--logo-tiles-in-delay);
+}
+
+.logo-tile--blue {
+  background-color: #05A6F0;
+  animation-delay: calc(var(--logo-tiles-in-delay) * 2);
+}
+
+.logo-tile--lightblue {
+  background-color: rgb(90, 198, 248);
+  animation-delay: calc(var(--logo-tiles-in-delay) * 2);
+}
+
+.logo-tile--blue:active {
+  background-color: rgb(90, 198, 248);
+  animation-delay: calc(var(--logo-tiles-in-delay) * 2);
+}
+
+.logo-tile--yellow {
+  background-color: #FFBA08;
+  animation-delay: calc(var(--logo-tiles-in-delay) * 3);
+}
+
+.logo-tile--lightyellow {
+  background-color: rgb(253, 208, 94);
+  animation-delay: calc(var(--logo-tiles-in-delay) * 3);
+}
+
+.logo-tile--yellow:active {
+  background-color: rgb(253, 208, 94);
+  animation-delay: calc(var(--logo-tiles-in-delay) * 3);
+}
 
 .footer {
   font-size: 80%;
@@ -164,23 +241,20 @@ footer [href*="github"]:hover {
 }
 
 @media only screen and (max-width: 40em) {
-    .container {
-        max-width: calc(100vw - 20vw);
-        margin: 0 auto;
-    }
-
-    .container p {
-        font-size: 18px;
-    }
-
-    footer {
-        text-align: unset;
-        padding: 1em 0 2em;
-        max-width: calc(100vw - 20vw);
-        margin: 0 auto;
-    }
-
-    footer span {
-        display: block;
-    }
+  .container {
+    max-width: calc(100vw - 20vw);
+    margin: 0 auto;
+  }
+  .container p {
+    font-size: 18px;
+  }
+  footer {
+    text-align: unset;
+    padding: 1em 0 2em;
+    max-width: calc(100vw - 20vw);
+    margin: 0 auto;
+  }
+  footer span {
+    display: block;
+  }
 }
