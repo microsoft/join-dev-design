@@ -174,10 +174,6 @@ main p:nth-child(4) { animation-delay: calc(var(--move-in-base-delay) * 8) }
   animation-delay: calc(var(--move-in-base-delay) * 9);
 }
 
-footer [href*="figma"]:hover {
-  color: #8420FF;
-}
-
 footer [href*="code"]:hover {
   color: #007ACC;
 }
