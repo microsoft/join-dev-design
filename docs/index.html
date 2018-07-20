@@ -66,10 +66,11 @@ var consoleStyles = [
   'font-size: 1.25em;'
 ].join('')
 
-console.log(
-  '%c\t\t\t\t\t\t\t\t\t\t\t\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n👋 Hi there! 👋\n\nIt seems you like to poke around as much as we do.\n\nhttps://github.com/Microsoft/join-dev-design',
-  consoleStyles
-)
+console.log("%c|", "color: transparent;border-left: 5rem solid #F35325;border-right: 5rem solid #81BC06;line-height:5rem;font-size:5rem;letter-spacing:none;padding: 0; margin: 0;");
+console.log("%c ---", "color: transparent;line-height:0rem;font-size:5rem;letter-spacing:none;padding: 0; margin: 0;");
+console.log("%c|", "color: transparent;border-left: 5rem solid #05A6F0;border-right: 5rem solid #FFBA08;line-height:5rem;font-size:5rem;letter-spacing:none;padding: 0; margin: 0;");
+console.log("%c", "color: white; background-color: #080808; width: 100%;");
+console.log("%c 👋 Hi there! 👋\n\nIt seems you like to poke around as much as we do.\n\nhttps://github.com/Microsoft/join-dev-design", "color: #000000; text-align: center;font-size: 2em;");
 
 fetch(
   'https://api.github.com/repos/Microsoft/join-dev-design/stats/contributors'
