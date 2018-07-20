@@ -99,12 +99,12 @@ a:hover {
   flex: 1;
 }
 
-p {
+p, h1 {
   margin: 0;
   padding: 10px 0.5em;
 }
 
-header p {
+header h1 {
   animation: var(--move-in-animation);
   animation-delay: calc(var(--move-in-base-delay) * 4);
   font-size: 27px;
