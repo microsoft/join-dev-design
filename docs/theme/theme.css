@@ -17,6 +17,7 @@
   padding: 1rem;
   font-size: 0;
   z-index: 900;
+  transition: opacity .3s ease;
 }
 
 .theme__list,
@@ -67,6 +68,12 @@
 }
 
 @media only screen and (min-width: 640px) {
+  .theme {
+    opacity: .5;
+  }
+  .theme:hover {
+    opacity: 1;
+  }
   .theme__item+.theme__item {
     margin-left: -0.8rem;
   }
@@ -76,6 +83,10 @@
 }
 
 /* Theme Setting */
+
+body {
+  transition: background-color .3s ease;
+}
 
 body.js-theme-light {
   color: #222;
