@@ -1,3 +1,13 @@
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
 /* UI Styling */
 
 .theme {
@@ -19,6 +29,8 @@
 
 .theme__list {
   list-style: none;
+  animation: 1s both fade-in;
+  animation-delay: 1.5s;
 }
 
 .theme__item {
