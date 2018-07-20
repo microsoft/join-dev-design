@@ -67,6 +67,7 @@ body {
   flex-flow: column nowrap;
   min-height: calc(100vh - 10px);
   margin: 5px;
+  padding: 0 1rem;
   color: #BBB;
   background-color: rgba(18, 18, 18, 1);
   -webkit-font-smoothing: antialiased;
