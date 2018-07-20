@@ -17,12 +17,12 @@
     <div class="container">
         <header>
             <a class="logo-link" href="https://microsoft.com" title="Microsoft Website">
-                <figure class="logo-css">
-                    <span class="logo-tile logo-tile--red"></span>
-                    <span class="logo-tile logo-tile--green"></span>
-                    <span class="logo-tile logo-tile--blue"></span>
-                    <span class="logo-tile logo-tile--yellow"></span>
-                </figure>
+              <figure class="logo-css">
+                <span class="logo-tile logo-tile--red"></span>
+                <span class="logo-tile logo-tile--green"></span>
+                <span class="logo-tile logo-tile--blue"></span>
+                <span class="logo-tile logo-tile--yellow"></span>
+              </figure>
             </a>
             <h1>Microsoft is looking for designers who code to help create the most compelling developer tools &amp; services
                 on the planet.
@@ -56,7 +56,7 @@
         </div>
     </div>
     <footer class="footer" role="contentinfo">
-        <span class="footer-piece">Designed in
+    <span class="footer-piece">Designed in
             <a href="https://figma.com" title="Figma is the first interface design tool based in the browser, making it easier for teams to create software.">Figma</a>.</span>
         <span class="footer-piece">Built in
             <a href="https://code.visualstudio.com" title="Visual Studio Code is a code editor redefined and optimized for building and debugging modern web and cloud applications.">Code</a>.</span>
@@ -88,19 +88,19 @@ console.log(
 fetch(
   'https://api.github.com/repos/Microsoft/join-dev-design/stats/contributors'
 )
-  .then(function (response) {
+  .then(function(response) {
     if (response.status !== 200) {
       console.log(
         'Looks like there was a problem. Status Code: ' + response.status
       )
       return
     }
-    response.json().then(function (data) {
+    response.json().then(function(data) {
       var contributors = document.getElementById('contributors')
       contributors.innerText = data.length
     })
   })
-  .catch(function (err) {
+  .catch(function(err) {
     console.log('Fetch Error :-S', err)
   })
 </script>
