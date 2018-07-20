@@ -149,6 +149,8 @@ main p:nth-child(4) { animation-delay: calc(var(--move-in-base-delay) * 8) }
   font-size: 80%;
   text-align: center;
   padding: 1rem 0;
+  animation: var(--move-in-animation);
+  animation-delay: calc(var(--move-in-base-delay) * 9);
 }
 
 footer [href*="figma"]:hover {
@@ -164,23 +166,23 @@ footer [href*="github"]:hover {
 }
 
 @media only screen and (max-width: 40em) {
-    .container {
-        max-width: calc(100vw - 20vw);
-        margin: 0 auto;
-    }
+  .container {
+    max-width: calc(100vw - 20vw);
+    margin: 0 auto;
+  }
 
-    .container p {
-        font-size: 18px;
-    }
+  .container p {
+    font-size: 18px;
+  }
 
-    footer {
-        text-align: unset;
-        padding: 1em 0 2em;
-        max-width: calc(100vw - 20vw);
-        margin: 0 auto;
-    }
+  footer {
+    text-align: unset;
+    padding: 1em 0 2em;
+    max-width: calc(100vw - 20vw);
+    margin: 0 auto;
+  }
 
-    footer span {
-        display: block;
-    }
+  footer span {
+    display: block;
+  }
 }
