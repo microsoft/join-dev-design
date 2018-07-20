@@ -1,6 +1,6 @@
 :root {
   --blue: #05a6f0;
-  --link-color: rgba(244, 99, 97, 1);
+  --link-color: #FFBA08;
   --move-in-offset: 20px;
   --move-in-animation: 1s both move-in;
   --move-in-base-delay: 100ms;
@@ -33,12 +33,34 @@
   to   { filter: hue-rotate(360deg) }
 }
 
+@keyframes root-gradient {
+  0%    { opacity: 0.0; }
+  40%   { opacity: 1.0; }
+  60%   { opacity: 1.0; }
+  100%  { opacity: 0.0; }
+}
+
 html {
+  position: relative;
   font-size: 125%;
   font-family: Inconsolata, Consolas, monospace;
   line-height: 1.25;
-  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.33, #f45326), color-stop(0.67, #80bc07));
-  background-image: -moz-linear-gradient(center bottom, #f45326 33%, #80bc07 67%);
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.33, #05A6F0), color-stop(0.67, #FFBA08));
+  background-image: -moz-linear-gradient(center bottom, #05A6F0 33%, #FFBA08 67%);
+}
+
+html:before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0; left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  z-index: -1;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.33, #ffbb00), color-stop(0.67,#00a1f1) );
+  background-image: -moz-linear-gradient(center bottom, #ffbb00 33%, #00a1f1 67%);
+  animation: 4s both root-gradient linear infinite;
 }
 
 body {
@@ -46,6 +68,7 @@ body {
   flex-flow: column nowrap;
   min-height: calc(100vh - 10px);
   margin: 5px;
+  padding: 0 1rem;
   color: #BBB;
   background-color: rgba(18, 18, 18, 1);
   -webkit-font-smoothing: antialiased;
@@ -78,12 +101,12 @@ a:hover {
   flex: 1;
 }
 
-p {
+p, h1 {
   margin: 0;
   padding: 10px 0.5em;
 }
 
-header p {
+header h1 {
   animation: var(--move-in-animation);
   animation-delay: calc(var(--move-in-base-delay) * 4);
   font-size: 27px;
@@ -149,10 +172,8 @@ main p:nth-child(4) { animation-delay: calc(var(--move-in-base-delay) * 8) }
   font-size: 80%;
   text-align: center;
   padding: 1rem 0;
-}
-
-footer [href*="figma"]:hover {
-  color: #8420FF;
+  animation: var(--move-in-animation);
+  animation-delay: calc(var(--move-in-base-delay) * 9);
 }
 
 footer [href*="code"]:hover {
@@ -164,23 +185,23 @@ footer [href*="github"]:hover {
 }
 
 @media only screen and (max-width: 40em) {
-    .container {
-        max-width: calc(100vw - 20vw);
-        margin: 0 auto;
-    }
+  .container {
+    max-width: calc(100vw - 20vw);
+    margin: 0 auto;
+  }
 
-    .container p {
-        font-size: 18px;
-    }
+  .container p {
+    font-size: 18px;
+  }
 
-    footer {
-        text-align: unset;
-        padding: 1em 0 2em;
-        max-width: calc(100vw - 20vw);
-        margin: 0 auto;
-    }
+  footer {
+    text-align: unset;
+    padding: 1em 0 2em;
+    max-width: calc(100vw - 20vw);
+    margin: 0 auto;
+  }
 
-    footer span {
-        display: block;
-    }
+  .footer-piece {
+    display: block;
+  }
 }
