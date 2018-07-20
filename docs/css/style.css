@@ -64,6 +64,7 @@ html:before {
 }
 
 body {
+  display: block;
   display: flex;
   flex-flow: column nowrap;
   min-height: calc(100vh - 10px);
