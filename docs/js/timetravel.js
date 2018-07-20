@@ -7,7 +7,7 @@ fetch("https://api.github.com/repos/Microsoft/join-dev-design/commits")
       return;
     }
     response.json().then(function(commits) {
-      console.log(commits);
+		
       window.commits = commits;
       window.currentCommitIndex = 0;
     });
@@ -17,7 +17,6 @@ fetch("https://api.github.com/repos/Microsoft/join-dev-design/commits")
   });
 
 function getBodyHtmlAtCommit(commitSha) {
-  console.log("getting body html at commitSha");
 
   fetch(
     "https://raw.githubusercontent.com/Microsoft/join-dev-design/" +
