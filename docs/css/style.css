@@ -72,20 +72,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.container {
-  margin-top: 2rem;
-  display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
-}
-
-.text-content {
-  display: flex;
-  flex-direction: row;
-}
-
-.content-group {
-  width: 50%;
-  padding: 5px;
+@media (min-width: 768px) {
+  .container {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
 }
 
 ::-moz-selection {
@@ -118,6 +110,7 @@ h1 {
 }
 
 main {
+  grid-column: 2 / span 3;
   background-color: var(--magenta-241);
   padding: 1rem;
 }
@@ -159,12 +152,24 @@ main p:nth-child(6) {
   animation-delay: calc(var(--move-in-base-delay) * 9);
 }
 
+.text-content {
+  display: flex;
+  flex-direction: row;
+}
+
+.content-group {
+  width: 50%;
+  padding: 5px;
+}
+
 .logo {
   margin-top: 0.5rem;
 }
 
 .logo-link {
   display: block;
+  animation: 1s both logo-tiles-hover linear;
+  animation-iteration-count: 3;
 }
 
 .logo-link:hover {
@@ -185,26 +190,4 @@ footer [href*="code"]:hover {
 
 footer [href*="github"]:hover {
   color: #6cc644;
-}
-
-@media only screen and (max-width: 40em) {
-  .container {
-    max-width: calc(100vw - 20vw);
-    margin: 0 auto;
-  }
-
-  .container p {
-    font-size: 18px;
-  }
-
-  footer {
-    text-align: unset;
-    padding: 1em 0 2em;
-    max-width: calc(100vw - 20vw);
-    margin: 0 auto;
-  }
-
-  footer span {
-    display: block;
-  }
 }
