@@ -16,16 +16,21 @@ fetch("https://api.github.com/repos/Microsoft/join-dev-design/commits")
   });
 
 function setHtmlAsLastTimeChanged(commitSha) {
-  fetch("https://api.github.com/repos/Microsoft/join-dev-design/commits/" + commitSha)
+  fetch(
+    "https://api.github.com/repos/Microsoft/join-dev-design/commits/" +
+      commitSha
+  )
     .then(function(response) {
       response.json().then(function(commit) {
-			if(commit.files.filter((function(file) {
-				return (file.filename.indexOf('index.html') > -1)
-			})).length > 0) {
-				getBodyHtmlAtCommit(commitSha)
-			} else {
-				timeTravelBack()
-			}
+        if (
+          commit.files.filter(function(file) {
+            return file.filename.indexOf("index.html") > -1;
+          }).length > 0
+        ) {
+          getBodyHtmlAtCommit(commitSha);
+        } else {
+          timeTravelBack();
+        }
       });
     })
     .catch(function(err) {
@@ -40,10 +45,19 @@ function getBodyHtmlAtCommit(commitSha) {
       "/docs/index.html"
   )
     .then(function(response) {
-      response.text().then(function(commitBodyHtml) {
+      response.text().then(function(commitHtml) {
         var spacer = "<hr>" + window.currentCommitIndex + " Commits Ago: <hr>";
+
+        //load the style.css used at the time
+        var styleCSSAtCommit =
+          "https://raw.githubusercontent.com/Microsoft/join-dev-design/" +
+          commitSha +
+          "/css/style.css";
+
+        commitHtml = commitHtml.replace("css/style.css", styleCSSAtCommit);
+
         document.getElementById("renderPreviousCommitNode").innerHTML +=
-          spacer + commitBodyHtml;
+          spacer + commitHtml;
       });
     })
     .catch(function(err) {
