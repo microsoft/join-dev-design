@@ -1,16 +1,8 @@
-const css = `
-color: white;
-background-color: #080808;
-background-image: url(https://microsoft.github.io/join-dev-design/msft-square.svg);
-background-size: 70%;
-background-position: 50% 25%;
-background-repeat: no-repeat;
-padding: 3em;
-text-align: center;
-font-size: 1.25em;
+const css = `text-align: center; font-size: 1.25em;
 `;
+
 console.log(
-  "%c\t\t\t\t\t\t\t\t\t\t\t\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n👋 Hi there! 👋\n\nIt seems you like to poke around as much as we do.\n\nhttps://github.com/Microsoft/join-dev-design",
+  "%c👋 Hi there! 👋\n\nIt seems you like to poke around as much as we do.\nhttps://github.com/Microsoft/join-dev-design",
   css
 );
 
