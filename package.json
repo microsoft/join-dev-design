@@ -7,8 +7,12 @@
     "doc": "docs"
   },
   "scripts": {
-    "start": "serve -s docs"
+    "build": "sw-precache --root=docs",
+    "start": "npm run build && serve -s docs"
   },
+  "pre-commit": [
+    "build"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Microsoft/join-dev-design.git"
@@ -20,6 +24,8 @@
   },
   "homepage": "https://github.com/Microsoft/join-dev-design#readme",
   "devDependencies": {
-    "serve": "^9.2.0"
+    "precommit-hook": "^3.0.0",
+    "serve": "^9.2.0",
+    "sw-precache": "^5.2.1"
   }
 }
