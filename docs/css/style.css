@@ -52,7 +52,7 @@ html {
 html:before {
   content: "";
   position: absolute;
-  display: flex;
+  display: block;
   top: 0; left: 0;
   height: 100%;
   width: 100%;
