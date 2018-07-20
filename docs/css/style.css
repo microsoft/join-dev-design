@@ -1,6 +1,6 @@
 :root {
   --blue: #05a6f0;
-  --link-color: rgba(244, 99, 97, 1);
+  --link-color: #FFBA08;
   --move-in-offset: 20px;
   --move-in-animation: 1s both move-in;
   --move-in-base-delay: 100ms;
@@ -44,8 +44,8 @@ html {
   font-size: 125%;
   font-family: Inconsolata, Consolas, monospace;
   line-height: 1.25;
-  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.33, #f45326), color-stop(0.67, #80bc07));
-  background-image: -moz-linear-gradient(center bottom, #f45326 33%, #80bc07 67%);
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.33, #05A6F0), color-stop(0.67, #FFBA08));
+  background-image: -moz-linear-gradient(center bottom, #05A6F0 33%, #FFBA08 67%);
 }
 
 html:before {
