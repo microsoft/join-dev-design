@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -88,6 +88,10 @@ fetch(
   })
   .catch(function(err) {
     console.log('Fetch Error :-S', err)
-  })
+  });
+
+  document.querySelector('.footer').addEventListener('animationend', function() {
+    document.querySelector('body').style.overflowY = 'auto';
+  }, false);
 </script>
 </html>
