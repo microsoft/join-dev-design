@@ -41,6 +41,7 @@
 }
 
 html {
+  position: relative;
   font-size: 125%;
   font-family: Inconsolata, Consolas, monospace;
   line-height: 1.25;
