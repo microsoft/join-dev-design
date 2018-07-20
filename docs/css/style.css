@@ -121,6 +121,8 @@ body {
   background-color: rgba(18, 18, 18, 1);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  justify-content: center;
+  align-items: center;
 }
 
 ::-moz-selection {
@@ -145,8 +147,12 @@ a:hover {
 
 .container {
   max-width: 32rem;
-  margin: 0 auto;
   flex: 1;
+}
+
+.container,
+.footer {
+  margin-left: calc(100vw - 100%);
 }
 
 p,
