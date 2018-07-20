@@ -48,7 +48,8 @@ body {
   margin: 5px;
   color: #BBB;
   background-image: -webkit-gradient(linear, left bottom, left top, color-stop(100, #202020), color-stop(0, #111));
-  background-image: -moz-linear-gradient(center bottom, #202020 100%, #111 0%);  -webkit-font-smoothing: antialiased;
+  background-image: -moz-linear-gradient(center bottom, #202020 100%, #111 0%);
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
