@@ -66,6 +66,10 @@
   border: 3px solid #444;
 }
 
+.theme__button:not([disabled]) {
+  cursor: pointer;
+}
+
 @media only screen and (min-width: 640px) {
   .theme {
     opacity: .5;
