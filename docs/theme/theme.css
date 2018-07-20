@@ -1,0 +1,68 @@
+/* Theme Setting */
+
+body.js-theme-light {
+  color: #222;
+  background-color: #fdfdfd;
+}
+
+.js-theme-light a {
+  color: #05a6f0;
+}
+
+.js-theme-light a:hover {
+  color: #f35325;
+}
+
+/* UI Styling */
+
+.theme {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 1rem;
+  font-size: 0;
+}
+
+.theme__list,
+.theme_item,
+.theme__button {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.theme__list {
+  list-style: none;
+}
+
+.theme__item {
+  position: relative;
+  display: inline-block;
+}
+
+.theme__item+.theme__item {
+  margin-left: .5rem;
+}
+
+.theme__button {
+  display: block;
+  position: relative;
+  text-indent: -9999px;
+  width: 1.2rem;
+  height: 1.2rem;
+  background: blue;
+  border: 1px solid green;
+  border-radius: 0.6rem;
+}
+
+.theme__button[value='dark'] {
+  background: black;
+}
+
+.theme__button[value='light'] {
+  background: white;
+}
+
+.theme__button:disabled {
+  border: 3px solid green;
+}
