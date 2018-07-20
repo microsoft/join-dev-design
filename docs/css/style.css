@@ -33,12 +33,32 @@
   to   { filter: hue-rotate(360deg) }
 }
 
+@keyframes root-gradient {
+  0%    { opacity: 0.0; }
+  50%   { opacity: 1.0; }
+  100%  { opacity: 0.0; }
+}
+
 html {
   font-size: 125%;
   font-family: Inconsolata, Consolas, monospace;
   line-height: 1.25;
   background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.33, #f45326), color-stop(0.67, #80bc07));
   background-image: -moz-linear-gradient(center bottom, #f45326 33%, #80bc07 67%);
+}
+
+html:before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0; left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  z-index: -1;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.33, #ffbb00), color-stop(0.67,#00a1f1) );
+  background-image: -moz-linear-gradient(center bottom, #ffbb00 33%, #00a1f1 67%);
+  animation: 3.5s both root-gradient linear infinite;
 }
 
 body {
