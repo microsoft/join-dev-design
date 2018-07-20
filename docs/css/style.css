@@ -69,7 +69,7 @@
 
 html {
   position: relative;
-  font-size: 125%;
+  font-size: 16px;
   font-family: Inconsolata, Consolas, monospace;
   line-height: 1.25;
   background-image: -webkit-gradient(
@@ -116,11 +116,12 @@ body {
   flex-flow: column nowrap;
   min-height: calc(100vh - 10px);
   margin: 5px;
-  padding: 0 1rem;
+  padding: 0 1.25rem;
   color: #bbb;
   background-color: rgba(18, 18, 18, 1);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
 }
 
 ::-moz-selection {
@@ -144,7 +145,7 @@ a:hover {
 }
 
 .container {
-  max-width: 32rem;
+  max-width: 40rem;
   margin: 0 auto;
   flex: 1;
 }
@@ -155,10 +156,20 @@ h1 {
   padding: 10px 0.5em;
 }
 
+p {
+  font-size: 1.125rem;
+}
+
+@media only screen and (min-width: 40em) {
+  p {
+    font-size: 1.25rem;
+  }
+}
+
 header h1 {
   animation: var(--move-in-animation);
   animation-delay: calc(var(--move-in-base-delay) * 4);
-  font-size: 27px;
+  font-size: 1.688rem;
   font-weight: bolder;
 }
 
@@ -189,9 +200,9 @@ main p:nth-child(4) {
 
 .logo-link {
   display: block;
-  width: 4rem;
-  height: 4rem;
-  margin: 2rem auto;
+  width: 5rem;
+  height: 5rem;
+  margin: 2.5rem auto;
 }
 
 .logo-link:hover {
@@ -237,9 +248,8 @@ main p:nth-child(4) {
 }
 
 .footer {
-  font-size: 80%;
   text-align: center;
-  padding: 1rem 0;
+  padding: 1.25rem 0;
   animation: var(--move-in-animation);
   animation-delay: calc(var(--move-in-base-delay) * 9);
 }
@@ -258,13 +268,9 @@ footer [href*="github"]:hover {
     margin: 0 auto;
   }
 
-  .container p {
-    font-size: 18px;
-  }
-
   footer {
     text-align: unset;
-    padding: 1em 0 2em;
+    padding: 1.25rem 0 2.5rem;
     max-width: calc(100vw - 20vw);
     margin: 0 auto;
   }
