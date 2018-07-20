@@ -187,7 +187,7 @@ footer [href*="github"]:hover {
 
 @media only screen and (max-width: 40em) {
   .container {
-    max-width: calc(100vw - 20vw);
+    max-width: calc(100vw - 10vw);
     margin: 0 auto;
   }
 
@@ -198,7 +198,7 @@ footer [href*="github"]:hover {
   footer {
     text-align: unset;
     padding: 1em 0 2em;
-    max-width: calc(100vw - 20vw);
+    max-width: calc(100vw - 10vw);
     margin: 0 auto;
   }
 
