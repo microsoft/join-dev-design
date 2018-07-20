@@ -1,12 +1,27 @@
+:root {
+    --move-in-offset: 1rem;
+    --move-in-offset: 20px;
+    --move-in-animation: 0.9s both move-in;
+}
+
+@keyframes move-in {
+    from {
+        transform: translateY(var(--move-in-offset));
+        transform: translateY(var(--move-in-offset));
+        opacity: 0;
+    }
+    to {
+        transform: none;
+        opacity: 1;
+    }
+}
+
 html {
     font-size: 100%;
 }
 
 body {
     background-color: #002C37;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     height: 100vh;
     margin: 0;
     padding: 0;
@@ -39,24 +54,19 @@ body {
 .container {
     max-width: 40%;
     flex: 1;
-    padding: 48px 48px 48px 120px;
+    padding: 48px 48px 48px 80px;
     position: relative;
+    border-left: 48px solid rgba(0, 0, 0, 0.2);
 }
-    .container:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        width: 48px;
-        background: rgba(0, 0, 0, 0.2);
-    }
+
 
 /* Header */
 .title {
     font: 700 1.5rem/1.6 'Karla';
     margin: 24px 0 0 0;
     color: #fff;
+    animation: var(--move-in-animation);
+    animation-delay: 200ms;
 }
     .title:before {
         content: '#';
@@ -68,11 +78,14 @@ body {
 /* Content */
 .content {
     margin-top: 48px;
+    animation: var(--move-in-animation);
+    animation-delay: 400ms;
 }
     .content p {
         font: 1rem/1.6 'Karla';
         margin: 0 0 24px 0;
         color: #FFF;
+
     }
         .content p a {
             color: #6DBF00;
@@ -86,6 +99,8 @@ body {
     margin-top: 52px;
     font: 0.875rem/1.6 'Karla';
     color: rgba(255, 255, 255, .6);
+    animation: var(--move-in-animation);
+    animation-delay: 600ms;
 }
     .footer:before {
         content: '';
@@ -125,12 +140,7 @@ body {
     .container {
         max-width: 100%;
         padding: 48px 24px 24px 48px;
+        border-top: 16px solid rgba(0, 0, 0, 0.2);
+        border-left: 0;
     }
-        .container:before {
-            top: 0;
-            bottom: auto;
-            width: 100%;
-            right: 0;
-            height: 16px;
-        }
 }
