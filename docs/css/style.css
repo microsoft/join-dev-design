@@ -20,15 +20,17 @@ html {
   font-size: 125%;
   font-family: Inconsolata, Consolas, monospace;
   line-height: 1.25;
-  background-color: rgba(18, 18, 18, 1);
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.33, #f45326), color-stop(0.67, #80bc07));
+  background-image: -moz-linear-gradient(center bottom, #f45326 33%, #80bc07 67%);
 }
 
 body {
   display: flex;
   flex-flow: column nowrap;
-  min-height: 100vh;
-  margin: 0;
+  min-height: 99vh;
+  margin: 5px;
   color: #BBB;
+  background-color: rgba(18, 18, 18, 1);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
