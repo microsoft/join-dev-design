@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "start": "serve -s docs"
+    "start": "live-server docs --no-browser"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/Microsoft/join-dev-design#readme",
   "devDependencies": {
-    "serve": "^9.2.0"
+    "live-server": "^1.2.0"
   }
 }
