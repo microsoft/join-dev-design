@@ -7,7 +7,6 @@ fetch("https://api.github.com/repos/Microsoft/join-dev-design/commits")
       return;
     }
     response.json().then(function(commits) {
-		
       window.commits = commits;
       window.currentCommitIndex = 0;
     });
@@ -16,8 +15,25 @@ fetch("https://api.github.com/repos/Microsoft/join-dev-design/commits")
     console.log("Fetch Error :-S", err);
   });
 
-function getBodyHtmlAtCommit(commitSha) {
+function setHtmlAsLastTimeChanged(commitSha) {
+  fetch("https://api.github.com/repos/Microsoft/join-dev-design/commits/" + commitSha)
+    .then(function(response) {
+      response.json().then(function(commit) {
+			if(commit.files.filter((function(file) {
+				return (file.filename.indexOf('index.html') > -1)
+			})).length > 0) {
+				getBodyHtmlAtCommit(commitSha)
+			} else {
+				timeTravelBack()
+			}
+      });
+    })
+    .catch(function(err) {
+      console.log("Fetch Error :-S", err);
+    });
+}
 
+function getBodyHtmlAtCommit(commitSha) {
   fetch(
     "https://raw.githubusercontent.com/Microsoft/join-dev-design/" +
       commitSha +
@@ -25,8 +41,9 @@ function getBodyHtmlAtCommit(commitSha) {
   )
     .then(function(response) {
       response.text().then(function(commitBodyHtml) {
-		  var spacer = "<hr>" + window.currentCommitIndex + " Commits Ago: <hr>"
-        document.getElementById("renderPreviousCommitNode").innerHTML += (spacer + commitBodyHtml);
+        var spacer = "<hr>" + window.currentCommitIndex + " Commits Ago: <hr>";
+        document.getElementById("renderPreviousCommitNode").innerHTML +=
+          spacer + commitBodyHtml;
       });
     })
     .catch(function(err) {
@@ -42,6 +59,5 @@ function timeTravelBack() {
 
   window.currentCommitIndex += 1;
   var nextCommitSha = window.commits[window.currentCommitIndex].sha;
-  getBodyHtmlAtCommit(nextCommitSha);
+  setHtmlAsLastTimeChanged(nextCommitSha);
 }
-
