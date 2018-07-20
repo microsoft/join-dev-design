@@ -9,11 +9,41 @@
     <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="SHORTCUT ICON" href="https://c.s-microsoft.com/favicon.ico?v2" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 </head>
 
 
 <body>
+        <div class="welcome">
+                <div class="human">
+                        <div class="head"></div>
+                        <div class="body"></div>
+                        <div class="arm left">
+                          <div class="limb upper"></div>
+                          <div class="limb lower"></div>
+                        </div>
+                        <div class="arm right">
+                          <div class="limb upper"></div>
+                          <div class="limb lower"></div>
+                        </div>
+                        <div class="leg left">
+                          <div class="limb upper"></div>
+                          <div class="limb lower">
+                            <div class="limb foot"></div>
+                          </div>
+                        </div>
+                        <div class="leg right">
+                          <div class="limb upper"></div>
+                          <div class="limb lower">
+                            <div class="limb foot"></div>
+                          </div>
+                        </div>
+                        <div class="limb easterEgg"></div>
+                      </div>
+        </div>
     <div class="container">
+        
         <header>
             <a class="logo-link" href="https://microsoft.com" title="Microsoft Website">
               <figure class="logo-css">
@@ -56,5 +86,9 @@
 </body>
 <script type="text/javascript">
 console.log("%c\t\t\t\t\t\t\t\t\t\t\t\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n👋 Hi there! 👋\n\nIt seems you like to poke around as much as we do.\n\nhttps://github.com/Microsoft/join-dev-design", "color: white; background-color: #080808; background-image: url(https://microsoft.github.io/join-dev-design/msft-square.svg); background-size: 70%; background-position: 50% 25%; background-repeat: no-repeat; padding: 3em; text-align: center;font-size: 1.25em;");
+$(document).ready(function(){
+$(".welcome").fadeOut("slow", function () {$(this).css({visibility: "hidden", opacity: 0});
+});
+});
 </script>
 </html>
