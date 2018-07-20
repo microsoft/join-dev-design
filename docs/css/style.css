@@ -149,6 +149,8 @@ main p:nth-child(4) { animation-delay: calc(var(--move-in-base-delay) * 8) }
   font-size: 80%;
   text-align: center;
   padding: 1rem 0;
+  animation: var(--move-in-animation);
+  animation-delay: calc(var(--move-in-base-delay) * 9);
 }
 
 footer [href*="figma"]:hover {
