@@ -96,9 +96,10 @@ a:hover {
 }
 
 .container {
-  max-width: 32rem;
-  margin: 0 auto;
   flex: 1;
+  margin: 0 auto;
+  max-width: 32rem;
+  width: 32rem;
 }
 
 p, h1 {
