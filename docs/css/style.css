@@ -41,6 +41,7 @@
 }
 
 html {
+  position: relative;
   font-size: 125%;
   font-family: Inconsolata, Consolas, monospace;
   line-height: 1.25;
@@ -51,7 +52,7 @@ html {
 html:before {
   content: "";
   position: absolute;
-  display: block;
+  display: flex;
   top: 0; left: 0;
   height: 100%;
   width: 100%;
