@@ -9,13 +9,14 @@
     <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="SHORTCUT ICON" href="https://c.s-microsoft.com/favicon.ico?v2" type="image/x-icon">
+    <script src="https://unpkg.com/chaffle/chaffle.min.js"></script>
 </head>
 
 
 <body>
     <div class="container">
         <header>
-            <a class="logo-link" href="https://microsoft.com" title="Microsoft Website">
+            <a class="logo-link" id="microsoft-logo" href="https://microsoft.com" title="Microsoft Website">
               <figure class="logo-css">
                 <span class="logo-tile logo-tile--red"></span>
                 <span class="logo-tile logo-tile--green"></span>
@@ -45,14 +46,17 @@
         </main>
     </div>
     <footer class="footer" role="footer">
-        <span class="footer-piece">Built in
-            <a href="https://code.visualstudio.com" title="Visual Studio Code is a code editor redefined and optimized for building and debugging modern web and cloud applications.">Code</a>.</span>
         <span class="footer-piece">
-            Created by
-            <span id="contributors">10</span> contributors on
-            <a href="https://github.com/Microsoft/join-dev-design" title="GitHub repository join-dev-design by the Microsoft organization">GitHub</a>.</span>
+            <span data-chaffle='en'>Built in</span>
+            <a data-chaffle='en' href="https://code.visualstudio.com" title="Visual Studio Code is a code editor redefined and optimized for building and debugging modern web and cloud applications.">Code</a>.</span>
+        <span class="footer-piece">
+            <span data-chaffle='en'>Created by</span>
+            <span id="contributors" data-chaffle='en'>10</span> 
+            <span data-chaffle='en'>contributors on</span>
+            <a data-chaffle='en' href="https://github.com/Microsoft/join-dev-design" title="GitHub repository join-dev-design by the Microsoft organization">GitHub</a>.</span>
     </footer>
 </body>
+<script src="index.js"></script>
 <script type="text/javascript">
 var consoleStyles = [
   'color: white;',
