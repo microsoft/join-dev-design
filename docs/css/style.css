@@ -199,7 +199,7 @@ footer [href*="github"]:hover {
     margin: 0 auto;
   }
 
-  footer span {
+  .footer-piece {
     display: block;
   }
 }
