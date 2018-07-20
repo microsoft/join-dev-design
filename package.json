@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "start": "live-server docs --no-browser"
+    "start": "live-server docs"
   },
   "repository": {
     "type": "git",
