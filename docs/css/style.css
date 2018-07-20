@@ -1,5 +1,5 @@
 :root {
-  --blue: #05a6f0;
+  --primary-color: #05a6f0;
   --link-color: #FFBA08;
   --move-in-offset: 20px;
   --move-in-animation: 1s both move-in;
@@ -20,24 +20,51 @@
 }
 
 @keyframes logo-tiles-in {
-  0%   { opacity: 0; filter: grayscale(1) hue-rotate(100deg); }
-  25%  { opacity: 1; }
-  50%  { opacity: 1; }
-  55%  { opacity: 0; }
-  60%  { opacity: 1; filter: grayscale(1) hue-rotate(100deg); }
-  100% { opacity: 1; filter: grayscale(0) hue-rotate(0deg); }
+  0% {
+    opacity: 0;
+    filter: grayscale(1) hue-rotate(100deg);
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+    filter: grayscale(1) hue-rotate(100deg);
+  }
+  100% {
+    opacity: 1;
+    filter: grayscale(0) hue-rotate(0deg);
+  }
 }
 
 @keyframes logo-tiles-hover {
-  from { filter: hue-rotate(0deg) }
-  to   { filter: hue-rotate(360deg) }
+  from {
+    filter: hue-rotate(0deg)
+  }
+  to {
+    filter: hue-rotate(360deg)
+  }
 }
 
 @keyframes root-gradient {
-  0%    { opacity: 0.0; }
-  40%   { opacity: 1.0; }
-  60%   { opacity: 1.0; }
-  100%  { opacity: 0.0; }
+  0% {
+    opacity: 0.0;
+  }
+  40% {
+    opacity: 1.0;
+  }
+  60% {
+    opacity: 1.0;
+  }
+  100% {
+    opacity: 0.0;
+  }
 }
 
 html {
@@ -45,20 +72,22 @@ html {
   font-size: 125%;
   font-family: Inconsolata, Consolas, monospace;
   line-height: 1.25;
-  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.33, #05A6F0), color-stop(0.67, #FFBA08));
-  background-image: -moz-linear-gradient(center bottom, #05A6F0 33%, #FFBA08 67%);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0.33, var(--primary-color)), color-stop(0.67, var(--link-color)));
+  background: unquote('-moz-linear-gradient(center bottom, var(--primary-color) 33%, var(--link-color) 67%)');
+  background: unquote('linear-gradient(center bottom, var(--primary-color), var(--link-color))');
 }
 
 html:before {
   content: "";
   position: absolute;
   display: block;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
   opacity: 0;
   z-index: -1;
-  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.33, #ffbb00), color-stop(0.67,#00a1f1) );
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.33, #ffbb00), color-stop(0.67, #00a1f1));
   background-image: -moz-linear-gradient(center bottom, #ffbb00 33%, #00a1f1 67%);
   animation: 4s both root-gradient linear infinite;
 }
@@ -77,12 +106,12 @@ body {
 
 ::-moz-selection {
   color: white;
-  background-color: var(--blue);
+  background-color: var(--primary-color);
 }
 
 ::selection {
   color: white;
-  background-color: var(--blue);
+  background-color: var(--primary-color);
 }
 
 a {
@@ -92,7 +121,7 @@ a {
 }
 
 a:hover {
-  color: var(--blue);
+  color: var(--primary-color);
 }
 
 .container {
@@ -102,7 +131,8 @@ a:hover {
   width: 32rem;
 }
 
-p, h1 {
+p,
+h1 {
   margin: 0;
   padding: 10px 0.5em;
 }
@@ -129,9 +159,17 @@ main p {
   animation-delay: calc(var(--move-in-base-delay) * 5);
 }
 
-main p:nth-child(2) { animation-delay: calc(var(--move-in-base-delay) * 6) }
-main p:nth-child(3) { animation-delay: calc(var(--move-in-base-delay) * 7) }
-main p:nth-child(4) { animation-delay: calc(var(--move-in-base-delay) * 8) }
+main p:nth-child(2) {
+  animation-delay: calc(var(--move-in-base-delay) * 6)
+}
+
+main p:nth-child(3) {
+  animation-delay: calc(var(--move-in-base-delay) * 7)
+}
+
+main p:nth-child(4) {
+  animation-delay: calc(var(--move-in-base-delay) * 8)
+}
 
 .logo-link {
   display: block;
@@ -140,7 +178,9 @@ main p:nth-child(4) { animation-delay: calc(var(--move-in-base-delay) * 8) }
   margin: 2rem auto;
 }
 
-.logo-link:hover { animation: 1s both logo-tiles-hover linear infinite; }
+.logo-link:hover {
+  animation: 1s both logo-tiles-hover linear infinite;
+}
 
 .logo-image {
   display: block;
@@ -164,10 +204,24 @@ main p:nth-child(4) { animation-delay: calc(var(--move-in-base-delay) * 8) }
   animation: var(--logo-tiles-in-animation);
 }
 
-.logo-tile--red    { background-color: #F35325; }
-.logo-tile--green  { background-color: #81BC06; animation-delay: var(--logo-tiles-in-delay); }
-.logo-tile--blue   { background-color: #05A6F0; animation-delay: calc(var(--logo-tiles-in-delay) * 2); }
-.logo-tile--yellow { background-color: #FFBA08; animation-delay: calc(var(--logo-tiles-in-delay) * 3); }
+.logo-tile--red {
+  background-color: #F35325;
+}
+
+.logo-tile--green {
+  background-color: #81BC06;
+  animation-delay: var(--logo-tiles-in-delay);
+}
+
+.logo-tile--primary-color {
+  background-color: #05A6F0;
+  animation-delay: calc(var(--logo-tiles-in-delay) * 2);
+}
+
+.logo-tile--yellow {
+  background-color: #FFBA08;
+  animation-delay: calc(var(--logo-tiles-in-delay) * 3);
+}
 
 .footer {
   font-size: 80%;
@@ -190,18 +244,15 @@ footer [href*="github"]:hover {
     max-width: calc(100vw - 10vw);
     margin: 0 auto;
   }
-
   .container p {
     font-size: 18px;
   }
-
   footer {
     text-align: unset;
     padding: 1em 0 2em;
     max-width: calc(100vw - 10vw);
     margin: 0 auto;
   }
-
   .footer-piece {
     display: block;
   }
