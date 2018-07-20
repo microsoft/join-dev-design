@@ -11,11 +11,10 @@
 /* UI Styling */
 
 .theme {
-  position: fixed;
-  bottom: 0;
-  right: 0;
+  position: relative;
   padding: 1rem;
   font-size: 0;
+  text-align: center;
   z-index: 900;
   transition: opacity .3s ease;
 }
