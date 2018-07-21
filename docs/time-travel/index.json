@@ -6,8 +6,8 @@
           {
             "node": {
               "id": "MDExOlB1bGxSZXF1ZXN0MjAyNDU2ODA2",
-              "body":
-                "Minor visual changes for improving the overall readability",
+              "title": "Visual suggestions",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/2",
               "mergedAt": "2018-07-19T15:01:19Z",
               "author": {
                 "login": "adrianmg",
@@ -27,8 +27,8 @@
           {
             "node": {
               "id": "MDExOlB1bGxSZXF1ZXN0MjAyNDU4Mzc4",
-              "body":
-                "The color of `.container p a` will be `pink`. No need to define the previous `color: inherit`.",
+              "title": "Remove overridden color CSS property",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/3",
               "mergedAt": "2018-07-19T06:38:59Z",
               "author": {
                 "login": "JMPerez",
@@ -48,8 +48,8 @@
           {
             "node": {
               "id": "MDExOlB1bGxSZXF1ZXN0MjAyNTk0MzQw",
-              "body":
-                "Removed the inline styles in the html file to be in a separate css file.",
+              "title": "Moved styles to a css file",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/5",
               "mergedAt": "2018-07-19T15:29:41Z",
               "author": {
                 "login": "damidina",
@@ -69,8 +69,8 @@
           {
             "node": {
               "id": "MDExOlB1bGxSZXF1ZXN0MjAyNjE5Njgz",
-              "body":
-                "Added document language and landmarks. To be honest I'm not happy with the added landmarks being nested in the container and would explore layout in more details and seek advice from a11y friends at TPG or Deque..\r\n\r\nI left as is because I'm a Dev not a Designer but just had to make the basic a11y fixes :) \r\n\r\nAlso am in UK with no plans to move. Though am exploring opportunities to work in UK for Microsoft and just about to submit an application for [AI for Accessibility](https://www.microsoft.com/en-us/ai-for-accessibility) for  [AlwaysInMind](https://github.com/AlwaysInMind).\r\n\r\nSo feel free to delete this PR if you'd rather.",
+              "title": "A few basic a11y fixes",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/6",
               "mergedAt": "2018-07-19T16:47:33Z",
               "author": {
                 "login": "SteveALee",
@@ -90,8 +90,8 @@
           {
             "node": {
               "id": "MDExOlB1bGxSZXF1ZXN0MjAyNjMwODc0",
-              "body":
-                "Figma's website is served over HTTPS but the link being used specifies HTTP. No reason for a redirect to be required.",
+              "title": "Use HTTPS for Figma URL",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/8",
               "mergedAt": "2018-07-19T17:36:36Z",
               "author": {
                 "login": "fiveshotsofespresso",
@@ -111,8 +111,9 @@
           {
             "node": {
               "id": "MDExOlB1bGxSZXF1ZXN0MjAyNjMyMTA4",
-              "body":
-                "Visual improvements and some cleanup:\r\n– Changed font to monospaced for a more authentic look\r\n– Added a Fade In animation on page load\r\n– Larger font for better readability\r\n– Larger margins on smaller viewports for better readability\r\n– Minified SVG\r\n\r\n![screenshot](https://user-images.githubusercontent.com/8441036/42959846-c77519ba-8b92-11e8-8a74-b1d6ea72334f.jpg)\r\n",
+              "title":
+                "Visual improvements: monospaced font and load animation",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/9",
               "mergedAt": "2018-07-19T17:57:09Z",
               "author": {
                 "login": "vladmoroz",
@@ -132,7 +133,8 @@
           {
             "node": {
               "id": "MDExOlB1bGxSZXF1ZXN0MjAyNjQwMTUx",
-              "body": "there is an extra space in the file, I remove it.",
+              "title": "trim extra space",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/10",
               "mergedAt": "2018-07-19T18:37:07Z",
               "author": {
                 "login": "unluisco",
@@ -152,8 +154,8 @@
           {
             "node": {
               "id": "MDExOlB1bGxSZXF1ZXN0MjAyNjU1MzUz",
-              "body":
-                "(please ignore my last PR)\r\n\r\nMargins originally collapsed significantly when window sizes are <600px, making the text uncomfortable to read.\r\n\r\nAdded them back in (20% screen width on each side) to improve readability on small screens/mobile devices.\r\n\r\nAlso, changed the footer copy so that all verbs are in past tense.",
+              "title": "added margins for <600px screen width",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/13",
               "mergedAt": "2018-07-19T21:34:31Z",
               "author": {
                 "login": "notjaril",
@@ -177,8 +179,9 @@
           {
             "node": {
               "id": "MDExOlB1bGxSZXF1ZXN0MjAyNjYwMjc3",
-              "body":
-                "we do not need the fill property in svg element because every path element has a fill property.",
+              "title":
+                "indent svg file using spaces, remove fill property & add little design detail",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/15",
               "mergedAt": "2018-07-19T21:17:49Z",
               "author": {
                 "login": "unluisco",
@@ -198,8 +201,8 @@
           {
             "node": {
               "id": "MDExOlB1bGxSZXF1ZXN0MjAyNjYxMTY1",
-              "body":
-                "animating a container and not the document body prevents that scrollbar flickering when the animation ends.",
+              "title": "prevent scrollbar from flickering",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/17",
               "mergedAt": "2018-07-19T21:17:10Z",
               "author": {
                 "login": "orouz",
@@ -217,6 +220,752 @@
                   "MDY6Q29tbWl0MTQxNTAzNjgzOmVjZTE2NDllNTU4N2M0YTM4YjFlMmExMmI5YzRhNWY2OGMyZDE5YWY=",
                 "zipballUrl":
                   "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/ece1649e5587c4a38b1e2a12b9c4a5f68c2d19af"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyNjY5NzUy",
+              "title":
+                "Improved Animations, Content Hierarchy, Readable Links, Logo",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/20",
+              "mergedAt": "2018-07-19T21:55:26Z",
+              "author": {
+                "login": "benjvmin",
+                "avatarUrl":
+                  "https://avatars1.githubusercontent.com/u/19807584?v=4"
+              },
+              "editor": {
+                "login": "benjvmin",
+                "avatarUrl":
+                  "https://avatars1.githubusercontent.com/u/19807584?v=4"
+              },
+              "mergeCommit": {
+                "committedDate": "2018-07-19T21:55:25Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjk3ODFmODUxM2U3OTVkZjgwYTU1MDI5N2MxMTVlNDc3MmQxZDE1MTg=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/9781f8513e795df80a550297c115e4772d1d1518"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyNjgxMTcy",
+              "title":
+                "Improve accessibility by add descriptive title to links",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/22",
+              "mergedAt": "2018-07-19T21:13:54Z",
+              "author": {
+                "login": "reimertz",
+                "avatarUrl":
+                  "https://avatars2.githubusercontent.com/u/625287?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-19T21:13:53Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjdmZGQ4NTUyZWYyNjY2MWE0ZmZhNGUzZTVmN2E3NmQ4NzkyMjk5NDY=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/7fdd8552ef26661a4ffa4e3e5f7a76d879229946"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyNjgxMjE3",
+              "title": "add yarn.lock 🙃",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/23",
+              "mergedAt": "2018-07-19T21:31:37Z",
+              "author": {
+                "login": "reimertz",
+                "avatarUrl":
+                  "https://avatars2.githubusercontent.com/u/625287?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-19T21:31:36Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjI0OGI1MTRjMDQwNDRlMTdlODliMTY3NmI5M2M1NzdhYjQyN2VlYTE=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/248b514c04044e17e89b1676b93c577ab427eea1"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyNjg4Njky",
+              "title":
+                "adds a fun little easter egg if you open the debugger tools.",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/25",
+              "mergedAt": "2018-07-19T21:30:45Z",
+              "author": {
+                "login": "reimertz",
+                "avatarUrl":
+                  "https://avatars2.githubusercontent.com/u/625287?v=4"
+              },
+              "editor": {
+                "login": "reimertz",
+                "avatarUrl":
+                  "https://avatars2.githubusercontent.com/u/625287?v=4"
+              },
+              "mergeCommit": {
+                "committedDate": "2018-07-19T21:30:44Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjMxMmI1ZTMwYTBkZTAyMTEwMWIxZmFmZmExMTM5NGE2YmIyNjI3MTQ=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/312b5e30a0de021101b1faffa11394a6bb262714"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyNzAyNDE3",
+              "title": "Added hr below header to onload animation",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/28",
+              "mergedAt": "2018-07-19T22:55:43Z",
+              "author": {
+                "login": "faebser",
+                "avatarUrl":
+                  "https://avatars0.githubusercontent.com/u/333862?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-19T22:55:43Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjQyOGJmYTdmYWYzYjAxNDQ3MmEwOGEzYTZjNDk4NmUyOGJhZTQwZTU=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/428bfa7faf3b014472a08a3a6c4986e28bae40e5"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyNzExMTI4",
+              "title": "Add animations on the logo and fine-tune animations",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/29",
+              "mergedAt": "2018-07-20T01:39:35Z",
+              "author": {
+                "login": "tristanlabbe",
+                "avatarUrl":
+                  "https://avatars2.githubusercontent.com/u/417203?v=4"
+              },
+              "editor": {
+                "login": "tristanlabbe",
+                "avatarUrl":
+                  "https://avatars2.githubusercontent.com/u/417203?v=4"
+              },
+              "mergeCommit": {
+                "committedDate": "2018-07-20T01:39:34Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjA3ZjI4YmI3NjUzNzZjOGE4NmY4M2VhY2I3NjA5NTFhMzU5MGVkYjk=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/07f28bb765376c8a86f83eacb760951a3590edb9"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyNzE2NDY5",
+              "title": "Add colour transition box for visual appeal",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/30",
+              "mergedAt": "2018-07-20T01:44:54Z",
+              "author": {
+                "login": "MehediH",
+                "avatarUrl":
+                  "https://avatars0.githubusercontent.com/u/10274434?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-20T01:44:53Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjNhZmEyZjBiMTBmMjE2MDFhN2M1ZWIzMDQ3MzY1N2UwMzMzZDFmOWY=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/3afa2f0b10f21601a7c5eb30473657e0333d1f9f"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyNzM2NDkx",
+              "title": "Fix vertical scrollbar appearing below 1000px",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/34",
+              "mergedAt": "2018-07-20T03:23:05Z",
+              "author": {
+                "login": "chris-morgan",
+                "avatarUrl":
+                  "https://avatars1.githubusercontent.com/u/392868?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-20T03:23:04Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjAxMjY3MjlhMDYxNzEyOTEwM2E5NGYyNmNhMGY4OWEzZDg1MjJjOTU=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/0126729a0617129103a94f26ca0f89a3d8522c95"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyNzM3Mjk4",
+              "title": "Aria Accessibility",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/35",
+              "mergedAt": "2018-07-20T03:43:41Z",
+              "author": {
+                "login": "Immortalin",
+                "avatarUrl":
+                  "https://avatars1.githubusercontent.com/u/7126128?v=4"
+              },
+              "editor": {
+                "login": "Immortalin",
+                "avatarUrl":
+                  "https://avatars1.githubusercontent.com/u/7126128?v=4"
+              },
+              "mergeCommit": {
+                "committedDate": "2018-07-20T03:43:40Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjZjOTI3MWQ0Y2Y4OWQ0YWUyMWMzMzJlMWU5MWJkYTc5MjI0YjFkY2E=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/6c9271d4cf89d4ae21c332e1e91bda79224b1dca"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyNzM3MzA0",
+              "title":
+                "Increase contrast of GitHub link when in hover state for accessibility",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/36",
+              "mergedAt": "2018-07-20T03:42:48Z",
+              "author": {
+                "login": "mattmazzola",
+                "avatarUrl":
+                  "https://avatars1.githubusercontent.com/u/2856501?v=4"
+              },
+              "editor": {
+                "login": "mattmazzola",
+                "avatarUrl":
+                  "https://avatars1.githubusercontent.com/u/2856501?v=4"
+              },
+              "mergeCommit": {
+                "committedDate": "2018-07-20T03:42:47Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOmViYTBiYzI0NjM0OGU2ZjQwZTRjODg4MWZhOTM4YmQwZTQyMGE2Mjc=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/eba0bc246348e6f40e4c8881fa938bd0e420a627"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyNzQ0OTM1",
+              "title": "Fix spelling in GitHub and Figma <a> tag titles",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/38",
+              "mergedAt": "2018-07-20T06:51:24Z",
+              "author": {
+                "login": "HunterMeyer",
+                "avatarUrl":
+                  "https://avatars3.githubusercontent.com/u/4690516?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-20T06:51:23Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjdhMjc0YWY3MDZmZjM3OWZkNWY2YzIxODE4ZTQ1ZmI4NDUxNGI3MmI=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/7a274af706ff379fd5f6c21818e45fb84514b72b"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyNzQ5NzE1",
+              "title": "Centre container on IE",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/39",
+              "mergedAt": "2018-07-20T19:15:16Z",
+              "author": {
+                "login": "mikekreuzer",
+                "avatarUrl":
+                  "https://avatars0.githubusercontent.com/u/7643644?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-20T19:15:15Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOmZkNTgyNDBjODFlNTM2NjZiMWM4MGEyYzY2N2ZiNWMwMTg0NTA2ODI=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/fd58240c81e53666b1c80a2c667fb5c018450682"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyNzU3MjE0",
+              "title": "Add the footer to the animation flow",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/42",
+              "mergedAt": "2018-07-20T06:52:10Z",
+              "author": {
+                "login": "rudeayelo",
+                "avatarUrl":
+                  "https://avatars3.githubusercontent.com/u/140042?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-20T06:52:09Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjg0YzAwOTJmYTczYjY3MzNjMzc1YmRmZjdmNjQ3ODQzYjllZDdlYjU=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/84c0092fa73b6733c375bdff7f647843b9ed7eb5"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyNzYxNjM5",
+              "title": "Semantic Heading: H1 for semantic html & SEO purposes",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/45",
+              "mergedAt": "2018-07-20T07:30:24Z",
+              "author": {
+                "login": "georgewritescode",
+                "avatarUrl":
+                  "https://avatars1.githubusercontent.com/u/8780812?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-20T07:30:23Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOmI4NTU2YmIyMTVhNDcwODNjZDBhYzg4MTI3ZTYzY2Y1NTNkNjg2ZmY=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/b8556bb215a47083cd0ac88127e63cf553d686ff"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyNzYzMDAw",
+              "title": "Animate root gradient \"border\"",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/46",
+              "mergedAt": "2018-07-20T07:10:38Z",
+              "author": {
+                "login": "dosyago-coder-0",
+                "avatarUrl":
+                  "https://avatars1.githubusercontent.com/u/22254235?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-20T07:10:38Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOmI4NDI2ZWNlYmEyZTg0MmYyODc3MzFlMmNhMWE2MmY3ZDg1MmQzZDY=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/b8426eceba2e842f287731e2ca1a62f7d852d3d6"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyNzYzNDU3",
+              "title": "Added open graph meta tags",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/47",
+              "mergedAt": "2018-07-20T20:44:00Z",
+              "author": {
+                "login": "vikaskyadav",
+                "avatarUrl":
+                  "https://avatars1.githubusercontent.com/u/12607959?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-20T20:44:00Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjc2ODBiN2Y0NGI2NzNlYzM2MzhjZGZkYWZlMDQyZDNkYzBjZmRiMjg=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/7680b7f44b673ec3638cdfdafe042d3dc0cfdb28"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyNzY3MTA4",
+              "title":
+                "tweaked colors to achieve greater contrast for color blind users",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/50",
+              "mergedAt": "2018-07-20T07:26:50Z",
+              "author": {
+                "login": "yangwen2",
+                "avatarUrl":
+                  "https://avatars0.githubusercontent.com/u/2554783?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-20T07:26:49Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjQyNzViZjQzM2ZhZGMwZTAyZmUwODJmMmNiMTRjZWRlZTczZmFmYTE=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/4275bf433fadc0e02fe082f2cb14cedee73fafa1"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyNzY3MTI4",
+              "title": "Add live server for development",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/51",
+              "mergedAt": "2018-07-20T19:09:11Z",
+              "author": {
+                "login": "pubudu-ranasinghe",
+                "avatarUrl":
+                  "https://avatars1.githubusercontent.com/u/3397619?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-20T19:09:10Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOmMzZTgyMzI3MDVmZmU4N2ZhYjIzOGI5YzA2ZTZhMzFhZmY3YTc1MTk=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/c3e8232705ffe87fab238b9c06e6a31aff7a7519"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyODAwMDY2",
+              "title": "Minor spacing fixes",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/58",
+              "mergedAt": "2018-07-20T16:19:44Z",
+              "author": {
+                "login": "awfulaxolotl",
+                "avatarUrl":
+                  "https://avatars2.githubusercontent.com/u/711652?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-20T16:19:44Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjhiOTVlOWI1OWYyMzRmZmJmZTk5NTU4NjdiZjEyYTUxMmI3MDU2YmU=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/8b95e9b59f234ffbfe9955867bf12a512b7056be"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyODAzNzE5",
+              "title": "Split devtools css statements into lines",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/59",
+              "mergedAt": "2018-07-20T16:17:14Z",
+              "author": {
+                "login": "bryanwtan",
+                "avatarUrl":
+                  "https://avatars3.githubusercontent.com/u/8355536?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-20T16:17:13Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjcwNWVhMjFjZTJlNjRiYzQwYWJjZmJlNjExYWYwNGY3MjY2YzVkZDc=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/705ea21ce2e64bc40abcfbe611af04f7266c5dd7"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyODIyMDk1",
+              "title": "Add link to GitHub contributors",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/64",
+              "mergedAt": "2018-07-20T16:26:41Z",
+              "author": {
+                "login": "ankit-m",
+                "avatarUrl":
+                  "https://avatars0.githubusercontent.com/u/9019878?v=4"
+              },
+              "editor": {
+                "login": "ankit-m",
+                "avatarUrl":
+                  "https://avatars0.githubusercontent.com/u/9019878?v=4"
+              },
+              "mergeCommit": {
+                "committedDate": "2018-07-20T16:26:41Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjczNGRhYmNhYjBjYjVmNzljZDdjOTUzOWNiMDRiNTk3ODliYTE0NzI=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/734dabcab0cb5f79cd7c9539cb04b59789ba1472"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyODMxMTEz",
+              "title": "Gradient fixes",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/65",
+              "mergedAt": "2018-07-20T16:15:52Z",
+              "author": {
+                "login": "dosyago-coder-0",
+                "avatarUrl":
+                  "https://avatars1.githubusercontent.com/u/22254235?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-20T16:15:51Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOmRjYTQxNTExYzhjZmRkMWU1ZWViYTgyNTQ5ODcwZGYwYmUzMzhjYTU=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/dca41511c8cfdd1e5eeba82549870df0be338ca5"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyODkzMzc3",
+              "title": "Updating serve to most recent version",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/68",
+              "mergedAt": "2018-07-20T16:13:38Z",
+              "author": {
+                "login": "MattPetitt",
+                "avatarUrl":
+                  "https://avatars3.githubusercontent.com/u/928396?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-20T16:13:38Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOmY3MmZlMDljY2RjYjRkMmNjZGU1Njc5MWZiYWYwZmUzZWQyYmJjZjU=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/f72fe09ccdcb4d2ccde56791fbaf0fe3ed2bbcf5"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyOTI1OTA0",
+              "title": "Add themes",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/73",
+              "mergedAt": "2018-07-20T20:41:21Z",
+              "author": {
+                "login": "d4rekanguok",
+                "avatarUrl":
+                  "https://avatars2.githubusercontent.com/u/3383539?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-20T20:41:20Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjJiMTY4NWZmOTI2NWY0ZGFmNDFjNDc2ZWU2ZDhkMmQwNjhkOTM2Mzc=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/2b1685ff9265f4daf41c476ee6d8d2d068d93637"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyOTI5OTU1",
+              "title":
+                "footer: change role from 'footer' to 'contentinfo' as 'footer' is an invalid value",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/75",
+              "mergedAt": "2018-07-20T18:57:46Z",
+              "author": {
+                "login": "mkivikoski",
+                "avatarUrl":
+                  "https://avatars3.githubusercontent.com/u/607813?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-20T18:57:45Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjg0M2RlNzc4NmI5ODhmZDk0OTdhZGUwZjA0MDgxMGVlOThkNWRmYzY=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/843de7786b988fd9497ade0f040810ee98d5dfc6"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyOTM2MTYw",
+              "title":
+                "content: add links to microsoft sites for diversity and openess resources",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/76",
+              "mergedAt": "2018-07-20T19:50:42Z",
+              "author": {
+                "login": "mkivikoski",
+                "avatarUrl":
+                  "https://avatars3.githubusercontent.com/u/607813?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-20T19:50:41Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOmFmZWMzOWRhM2Q0ZDZlZTc1MDIxN2QxNTNkMTFlN2FiNWZiZDZiZDY=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/afec39da3d4d6ee750217d153d11e7ab5fbd6bd6"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyOTQxNTcx",
+              "title": "Add editor config",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/77",
+              "mergedAt": "2018-07-20T20:42:10Z",
+              "author": {
+                "login": "isthisnagee",
+                "avatarUrl":
+                  "https://avatars1.githubusercontent.com/u/4813262?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-20T20:42:09Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjljMTY1OTRiYTYyZDM5ZTdlYThhZmVkYTdlYWU3Y2FkMTc0OTVhOGE=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/9c16594ba62d39e7ea8afeda7eae7cad17495a8a"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyOTU0Njkw",
+              "title":
+                "Some updates for font-sizing, accessibility, and animation performance ",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/78",
+              "mergedAt": "2018-07-20T21:00:37Z",
+              "author": {
+                "login": "danielroot",
+                "avatarUrl":
+                  "https://avatars1.githubusercontent.com/u/513795?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-20T21:00:36Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOmE2MDUxMDk4MjQ0YTQ0NThlZWZhMTZlNDkwZjA1NDljM2E0NjgwMzY=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/a6051098244a4458eefa16e490f0549c3a468036"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyOTY2NTYw",
+              "title": "MSFT logo on console using gradients",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/79",
+              "mergedAt": "2018-07-20T22:29:27Z",
+              "author": {
+                "login": "sangeeth96",
+                "avatarUrl":
+                  "https://avatars1.githubusercontent.com/u/2759499?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-20T22:29:27Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjJmNDI1ODk5NDNmMDBlYTg5OTBlOWM5NzAyZjcwYzg1MGMwZTI2YTA=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/2f42589943f00ea8990e9c9702f70c850c0e26a0"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyOTc2Njc5",
+              "title": "show pointer on hover over theme buttons for better ux",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/82",
+              "mergedAt": "2018-07-20T23:52:33Z",
+              "author": {
+                "login": "pubudu-ranasinghe",
+                "avatarUrl":
+                  "https://avatars1.githubusercontent.com/u/3397619?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-20T23:52:33Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjkxZGIxMjlkNjc3OGMyYjU5YWQzMGQ0OGNkYzk2OWQ5NDIwMTk4Nzk=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/91db129d6778c2b59ad30d48cdc969d942019879"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyOTg1MjM4",
+              "title": "Prettier code formatting added... need more tooling?",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/84",
+              "mergedAt": "2018-07-21T01:58:35Z",
+              "author": {
+                "login": "sangeeth96",
+                "avatarUrl":
+                  "https://avatars1.githubusercontent.com/u/2759499?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-21T01:58:34Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjZkODhmNDc3MTM4Zjk1YTJmNzdjNzc0NzM4ODkyNDE0MjIwZDRhY2M=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/6d88f477138f95a2f77c774738892414220d4acc"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyOTkyNzEz",
+              "title": "Improve tooltips",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/85",
+              "mergedAt": "2018-07-21T08:00:59Z",
+              "author": {
+                "login": "humanoid",
+                "avatarUrl":
+                  "https://avatars1.githubusercontent.com/u/12853597?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-21T08:00:58Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOmU3YzIzNDVkOGI3YTcyMmZlOTQ5ZGE0YjRiNmE2NDE5MjlmNjhkYmQ=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/e7c2345d8b7a722fe949da4b4b6a641929f68dbd"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyOTk1MzQ4",
+              "title": "Corrected theme item off-by-1 pixel error",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/87",
+              "mergedAt": "2018-07-21T07:58:58Z",
+              "author": {
+                "login": "dosyago-coder-0",
+                "avatarUrl":
+                  "https://avatars1.githubusercontent.com/u/22254235?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-21T07:58:57Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjNhODEwODExMmUyZDdmMGMzMzliZDliODI0Y2MyYjdmODAxMWZkZjY=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/3a8108112e2d7f0c339bd9b824cc2b7f8011fdf6"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyOTk1NzUw",
+              "title": "README self-consistency",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/88",
+              "mergedAt": "2018-07-21T07:58:31Z",
+              "author": {
+                "login": "dosyago-coder-0",
+                "avatarUrl":
+                  "https://avatars1.githubusercontent.com/u/22254235?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-21T07:58:31Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjU4ZmExYmVhMDhiNjc3OWZlZmM4MDhiNDkwNWZmYzdkNjEwMzE5MWM=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/58fa1bea08b6779fefc808b4905ffc7d6103191c"
               }
             }
           }

@@ -21,11 +21,35 @@
 <body>
   <div class="container">
     <main class="display-wrapper">
-      <iframe id="display" class="display" src="../index.html" frameborder="0"></iframe>
+      <iframe id="js-display" class="display" src="" frameborder="0"></iframe>
     </main>
     <div class="history">
-      <h1></h1>
-      <button id="button">Next version</button>
+      <h2>
+        <span id="js-history-id">1</span>
+        /
+        <span id="js-history-max">-</span>
+      </h2>
+      <div class="history__controller">
+        <button id="js-button-first">First</button>
+        <button id="js-button-previous">Previous</button>
+        <button id="js-button-next">Next</button>
+        <button id="js-button-last">Last</button>
+      </div>
+      <hr>
+      <div class="pr">
+        <div class="pr-people-wrapper">
+          <div class="pr-people">
+            <img id="js-pr-author-avatar" class="pr-avatar" src="">
+            <p id="js-pr-author"></p>
+          </div>
+          <div class="pr-people">
+            <img id="js-pr-editor-avatar" class="pr-avatar" src="">
+            <p id="js-pr-editor"></p>
+          </div>
+        </div>
+        <h1 id="js-pr-title" class="history__header"></h1>
+        <p id="js-pr-mergedAt" class="pr__mergedAt"></p>
+      </div>
     </div>
   </div>
 </body>
