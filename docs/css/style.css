@@ -85,7 +85,6 @@ html {
     #ffba08 67%
   );
 }
-
 html:before {
   content: "";
   position: absolute;
@@ -110,7 +109,6 @@ html:before {
   );
   animation: 4s both root-gradient linear infinite;
 }
-
 body {
   display: flex;
   flex-flow: column nowrap;
@@ -123,27 +121,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
 }
-
 ::-moz-selection {
   color: white;
   background-color: var(--blue);
 }
-
 ::selection {
   color: white;
   background-color: var(--blue);
 }
-
 a {
   color: var(--link-color);
   text-decoration: none;
   transition: 150ms color;
 }
-
 a:hover {
   color: var(--blue);
 }
-
 .container {
   max-width: 40rem;
   margin: 0 auto;
@@ -152,30 +145,25 @@ a:hover {
   max-width: 40rem;
   width: 40rem;
 }
-
 p,
 h1 {
   margin: 0;
   padding: 10px 0.5em;
 }
-
 p {
   font-size: 1.125rem;
 }
-
 @media only screen and (min-width: 40em) {
   p {
     font-size: 1.25rem;
   }
 }
-
 header h1 {
   animation: var(--move-in-animation);
   animation-delay: calc(var(--move-in-base-delay) * 4);
   font-size: 1.688rem;
   font-weight: bolder;
 }
-
 header hr {
   border: 0;
   height: 0;
@@ -185,12 +173,10 @@ header hr {
   animation: var(--move-in-animation);
   animation-delay: 250ms;
 }
-
 main p {
   animation: var(--move-in-animation);
   animation-delay: calc(var(--move-in-base-delay) * 5);
 }
-
 main p:nth-child(2) {
   animation-delay: calc(var(--move-in-base-delay) * 6);
 }
@@ -200,24 +186,20 @@ main p:nth-child(3) {
 main p:nth-child(4) {
   animation-delay: calc(var(--move-in-base-delay) * 8);
 }
-
 .logo-link {
   display: block;
   width: 5rem;
   height: 5rem;
   margin: 2.5rem auto;
 }
-
 .logo-link:hover {
   animation: 1s both logo-tiles-hover linear infinite;
 }
-
 .logo-image {
   display: block;
   width: 100%;
   height: auto;
 }
-
 .logo-css {
   display: flex;
   flex-wrap: wrap;
@@ -225,7 +207,6 @@ main p:nth-child(4) {
   width: 100%;
   margin: 0;
 }
-
 .logo-tile {
   display: block;
   width: 45%;
@@ -241,6 +222,7 @@ main p:nth-child(4) {
   background-color: #81bc06;
   animation-delay: var(--logo-tiles-in-delay);
 }
+
 .logo-tile--blue {
   background-color: #05a6f0;
   animation-delay: calc(var(--logo-tiles-in-delay) * 2);
@@ -249,35 +231,29 @@ main p:nth-child(4) {
   background-color: #ffba08;
   animation-delay: calc(var(--logo-tiles-in-delay) * 3);
 }
-
 .footer {
   text-align: center;
   padding: 1.25rem 0;
   animation: var(--move-in-animation);
   animation-delay: calc(var(--move-in-base-delay) * 9);
 }
-
 footer [href*="code"]:hover {
   color: #007acc;
 }
-
 footer [href*="github"]:hover {
   color: #6cc644;
 }
-
 @media only screen and (max-width: 40em) {
   .container {
     max-width: calc(100vw - 10vw);
     margin: 0 auto;
   }
-
   footer {
     text-align: unset;
     padding: 1.25rem 0 2.5rem;
     max-width: calc(100vw - 10vw);
     margin: 0 auto;
   }
-
   .footer-piece {
     display: block;
   }
