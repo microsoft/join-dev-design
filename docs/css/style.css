@@ -143,14 +143,14 @@ a {
 a:hover {
   color: var(--blue);
 }
-
-.container {
-  max-width: 40rem;
-  margin: 0 auto;
-  flex: 1;
-  margin: 0 auto;
-  max-width: 40rem;
+.container,
+.footer {
   width: 40rem;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+.container {
+  flex: 1;
 }
 
 p,
@@ -251,10 +251,38 @@ main p:nth-child(4) {
 }
 
 .footer {
-  text-align: center;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
   padding: 1.25rem 0;
+}
+
+.footer dl {
+  margin: 0;
+  padding: 1rem;
   animation: var(--move-in-animation);
+}
+
+.footer dt {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.footer dd {
+  margin-left: 0;
+}
+
+.footer dl:first-child {
   animation-delay: calc(var(--move-in-base-delay) * 9);
+}
+
+.footer dl:nth-child(2){
+  animation-delay: calc(var(--move-in-base-delay) * 11);
+}
+
+.footer dl:nth-child(3){
+  animation-delay: calc(var(--move-in-base-delay) * 13);
 }
 
 footer [href*="code"]:hover {
@@ -271,14 +299,12 @@ footer [href*="github"]:hover {
     margin: 0 auto;
   }
 
-  footer {
-    text-align: unset;
-    padding: 1.25rem 0 2.5rem;
-    max-width: calc(100vw - 10vw);
-    margin: 0 auto;
+  header h1 {
+    font-size: 1.25rem;
   }
 
-  .footer-piece {
-    display: block;
+  .footer {
+    flex-flow: column;
+    width: auto;
   }
 }
