@@ -44,14 +44,14 @@
 }
 
 .theme__button {
-  display: block;
+  display: inline-block;
   position: relative;
   text-indent: -9999px;
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1.5rem;
+  height: 1.5rem;
   background: blue;
   border: 1px solid #444;
-  border-radius: 0.6rem;
+  border-radius: 50%;
 }
 
 .theme__button[value="dark"] {
