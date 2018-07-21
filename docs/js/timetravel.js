@@ -10,6 +10,8 @@ fetch("https://api.github.com/repos/Microsoft/join-dev-design/commits")
       console.log(commits);
       window.commits = commits;
       window.currentCommitIndex = 0;
+      document.getElementById("time-travel-button-container").style.display =
+        "block";
     });
   })
   .catch(function (err) {
