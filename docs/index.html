@@ -12,7 +12,9 @@
   <meta property="og:description" content="Microsoft is hiring technical product designers and design leaders. ">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://microsoft.github.io/join-dev-design/microsoft-og-image.png">
+  <meta name="keywords" content="microsoft, code, designers">
   <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="theme/theme.css">
   <link rel="SHORTCUT ICON" href="https://c.s-microsoft.com/favicon.ico?v2" type="image/x-icon">
@@ -20,6 +22,10 @@
 
 
 <body>
+        <div class="welcome">
+				<div class="preloader"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+			</div>
+    <div class="container">
   <div class="container">
     <header role="banner">
       <a class="logo-link" href="https://microsoft.com" title="Microsoft Website">
@@ -91,13 +97,14 @@
         "background-size: " + (sz * 2 + sp) + "px " + sz + "px",
         "background-position: 0 0, 0 " + (sz + sp) + "px"
       ]
-
       console.log('%c ', styles.join(';'));
       console.log('👋 Hi there! 👋\n\nIt seems you like to poke around as much as we do.\n\nhttps://github.com/Microsoft/join-dev-design')
     }
-
     logLogo(100);
-
+     $(document).ready(function(){
+$(".welcome").fadeOut(function () {$(this).css({visibility: "hidden", opacity: 0});
+});
+});
     fetch(
       'https://api.github.com/repos/Microsoft/join-dev-design/stats/contributors'
     )
