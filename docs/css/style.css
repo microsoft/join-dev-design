@@ -1,4 +1,5 @@
 :root {
+  /* color defaults */
   --primary-color: #05a6f0;
   --secondary-color: #FFBA08;
   --brand-red: #F35325;
@@ -7,8 +8,9 @@
   --off-white: #bbb;
   --medium-grey: #777;
   --dark-grey: #121212;
+  /* typeface defaults */
   --primary-typeface: Inconsolata, Consolas, monospace;
-  ;
+  /* animations */
   --move-in-offset: 20px;
   --move-in-animation: 1s both move-in;
   --move-in-base-delay: 100ms;
@@ -77,7 +79,7 @@
 
 html {
   position: relative;
-  font-size: 125%;
+  font-size: 20px;
   font-family: var(--primary-typeface);
   line-height: 1.25;
   background: -webkit-gradient(linear, left bottom, left top, color-stop(0.33, var(--primary-color)), color-stop(0.67, var(--secondary-color)));
