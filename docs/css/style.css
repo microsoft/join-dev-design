@@ -88,7 +88,7 @@ html {
 html:before {
   content: "";
   position: absolute;
-  display: block;
+  background-position-x: right;
   top: 0;
   left: 0;
   height: 100%;
@@ -120,6 +120,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
+  
+ 
+}
+.background {
+  background-image: url(../media/microsoftlogo.svg);
+  background-position: center;
+  background-repeat: no-repeat;
 }
 ::-moz-selection {
   color: white;
@@ -133,6 +140,12 @@ a {
   color: var(--link-color);
   text-decoration: none;
   transition: 150ms color;
+}
+a>div {
+  display: none;
+}
+a:hover>div {
+  display: block;
 }
 a:hover {
   color: var(--blue);
@@ -161,8 +174,9 @@ p {
 header h1 {
   animation: var(--move-in-animation);
   animation-delay: calc(var(--move-in-base-delay) * 4);
-  font-size: 1.688rem;
+  font-size: 2 rem;
   font-weight: bolder;
+  
 }
 header hr {
   border: 0;
@@ -186,6 +200,15 @@ main p:nth-child(3) {
 main p:nth-child(4) {
   animation-delay: calc(var(--move-in-base-delay) * 8);
 }
+.hidden {
+  display: none;
+}
+.hidden span {
+  display: none;
+}
+
+
+
 .logo-link {
   display: block;
   width: 5rem;

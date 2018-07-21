@@ -16,21 +16,30 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="theme/theme.css">
   <link rel="SHORTCUT ICON" href="https://c.s-microsoft.com/favicon.ico?v2" type="image/x-icon">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
 </head>
 
 
 <body>
+
   <div class="container">
     <header role="banner">
       <a class="logo-link" href="https://microsoft.com" title="Microsoft Website">
-        <figure class="logo-css">
+        <img id="tron-microsoft" class="hidden" src="./media/microsoftlogo.svg" />
+        <figure id="orig-microsoft" class="logo-css">
           <span class="logo-tile logo-tile--red"></span>
           <span class="logo-tile logo-tile--green"></span>
           <span class="logo-tile logo-tile--blue"></span>
           <span class="logo-tile logo-tile--yellow"></span>
         </figure>
+        <figure class="logo-css">
+          <div class="background">
+        </figure>
       </a>
-      <h1>Microsoft is looking for designers who code to help create the most compelling developer tools &amp; services on the planet.
+      <h1>
+        <span id="microsoft-span" class="highlight-hover">Microsoft</span>
+        </a> is looking for designers who code to help create the most compelling developer tools &amp; services on the planet.
       </h1>
       <hr>
     </header>
@@ -38,7 +47,8 @@
       <p>We have open positions for technical product designers &amp; design leaders in San Francisco, Seattle, and elsewhere.
       </p>
 
-      <p>We use PCs, Macs, Figma, Sketch, GitHub, JavaScript, ZEIT, and other modern tools to design, prototype, and build the future of software development.</p>
+      <p>We use PCs, Macs, Figma, Sketch, GitHub, JavaScript, ZEIT, and other modern tools to design, prototype, and build the
+        future of software development.</p>
 
       <p>We believe in
         <a href="https://www.microsoft.com/en-us/diversity/" title="Microsoft's diversity and inclusion efforts">diversity</a>,
@@ -49,6 +59,7 @@
       <p>Interested? Send a PR with any improvement to
         <a href="https://github.com/Microsoft/join-dev-design" title="GitHub repository join-dev-design by the Microsoft organization">microsoft/join-dev-design</a> or
         <a href="mailto:dasiege@microsoft.com" title="Email address for dasiege@microsoft.com">email us</a>.</p>
+
     </main>
     <div class="theme">
       <ul class="theme__list">
@@ -60,62 +71,73 @@
         </li>
       </ul>
     </div>
-  </div>
-  <footer class="footer" role="contentinfo">
-    <span class="footer-piece">Designed in
-      <a href="https://figma.com" title="Figma is the first interface design tool based in the browser, making it easier for teams to create software.">Figma</a>.</span>
-    <span class="footer-piece">Built in
-      <a href="https://code.visualstudio.com" title="Visual Studio Code is a code editor redefined and optimized for building and debugging modern web and cloud applications.">Code</a>.</span>
-    <span class="footer-piece">
-      Created by
-      <a href="https://github.com/Microsoft/join-dev-design/graphs/contributors" id="contributors" title="Contributors to the GitHub repository join-dev-design by the Microsoft organization">10</a> contributors on
-      <a href="https://github.com/Microsoft/join-dev-design" title="GitHub repository join-dev-design by the Microsoft organization">GitHub</a>.</span>
-  </footer>
-  <script src="theme/theme.js"></script>
-  <script type="text/javascript">
-    function logLogo(sz) {
-      var sp = 10;
-      var styles = [
-        "font-size: 1px",
-        "display: inline-block",
-        "padding-left: " + (sz * 2 + sp) + "px",
-        "padding-top: " + (sz * 2 + sp) + "px",
-        "background-image: linear-gradient(90deg, #F0521F 0px, #F0521F <p1>px, transparent <p1>px, transparent <p2>px, #7FCC2C <p2>px, #7FCC2C <p3>px, transparent <p3>px), linear-gradient(90deg, #00ADF0 0px, #00ADF0 <p4>px, transparent <p4>px, transparent <p5>px, #FCBA12 <p5>px, #FCBA12 <p6>px, transparent <p6>px)"
-          .replace(/<p1>/g, '' + (sz))
-          .replace(/<p2>/g, '' + (sz + sp))
-          .replace(/<p3>/g, '' + (sz * 2 + sp))
-          .replace(/<p4>/g, '' + (sz))
-          .replace(/<p5>/g, '' + (sz + sp))
-          .replace(/<p6>/g, '' + (sz * 2 + sp)),
-        "background-repeat: no-repeat",
-        "background-size: " + (sz * 2 + sp) + "px " + sz + "px",
-        "background-position: 0 0, 0 " + (sz + sp) + "px"
-      ]
+    </div>
+    <footer class="footer" role="contentinfo">
+      <span class="footer-piece">Designed in
+        <a href="https://figma.com" title="Figma is the first interface design tool based in the browser, making it easier for teams to create software.">Figma</a>.</span>
+      <span class="footer-piece">Built in
+        <a href="https://code.visualstudio.com" title="Visual Studio Code is a code editor redefined and optimized for building and debugging modern web and cloud applications.">Code</a>.</span>
+      <span class="footer-piece">
+        Created by
+        <a href="https://github.com/Microsoft/join-dev-design/graphs/contributors" id="contributors" title="Contributors to the GitHub repository join-dev-design by the Microsoft organization">10</a> contributors on
+        <a href="https://github.com/Microsoft/join-dev-design" title="GitHub repository join-dev-design by the Microsoft organization">GitHub</a>.</span>
+    </footer>
+    <script src="theme/theme.js"></script>
+    <script type="text/javascript">
+      function logLogo(sz) {
+        var sp = 10;
+        var styles = [
+          "font-size: 1px",
+          "display: inline-block",
+          "padding-left: " + (sz * 2 + sp) + "px",
+          "padding-top: " + (sz * 2 + sp) + "px",
+          "background-image: linear-gradient(90deg, #F0521F 0px, #F0521F <p1>px, transparent <p1>px, transparent <p2>px, #7FCC2C <p2>px, #7FCC2C <p3>px, transparent <p3>px), linear-gradient(90deg, #00ADF0 0px, #00ADF0 <p4>px, transparent <p4>px, transparent <p5>px, #FCBA12 <p5>px, #FCBA12 <p6>px, transparent <p6>px)"
+            .replace(/<p1>/g, '' + (sz))
+            .replace(/<p2>/g, '' + (sz + sp))
+            .replace(/<p3>/g, '' + (sz * 2 + sp))
+            .replace(/<p4>/g, '' + (sz))
+            .replace(/<p5>/g, '' + (sz + sp))
+            .replace(/<p6>/g, '' + (sz * 2 + sp)),
+          "background-repeat: no-repeat",
+          "background-size: " + (sz * 2 + sp) + "px " + sz + "px",
+          "background-position: 0 0, 0 " + (sz + sp) + "px"
+        ]
 
-      console.log('%c ', styles.join(';'));
-      console.log('👋 Hi there! 👋\n\nIt seems you like to poke around as much as we do.\n\nhttps://github.com/Microsoft/join-dev-design')
-    }
+        console.log('%c ', styles.join(';'));
+        console.log('👋 Hi there! 👋\n\nIt seems you like to poke around as much as we do.\n\nhttps://github.com/Microsoft/join-dev-design')
+      }
 
-    logLogo(100);
+      logLogo(100);
 
-    fetch(
-      'https://api.github.com/repos/Microsoft/join-dev-design/stats/contributors'
-    )
-      .then(function (response) {
-        if (response.status !== 200) {
-          console.log(
-            'Looks like there was a problem. Status Code: ' + response.status
-          )
-          return
-        }
-        response.json().then(function (data) {
-          var contributors = document.getElementById('contributors')
-          contributors.innerText = data.length
+      fetch(
+        'https://api.github.com/repos/Microsoft/join-dev-design/stats/contributors'
+      )
+        .then(function (response) {
+          if (response.status !== 200) {
+            console.log(
+              'Looks like there was a problem. Status Code: ' + response.status
+            )
+            return
+          }
+          response.json().then(function (data) {
+            var contributors = document.getElementById('contributors')
+            contributors.innerText = data.length
+          })
         })
-      })
-      .catch(function (err) {
-        console.log('Fetch Error :-S', err)
-      })
-  </script>
+        .catch(function (err) {
+          console.log('Fetch Error :-S', err)
+        });
+
+      document.getElementById("microsoft-span").addEventListener("mouseover", (el, ev) => {
+        document.getElementById("tron-microsoft").classList.toggle("hidden");
+        document.getElementById("orig-microsoft").classList.toggle("hidden");
+      });
+
+      document.getElementById("microsoft-span").addEventListener("mouseleave", (el, ev) => {
+        document.getElementById("tron-microsoft").classList.toggle("hidden");
+        document.getElementById("orig-microsoft").classList.toggle("hidden");
+      });
+    </script>
 </body>
+
 </html>
