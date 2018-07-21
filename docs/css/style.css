@@ -196,6 +196,7 @@ main p:nth-of-type(4) { animation-delay: calc(var(--move-in-base-delay) * 8); }
 /* Footer */
 
 footer {
+  margin: 1rem 0 0;
   text-align: center;
   font-size: 0.8rem;
   overflow: hidden;
