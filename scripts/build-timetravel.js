@@ -41,7 +41,6 @@ function downloadFileForCommits() {
     var styleCSSFileName = "docs/history/" + commit.sha + ".css";
 
     downloadAndSave(urlOfStyleCSS, styleCSSFileName, commit.sha);
-
   });
 }
 
@@ -49,7 +48,7 @@ function downloadAndSave(url, fileName, sha) {
   fetch(url).then(function(response) {
     response.text().then(function(content) {
       if (fileName.indexOf(".html")) {
-        content = content.replace("css/style.css", sha + ".css");
+        content = content.replace("css/style.css", "/history/" + sha + ".css");
       }
 
       fs.writeFile(fileName, content, function(err) {
@@ -62,4 +61,4 @@ function downloadAndSave(url, fileName, sha) {
   });
 }
 
-console.log("Time Travel Built")
+console.log("Time Travel Built");
