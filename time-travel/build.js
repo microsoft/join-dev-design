@@ -9,11 +9,12 @@ const accessToken = process.env.ACCESS_TOKEN;
 const query = `
 {
   repository(owner:"Microsoft", name:"join-dev-design"){
-    pullRequests(first: 10, states: MERGED) {
+    pullRequests(first: 100, states: MERGED) {
       edges {
         node {
           id
-          body
+          title
+          url
           mergedAt
           author {
             login
