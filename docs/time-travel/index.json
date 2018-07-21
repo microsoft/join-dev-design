@@ -1,0 +1,227 @@
+{
+  "data": {
+    "repository": {
+      "pullRequests": {
+        "edges": [
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyNDU2ODA2",
+              "body":
+                "Minor visual changes for improving the overall readability",
+              "mergedAt": "2018-07-19T15:01:19Z",
+              "author": {
+                "login": "adrianmg",
+                "avatarUrl":
+                  "https://avatars0.githubusercontent.com/u/589285?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-19T15:01:18Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOmFjNDE4N2E0NzlhY2M5OWQ5NmE3NmY2ZDBmNGMyMWRiNjllNzA1OTQ=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/ac4187a479acc99d96a76f6d0f4c21db69e70594"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyNDU4Mzc4",
+              "body":
+                "The color of `.container p a` will be `pink`. No need to define the previous `color: inherit`.",
+              "mergedAt": "2018-07-19T06:38:59Z",
+              "author": {
+                "login": "JMPerez",
+                "avatarUrl":
+                  "https://avatars1.githubusercontent.com/u/416456?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-19T06:38:58Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjkzNTk0NzI0ZjdkYTI1YTJjMGI5ZWZmMGVmZDc4M2I2NDU2OTkzYWU=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/93594724f7da25a2c0b9eff0efd783b6456993ae"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyNTk0MzQw",
+              "body":
+                "Removed the inline styles in the html file to be in a separate css file.",
+              "mergedAt": "2018-07-19T15:29:41Z",
+              "author": {
+                "login": "damidina",
+                "avatarUrl":
+                  "https://avatars2.githubusercontent.com/u/2275314?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-19T15:29:40Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjE3MDAzZTlhNDY0ZGZlZDRlODYzYzk0NTg5MGIyM2ZiNmNmZGMyNDg=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/17003e9a464dfed4e863c945890b23fb6cfdc248"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyNjE5Njgz",
+              "body":
+                "Added document language and landmarks. To be honest I'm not happy with the added landmarks being nested in the container and would explore layout in more details and seek advice from a11y friends at TPG or Deque..\r\n\r\nI left as is because I'm a Dev not a Designer but just had to make the basic a11y fixes :) \r\n\r\nAlso am in UK with no plans to move. Though am exploring opportunities to work in UK for Microsoft and just about to submit an application for [AI for Accessibility](https://www.microsoft.com/en-us/ai-for-accessibility) for  [AlwaysInMind](https://github.com/AlwaysInMind).\r\n\r\nSo feel free to delete this PR if you'd rather.",
+              "mergedAt": "2018-07-19T16:47:33Z",
+              "author": {
+                "login": "SteveALee",
+                "avatarUrl":
+                  "https://avatars2.githubusercontent.com/u/618922?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-19T16:47:33Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjhmN2M5OWE5NmY1MjQwOThjMTY5ODNhZjUyMmE5ZThlMTk2NjBiOWY=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/8f7c99a96f524098c16983af522a9e8e19660b9f"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyNjMwODc0",
+              "body":
+                "Figma's website is served over HTTPS but the link being used specifies HTTP. No reason for a redirect to be required.",
+              "mergedAt": "2018-07-19T17:36:36Z",
+              "author": {
+                "login": "fiveshotsofespresso",
+                "avatarUrl":
+                  "https://avatars2.githubusercontent.com/u/26778612?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-19T17:36:36Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOmU0MWJkNzlmMGU1N2VlYjFmYmQ3OTQxZjY5YTkzYTkzMzVhZDVkZGY=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/e41bd79f0e57eeb1fbd7941f69a93a9335ad5ddf"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyNjMyMTA4",
+              "body":
+                "Visual improvements and some cleanup:\r\n– Changed font to monospaced for a more authentic look\r\n– Added a Fade In animation on page load\r\n– Larger font for better readability\r\n– Larger margins on smaller viewports for better readability\r\n– Minified SVG\r\n\r\n![screenshot](https://user-images.githubusercontent.com/8441036/42959846-c77519ba-8b92-11e8-8a74-b1d6ea72334f.jpg)\r\n",
+              "mergedAt": "2018-07-19T17:57:09Z",
+              "author": {
+                "login": "vladmoroz",
+                "avatarUrl":
+                  "https://avatars0.githubusercontent.com/u/8441036?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-19T17:57:08Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOmMyMjA0OGM5YTcxMjVjYmU0OWQwNTc1YmNjZmE3MGU4YTEzZWJhZGE=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/c22048c9a7125cbe49d0575bccfa70e8a13ebada"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyNjQwMTUx",
+              "body": "there is an extra space in the file, I remove it.",
+              "mergedAt": "2018-07-19T18:37:07Z",
+              "author": {
+                "login": "unluisco",
+                "avatarUrl":
+                  "https://avatars3.githubusercontent.com/u/6332263?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-19T18:37:07Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjY5OGM1OGJmMmE4OGJhMWY1YThjZjc0ZTA0ZDAwMDQwNmQzZjljNzI=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/698c58bf2a88ba1f5a8cf74e04d000406d3f9c72"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyNjU1MzUz",
+              "body":
+                "(please ignore my last PR)\r\n\r\nMargins originally collapsed significantly when window sizes are <600px, making the text uncomfortable to read.\r\n\r\nAdded them back in (20% screen width on each side) to improve readability on small screens/mobile devices.\r\n\r\nAlso, changed the footer copy so that all verbs are in past tense.",
+              "mergedAt": "2018-07-19T21:34:31Z",
+              "author": {
+                "login": "notjaril",
+                "avatarUrl":
+                  "https://avatars2.githubusercontent.com/u/15959269?v=4"
+              },
+              "editor": {
+                "login": "notjaril",
+                "avatarUrl":
+                  "https://avatars2.githubusercontent.com/u/15959269?v=4"
+              },
+              "mergeCommit": {
+                "committedDate": "2018-07-19T21:34:30Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjRhNmVhMjViODk0NDg2MjcwM2VlZmFhYWRhNDg4YjEwMjczZTFjYmQ=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/4a6ea25b8944862703eefaaada488b10273e1cbd"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyNjYwMjc3",
+              "body":
+                "we do not need the fill property in svg element because every path element has a fill property.",
+              "mergedAt": "2018-07-19T21:17:49Z",
+              "author": {
+                "login": "unluisco",
+                "avatarUrl":
+                  "https://avatars3.githubusercontent.com/u/6332263?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-19T21:17:48Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOmUyMTVlMTg0OTg4NmY1ZWEyMjBjYmRiMTY0NzgxNWNmY2FjNzM2ZGY=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/e215e1849886f5ea220cbdb1647815cfcac736df"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyNjYxMTY1",
+              "body":
+                "animating a container and not the document body prevents that scrollbar flickering when the animation ends.",
+              "mergedAt": "2018-07-19T21:17:10Z",
+              "author": {
+                "login": "orouz",
+                "avatarUrl":
+                  "https://avatars3.githubusercontent.com/u/20814186?v=4"
+              },
+              "editor": {
+                "login": "orouz",
+                "avatarUrl":
+                  "https://avatars3.githubusercontent.com/u/20814186?v=4"
+              },
+              "mergeCommit": {
+                "committedDate": "2018-07-19T21:17:09Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOmVjZTE2NDllNTU4N2M0YTM4YjFlMmExMmI5YzRhNWY2OGMyZDE5YWY=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/ece1649e5587c4a38b1e2a12b9c4a5f68c2d19af"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.display-wrapper {
+  flex: 5;
+}
+
+.display {
+  width: 100%;
+  height: 100vh;
+}
+
+.history {
+  flex: 1;
+  background: #000;
+}

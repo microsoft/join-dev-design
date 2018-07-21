@@ -1,0 +1,107 @@
+:root {
+  --blue: #05a6f0;
+  --move-in-offset: 1rem;
+}
+
+@keyframes move-in {
+  from {
+    transform: translateY(var(--move-in-offset));
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+html {
+  font-size: 125%;
+  font-family: Inconsolata, Consolas, monospace;
+  line-height: 1.25;
+  background-color: #080808;
+}
+
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  min-height: 100vh;
+  margin: 0;
+  color: #bbb;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-moz-selection {
+  color: white;
+  background-color: var(--blue);
+}
+
+::selection {
+  color: white;
+  background-color: var(--blue);
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  transition: 150ms color;
+}
+
+a:hover {
+  color: var(--blue);
+}
+
+.container {
+  max-width: 32rem;
+  margin: 0 auto;
+  flex: 1;
+
+  opacity: 0;
+  transform: translateY(var(--move-in-offset));
+  animation: 1500ms 500ms forwards move-in;
+}
+
+.logo-link {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  margin: 2.5rem auto;
+}
+
+.logo-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.footer {
+  font-size: 80%;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+footer [href*="figma"]:hover {
+  color: #8420ff;
+}
+
+footer [href*="code"]:hover {
+  color: #007acc;
+}
+
+footer [href*="github"]:hover {
+  color: #2b3137;
+}
+
+@media only screen and (max-width: 40em) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .footer {
+    text-align: unset;
+    padding: 1rem;
+  }
+  .footer-piece {
+    display: block;
+  }
+}
