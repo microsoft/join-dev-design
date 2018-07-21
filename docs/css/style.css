@@ -45,8 +45,8 @@
 /* Common */
 
 html {
+  position: relative;
   font-size: 125%;
-  height: 100%;
   font-family: Inconsolata, Consolas, "SFMono-Regular", Menlo, "DejaVu Sans Mono", monospace;
   line-height: 1.25;
   background: linear-gradient(to bottom, var(--blue) 33%, var(--yellow) 67%);
