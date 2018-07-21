@@ -36,6 +36,7 @@
 .theme__item {
   position: relative;
   display: inline-block;
+  transition: margin-left 0.3s ease;
 }
 
 .theme__item + .theme__item {
@@ -44,14 +45,14 @@
 }
 
 .theme__button {
-  display: block;
+  display: inline-block;
   position: relative;
   text-indent: -9999px;
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1.5rem;
+  height: 1.5rem;
   background: blue;
   border: 1px solid #444;
-  border-radius: 0.6rem;
+  border-radius: 50%;
 }
 
 .theme__button[value="dark"] {
@@ -78,8 +79,9 @@
     opacity: 1;
   }
   .theme__item + .theme__item {
-    margin-left: -0.8rem;
+    margin-left: -1rem;
   }
+
   .theme:hover .theme__item + .theme__item {
     margin-left: 0.5rem;
   }

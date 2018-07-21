@@ -67,6 +67,10 @@
   }
 }
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   position: relative;
   font-size: 16px;
@@ -214,7 +218,6 @@ main p:nth-child(4) {
   margin: 2.5%;
   animation: var(--logo-tiles-in-animation);
 }
-
 .logo-tile--red {
   background-color: #f35325;
 }
