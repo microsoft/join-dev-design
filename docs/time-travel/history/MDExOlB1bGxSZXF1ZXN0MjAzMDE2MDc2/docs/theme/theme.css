@@ -12,10 +12,10 @@
 
 .theme {
   position: relative;
-  padding: 1rem;
+  margin: 1rem 0;
   font-size: 0;
   text-align: center;
-  z-index: 900;
+  z-index: 1;
   transition: opacity 0.3s ease;
 }
 
@@ -30,7 +30,7 @@
 .theme__list {
   list-style: none;
   animation: 1s both fade-in;
-  animation-delay: 1.5s;
+  animation-delay: calc(var(--move-in-base-delay) * 9);
 }
 
 .theme__item {

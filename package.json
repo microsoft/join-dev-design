@@ -10,7 +10,7 @@
     "start": "live-server docs",
     "precommit": "pretty-quick --staged",
     "prettier": "prettier",
-    "build-timetravel": "node scripts/build-timetravel.js"
+    "build-timetravel": "node time-travel/build.js"
   },
   "repository": {
     "type": "git",

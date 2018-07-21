@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Join Microsoft Developer Design</title>
+  <meta property="og:title" content="Join Microsoft Developer Design">
+  <meta property="og:site_name" content="https://microsoft.github.io/join-dev-design/">
+  <meta property="og:url" content="https://microsoft.github.io/join-dev-design/">
+  <meta property="og:description" content="Microsoft is hiring technical product designers and design leaders">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/microsoft-og-image.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="theme/theme.css">
+  <link rel="shortcut icon" href="https://c.s-microsoft.com/favicon.ico?v2" type="image/x-icon">
+</head>
+<body>
+  <div class="container">
+    <header role="banner">
+      <a class="logo-link" href="https://microsoft.com" title="Microsoft Website">
+        <div class="logo-css" role="img" aria-label="Microsoft Logo">
+          <span class="logo-tile logo-tile--red"></span>
+          <span class="logo-tile logo-tile--green"></span>
+          <span class="logo-tile logo-tile--blue"></span>
+          <span class="logo-tile logo-tile--yellow"></span>
+        </div>
+      </a>
+    </header>
+    <main role="main">
+      <h1>
+        Microsoft is looking for designers who code to help create the most compelling developer tools&nbsp;&amp;&nbsp;services
+        on the planet.
+      </h1>
+      <p>
+        We have open positions for technical product designers &amp; design leaders in San Francisco, Seattle, and elsewhere.
+      </p>
+      <p>
+        We use PCs, Macs, Figma, Sketch, GitHub, JavaScript, ZEIT, and other modern tools to design, prototype, and build
+        the future of software development.
+      </p>
+      <p>
+        We believe in diversity, openness, and building delightful tools that empower every person and organization to
+        achieve more.
+      </p>
+      <p>
+        Interested? Send a PR with any improvement to
+        <a href="https://github.com/Microsoft/join-dev-design" title="GitHub repository join-dev-design by the Microsoft organization">microsoft/join-dev-design</a> or
+        <a href="mailto:dasiege@microsoft.com" title="Email address for dasiege@microsoft.com">email us</a>.
+      </p>
+    </main>
+  </div>
+  <footer class="footer" role="contentinfo">
+    <div class="theme">
+      <ul class="theme__list">
+        <li class="theme__item">
+          <button class="theme__button js-theme-button" value="dark" title="Enable dark theme">Dark</button>
+        </li>
+        <li class="theme__item">
+          <button class="theme__button js-theme-button" value="light" title="Enable light theme">Light</button>
+        </li>
+      </ul>
+    </div>
+    <p>
+      <span class="footer-piece">
+        Designed in
+        <a href="https://figma.com" title="Figma is the first interface design tool based in the browser, making it easier for teams to create software.">Figma</a>.
+      </span>
+      <span class="footer-piece">
+        Built in
+        <a href="https://code.visualstudio.com" title="Visual Studio Code is a code editor redefined and optimized for building and debugging modern web and cloud applications.">Code</a>.
+      </span>
+      <span class="footer-piece footer-piece--separate">
+        Created by
+        <a href="https://github.com/Microsoft/join-dev-design/graphs/contributors" id="contributors" title="Contributors to the GitHub repository join-dev-design by the Microsoft organization">10</a> contributors on
+        <a href="https://github.com/Microsoft/join-dev-design" title="GitHub repository join-dev-design by the Microsoft organization">GitHub</a>.
+      </span>
+    </p>
+    <script>
+      fetch('https://api.github.com/repos/Microsoft/join-dev-design/stats/contributors')
+        .then(response => {
+          if (response.status !== 200) {
+            console.log('Looks like there was a problem. Status Code: ' + response.status);
+            return;
+          }
+          return response.json();
+        })
+        .then(data => document.getElementById('contributors').innerText = data.length)
+        .catch(err => console.log('Fetch Error :-S', err));
+    </script>
+  </footer>
+  <script async src="theme/theme.js"></script>
+  <script>
+    function logLogo(sz) {
+      const sp = 10;
+      const styles = [
+        'font-size: 1px',
+        'display: inline-block',
+        'padding-left: ' + (sz * 2 + sp) + 'px',
+        'padding-top: ' + (sz * 2 + sp) + 'px',
+        'background-image: linear-gradient(90deg, #F0521F 0px, #F0521F <p1>px, transparent <p1>px, transparent <p2>px, #7FCC2C <p2>px, #7FCC2C <p3>px, transparent <p3>px), linear-gradient(90deg, #00ADF0 0px, #00ADF0 <p4>px, transparent <p4>px, transparent <p5>px, #FCBA12 <p5>px, #FCBA12 <p6>px, transparent <p6>px)'
+          .replace(/<p1>/g, '' + (sz))
+          .replace(/<p2>/g, '' + (sz + sp))
+          .replace(/<p3>/g, '' + (sz * 2 + sp))
+          .replace(/<p4>/g, '' + (sz))
+          .replace(/<p5>/g, '' + (sz + sp))
+          .replace(/<p6>/g, '' + (sz * 2 + sp)),
+        'background-repeat: no-repeat',
+        'background-size: ' + (sz * 2 + sp) + 'px ' + sz + 'px',
+        'background-position: 0 0, 0 ' + (sz + sp) + 'px'
+      ];
+      
+      console.log('%c ', styles.join(';'));
+      console.log('👋 Hi there! 👋\n\nIt seems you like to poke around as much as we do.\n\nhttps://github.com/Microsoft/join-dev-design')
+    }
+    
+    logLogo(100);
+  </script>
+</body>
+</html>

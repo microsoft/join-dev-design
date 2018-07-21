@@ -6,9 +6,22 @@ Microsoft is hiring technical product designers and design leaders. [Learn more]
 
 ```shell
 $ npm install
-$ npm run build-timetravel
 $ npm start
 ```
+
+### Time Travel
+
+Time travel displays past versions of the repo based on merged pull requests.
+The build script in `time-travel` folder fetchs each merged pull request's `docs` folder content (except for `docs/time-travel/`) and store them in `docs/time-travel/history`. Currently this process has to be done manually.
+
+**Note**: Create a `.env` with your github's access token in order to fetch data from Github API.
+
+```shell
+# update build
+$ npm run build-timetravel
+```
+
+---
 
 There's a [Figma file](https://www.figma.com/file/Nkddv9KabDaTFtqZ5vlSzUxr/Developer-Design-Recruiting-Site?node-id=1%3A2) for the design but it's currently Microsoft internal.
 
