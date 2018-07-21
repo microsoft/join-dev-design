@@ -9,7 +9,8 @@
   "scripts": {
     "start": "live-server docs",
     "precommit": "pretty-quick --staged",
-    "prettier": "prettier"
+    "prettier": "prettier",
+    "build-timetravel": "node time-travel/build.js"
   },
   "repository": {
     "type": "git",

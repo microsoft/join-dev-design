@@ -968,6 +968,172 @@
                   "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/58fa1bea08b6779fefc808b4905ffc7d6103191c"
               }
             }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAzMDA3MjAy",
+              "title": "Fix FOUC issue with root gradient",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/91",
+              "mergedAt": "2018-07-22T17:24:36Z",
+              "author": {
+                "login": "dosyago-coder-0",
+                "avatarUrl":
+                  "https://avatars1.githubusercontent.com/u/22254235?v=4"
+              },
+              "editor": {
+                "login": "dosyago-coder-0",
+                "avatarUrl":
+                  "https://avatars1.githubusercontent.com/u/22254235?v=4"
+              },
+              "mergeCommit": {
+                "committedDate": "2018-07-22T17:24:36Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOmIyMTI2NTM4ZjMxNjQwN2IxZDRiNmEwNDk5NWQ4NjhmYjJjNDJiYjE=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/b2126538f316407b1d4b6a04995d868fb2c42bb1"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAzMDE2MDc2",
+              "title":
+                "Minor design tweaks for footer, CSS improvements, HTML structure improvemetns, a11y",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/92",
+              "mergedAt": "2018-07-21T17:18:17Z",
+              "author": {
+                "login": "dimanech",
+                "avatarUrl":
+                  "https://avatars2.githubusercontent.com/u/1180050?v=4"
+              },
+              "editor": {
+                "login": "dimanech",
+                "avatarUrl":
+                  "https://avatars2.githubusercontent.com/u/1180050?v=4"
+              },
+              "mergeCommit": {
+                "committedDate": "2018-07-21T17:18:17Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjUxZGZiN2M5ZWM4YzQzMDI3ZTcwYTY0YTFkNDI4ZGM0YjhhMmQ1MmI=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/51dfb7c9ec8c43027e70a64a1d428dc4b8a2d52b"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAzMDI4ODU4",
+              "title":
+                "FIX: Add meta description for 100% on Lighthouse SEO audit",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/95",
+              "mergedAt": "2018-07-22T03:14:36Z",
+              "author": {
+                "login": "plainspace",
+                "avatarUrl":
+                  "https://avatars1.githubusercontent.com/u/24152?v=4"
+              },
+              "editor": {
+                "login": "plainspace",
+                "avatarUrl":
+                  "https://avatars1.githubusercontent.com/u/24152?v=4"
+              },
+              "mergeCommit": {
+                "committedDate": "2018-07-22T03:14:35Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjMwMzkyNDM4OTU2YmRmNjE1NTIwOWYxMjEzOTg4MGM0NTcyMWY4ZGI=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/30392438956bdf6155209f12139880c45721f8db"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAzMDI5MzU3",
+              "title": "As above, so below (the logo)",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/96",
+              "mergedAt": "2018-07-22T17:23:07Z",
+              "author": {
+                "login": "plainspace",
+                "avatarUrl":
+                  "https://avatars1.githubusercontent.com/u/24152?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-22T17:23:06Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOmZkNTljODA2YWI4ZTBkNDkwZmUwZDQ5YTJmMTlmMzkxMjIzN2M3ZDE=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/fd59c806ab8e0d490fe0d49a2f19f3912237c7d1"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAzMDQ5NDA4",
+              "title": "Theme selector improved",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/99",
+              "mergedAt": "2018-07-22T17:19:29Z",
+              "author": {
+                "login": "kohterai",
+                "avatarUrl":
+                  "https://avatars3.githubusercontent.com/u/5862751?v=4"
+              },
+              "editor": {
+                "login": "kohterai",
+                "avatarUrl":
+                  "https://avatars3.githubusercontent.com/u/5862751?v=4"
+              },
+              "mergeCommit": {
+                "committedDate": "2018-07-22T17:19:29Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOmQwOTI4YjAyZWU3ZGY2NDhhM2NkM2M3ZjQ4MjJiODM5ZWZmNjBmYmQ=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/d0928b02ee7df648a3cd3c7f4822b839eff60fbd"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAzMDU4MTMx",
+              "title": "Log logo on console using text-shadow",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/101",
+              "mergedAt": "2018-07-22T17:17:13Z",
+              "author": {
+                "login": "RayPS",
+                "avatarUrl":
+                  "https://avatars2.githubusercontent.com/u/1941540?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-22T17:17:12Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjUzNzVjODFkZTA2ZTQxNjQ2NWNjMGFjNTAzNDc5Zjk2YmU0YTViMzg=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/5375c81de06e416465cc0ac503479f96be4a5b38"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAzMDYzOTg4",
+              "title":
+                "[A11y] [High Contrast] Added transparent outline to the logo",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/102",
+              "mergedAt": "2018-07-22T17:15:17Z",
+              "author": {
+                "login": "amitse",
+                "avatarUrl":
+                  "https://avatars1.githubusercontent.com/u/2761516?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-22T17:15:17Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOmIxZDNmOTdhOWQ5YzZlZjQ4ZDNmNTkwMWNkZmNjZjIxZmRhMjE0MzY=",
+                "zipballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.zip/b1d3f97a9d9c6ef48d3f5901cdfccf21fda21436"
+              }
+            }
           }
         ]
       }

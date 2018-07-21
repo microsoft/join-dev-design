@@ -44,7 +44,6 @@ const historyFolderPath = path.resolve(
 /**
  * TODOS
  * - Flush `./zips` folder.
- * - Flush `../docs/history` folder.
  */
 const flushHistoryFolder = data =>
   fs

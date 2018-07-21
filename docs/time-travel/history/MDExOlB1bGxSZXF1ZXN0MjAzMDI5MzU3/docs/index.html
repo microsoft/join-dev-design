@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -18,12 +17,11 @@
   <link rel="stylesheet" href="theme/theme.css">
   <link rel="shortcut icon" href="https://c.s-microsoft.com/favicon.ico?v2" type="image/x-icon">
 </head>
-
 <body>
   <div class="container">
-    <header>
+    <header role="banner">
       <a class="logo-link" href="https://microsoft.com" title="Microsoft Website">
-        <div class="logo" role="img" aria-label="Microsoft Logo">
+        <div class="logo-css" role="img" aria-label="Microsoft Logo">
           <span class="logo-tile logo-tile--red"></span>
           <span class="logo-tile logo-tile--green"></span>
           <span class="logo-tile logo-tile--blue"></span>
@@ -31,20 +29,21 @@
         </div>
       </a>
     </header>
-    <main>
+    <main role="main">
       <h1>
-        Microsoft is looking for designers who code to help create the most compelling developer tools&nbsp;&amp;&nbsp;services on
-        the planet.
+        Microsoft is looking for designers who code to help create the most compelling developer tools&nbsp;&amp;&nbsp;services
+        on the planet.
       </h1>
       <p>
         We have open positions for technical product designers &amp; design leaders in San Francisco, Seattle, and elsewhere.
       </p>
       <p>
-        We use PCs, Macs, Figma, Sketch, GitHub, JavaScript, ZEIT, and other modern tools to design, prototype, and build the future
-        of software development.
+        We use PCs, Macs, Figma, Sketch, GitHub, JavaScript, ZEIT, and other modern tools to design, prototype, and build
+        the future of software development.
       </p>
       <p>
-        We believe in diversity, openness, and building delightful tools that empower every person and organization to achieve more.
+        We believe in diversity, openness, and building delightful tools that empower every person and organization to
+        achieve more.
       </p>
       <p>
         Interested? Send a PR with any improvement to
@@ -53,7 +52,7 @@
       </p>
     </main>
   </div>
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="theme">
       <ul class="theme__list">
         <li class="theme__item">
@@ -63,9 +62,6 @@
           <button class="theme__button js-theme-button" value="light" title="Enable light theme">Light</button>
         </li>
       </ul>
-    </div>
-    <div class="time-travel">
-      <a href="./time-travel/" title="See past versions of this site">Time Travel</a>
     </div>
     <p>
       <span class="footer-piece">
@@ -93,33 +89,17 @@
         })
         .then(data => document.getElementById('contributors').innerText = data.length)
         .catch(err => console.log('Fetch Error :-S', err));
-
     </script>
   </footer>
   <script async src="theme/theme.js"></script>
   <script>
     function logLogo(size) {
-      const style =
-        `font-family: Arial; font-size: ${size}px; line-height: 2em; color: #f33525; text-shadow: 0.5em 0 0 #81bc06, 0 0.5em 0 #05a6f0, 0.5em 0.5em 0 #ffba08;`;
+      const style = `font-family: Arial; font-size: ${size}px; line-height: 2em; color: #f33525; text-shadow: 0.5em 0 0 #81bc06, 0 0.5em 0 #05a6f0, 0.5em 0.5em 0 #ffba08;`;
       console.log('%c■     ', style);
-      console.log(
-        '👋 Hi there! 👋\n\nIt seems you like to poke around as much as we do.\n\nhttps://github.com/Microsoft/join-dev-design'
-      );
+      console.log('👋 Hi there! 👋\n\nIt seems you like to poke around as much as we do.\n\nhttps://github.com/Microsoft/join-dev-design');
     }
-
+    
     logLogo(100);
-
-  </script>
-  <script>
-    function markDocumentAsLoaded() {
-      setTimeout(function () {
-        document.documentElement.dataset.loaded = true
-      }, 1000)
-    }
-
-    addEventListener('load', markDocumentAsLoaded);
-
   </script>
 </body>
-
 </html>
