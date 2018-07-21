@@ -35,6 +35,9 @@ new Vue({
     },
     logoTitleBlue: function() {
       return this.colorStatus.blue ? "logo-tile--lightblue" : "logo-tile--blue";
+    },
+    winner: function() {
+      return this.currentScore >= 10 ? true : false;
     }
   },
   methods: {

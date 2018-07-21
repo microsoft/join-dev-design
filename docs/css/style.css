@@ -138,6 +138,12 @@ main p:nth-child(4) { animation-delay: calc(var(--move-in-base-delay) * 8) }
   animation: var(--logo-tiles-in-animation);
 }
 
+.winner {
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
 .logo-tile--red    { background-color: #F35325; }
 .logo-tile--lightred { background-color: rgb(238, 118, 84); }
 .logo-tile--red:active { background-color: rgb(238, 118, 84); }

@@ -23,6 +23,7 @@
                     <span @click="clickColor('yellow')" class="logo-tile" v-bind:class="logoTitleYellow"></span>
                 </figure>
             </div>
+            <span v-if="winner" class="winner">🎊 Simon says...A winner is you! 🎊</span>
             <p>Microsoft is looking for designers who code to help create the most compelling developer tools &amp; services
                 on the planet.
             </p>
