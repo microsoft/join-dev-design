@@ -117,5 +117,14 @@
         console.log('Fetch Error :-S', err)
       })
   </script>
+  <script type="text/javascript">
+    addEventListener('load', markDocumentAsLoaded);
+
+    function markDocumentAsLoaded() {
+      setTimeout( function() {
+        document.documentElement.dataset.loaded = true;
+      }, 1000 );
+    }
+  </script>
 </body>
 </html>

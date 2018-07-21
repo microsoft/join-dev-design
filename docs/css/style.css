@@ -72,6 +72,9 @@ html {
   font-size: 16px;
   font-family: Inconsolata, Consolas, monospace;
   line-height: 1.25;
+  background-color: rgba(18, 18, 18, 1);
+}
+html[data-loaded] {
   background-image: -webkit-gradient(
     linear,
     left bottom,
@@ -93,7 +96,6 @@ html:before {
   left: 0;
   height: 100%;
   width: 100%;
-  opacity: 0;
   z-index: -1;
   background-image: -webkit-gradient(
     linear,
@@ -107,7 +109,7 @@ html:before {
     #ffbb00 33%,
     #00a1f1 67%
   );
-  animation: 4s both root-gradient linear infinite;
+  animation: 4s both root-gradient ease-in-out infinite;
 }
 body {
   display: flex;
