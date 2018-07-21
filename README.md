@@ -6,6 +6,7 @@ Microsoft is hiring technical product designers and design leaders. [Learn more]
 
 ```shell
 $ npm install
+$ npm run build-timetravel
 $ npm start
 ```
 
