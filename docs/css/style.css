@@ -225,7 +225,6 @@ main p:nth-child(4) {
   background-color: #81bc06;
   animation-delay: var(--logo-tiles-in-delay);
 }
-
 .logo-tile--blue {
   background-color: #05a6f0;
   animation-delay: calc(var(--logo-tiles-in-delay) * 2);

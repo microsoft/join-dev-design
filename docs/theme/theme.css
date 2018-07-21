@@ -36,7 +36,6 @@
 .theme__item {
   position: relative;
   display: inline-block;
-  transition: margin-left 0.3s ease;
 }
 
 .theme__item + .theme__item {
@@ -79,9 +78,8 @@
     opacity: 1;
   }
   .theme__item + .theme__item {
-    margin-left: -1rem;
+    margin-left: -0.8rem;
   }
-
   .theme:hover .theme__item + .theme__item {
     margin-left: 0.5rem;
   }
