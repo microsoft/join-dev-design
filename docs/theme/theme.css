@@ -36,6 +36,7 @@
 .theme__item {
   position: relative;
   display: inline-block;
+  vertical-align: top;
 }
 
 .theme__item + .theme__item {
