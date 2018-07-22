@@ -16,12 +16,12 @@
     <div class="container">
         <header>
             <a class="logo-link" href="https://microsoft.com" title="Microsoft Website">
-              <figure class="logo-css">
-                <span class="logo-tile logo-tile--red"></span>
-                <span class="logo-tile logo-tile--green"></span>
-                <span class="logo-tile logo-tile--blue"></span>
-                <span class="logo-tile logo-tile--yellow"></span>
-              </figure>
+                <figure class="logo-css">
+                    <span class="logo-tile logo-tile--red"></span>
+                    <span class="logo-tile logo-tile--green"></span>
+                    <span class="logo-tile logo-tile--blue"></span>
+                    <span class="logo-tile logo-tile--yellow"></span>
+                </figure>
             </a>
             <h1>Microsoft is looking for designers who code to help create the most compelling developer tools &amp; services
                 on the planet.
@@ -42,6 +42,21 @@
             <p>Interested? Send a PR with any improvement to
                 <a href="https://github.com/Microsoft/join-dev-design" title="GitHub repository join-dev-design by the Microsoft organization">microsoft/join-dev-design</a> or
                 <a href="mailto:dasiege@microsoft.com" title="Email address for dasiege@microsoft.com">email us</a>.</p>
+
+            <div class="image-contributors" id="image-contributors">
+                <div class="author" style="background-image: url(https://avatars1.githubusercontent.com/u/4813262?v=4)">
+                </div>
+                <div class="author" style="background-image: url(https://avatars3.githubusercontent.com/u/928396?v=4)">
+                </div>
+                <div class="author" style="background-image: url(https://avatars3.githubusercontent.com/u/8355536?v=4)">
+                </div>
+                <div class="author" style="background-image: url(https://avatars0.githubusercontent.com/u/9019878?v=4)">
+                </div>
+            </div>
+            <p class="image-contributors-title">
+                Contributors
+                <a href="https://github.com/Microsoft/join-dev-design/graphs/contributors">see all</a>
+            </p>
         </main>
     </div>
     <footer class="footer" role="footer">
@@ -54,7 +69,7 @@
     </footer>
 </body>
 <script type="text/javascript">
-    console.log("%c\t\t\t\t\t\t\t\t\t\t\t\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n👋 Hi there! 👋\n\nIt seems you like to poke around as much as we do.\n\nhttps://github.com/Microsoft/join-dev-design", "color: white; background-color: #080808; background-image: url(https://microsoft.github.io/join-dev-design/msft-square.svg); background-size: 70%; background-position: 50% 25%; background-repeat: no-repeat; padding: 3em; text-align: center;font-size: 1.25em;");
+    // console.log("%c\t\t\t\t\t\t\t\t\t\t\t\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n👋 Hi there! 👋\n\nIt seems you like to poke around as much as we do.\n\nhttps://github.com/Microsoft/join-dev-design", "color: white; background-color: #080808; background-image: url(https://microsoft.github.io/join-dev-design/msft-square.svg); background-size: 70%; background-position: 50% 25%; background-repeat: no-repeat; padding: 3em; text-align: center;font-size: 1.25em;");
 
     fetch("https://api.github.com/repos/Microsoft/join-dev-design/stats/contributors")
         .then(function (response) {
@@ -65,12 +80,27 @@
                 return;
             }
             response.json().then(function (data) {
+                var img_contributors = document.getElementById("image-contributors");
+                img_contributors.innerHTML = "";
+                var subData = data.slice(0, 5);
+                subData.forEach(function (e) {
+                    img_contributors.insertAdjacentHTML('beforeend',
+                        '<div class="author" style="background-image: url(' + e.author.avatar_url +
+                        ')"></div>');
+                })
+
+                var author_last_count = document.querySelector(
+                    "#image-contributors .author:last-child");
+                author_last_count.setAttribute("data-count", data.length - 5);
+
                 var contributors = document.getElementById("contributors");
                 contributors.innerText = data.length;
+                console.log(data);
             });
         })
         .catch(function (err) {
             console.log("Fetch Error :-S", err);
         });
 </script>
+
 </html>

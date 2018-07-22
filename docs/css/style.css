@@ -6,6 +6,7 @@
   --move-in-base-delay: 100ms;
   --logo-tiles-in-animation: 1s both logo-tiles-in;
   --logo-tiles-in-delay: 100ms;
+  --contibutors-animation: 1s contributor-hover infinite;
 }
 
 @keyframes move-in {
@@ -20,24 +21,62 @@
 }
 
 @keyframes logo-tiles-in {
-  0%   { opacity: 0; filter: grayscale(1) hue-rotate(100deg); }
-  25%  { opacity: 1; }
-  50%  { opacity: 1; }
-  55%  { opacity: 0; }
-  60%  { opacity: 1; filter: grayscale(1) hue-rotate(100deg); }
-  100% { opacity: 1; filter: grayscale(0) hue-rotate(0deg); }
+  0% {
+    opacity: 0;
+    filter: grayscale(1) hue-rotate(100deg);
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+    filter: grayscale(1) hue-rotate(100deg);
+  }
+  100% {
+    opacity: 1;
+    filter: grayscale(0) hue-rotate(0deg);
+  }
 }
 
 @keyframes logo-tiles-hover {
-  from { filter: hue-rotate(0deg) }
-  to   { filter: hue-rotate(360deg) }
+  from {
+    filter: hue-rotate(0deg)
+  }
+  to {
+    filter: hue-rotate(360deg)
+  }
 }
 
 @keyframes root-gradient {
-  0%    { opacity: 0.0; }
-  40%   { opacity: 1.0; }
-  60%   { opacity: 1.0; }
-  100%  { opacity: 0.0; }
+  0% {
+    opacity: 0.0;
+  }
+  40% {
+    opacity: 1.0;
+  }
+  60% {
+    opacity: 1.0;
+  }
+  100% {
+    opacity: 0.0;
+  }
+}
+
+@keyframes contributor-hover {
+  from {
+    z-index: 10;
+    transform: scale(1.1);
+  }
+  to {
+    z-index: 10;
+    transform: scale(1.2);
+  }
 }
 
 html {
@@ -52,12 +91,13 @@ html:before {
   content: "";
   position: absolute;
   display: block;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
   opacity: 0;
   z-index: -1;
-  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.33, #ffbb00), color-stop(0.67,#00a1f1) );
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.33, #ffbb00), color-stop(0.67, #00a1f1));
   background-image: -moz-linear-gradient(center bottom, #ffbb00 33%, #00a1f1 67%);
   animation: 4s both root-gradient linear infinite;
 }
@@ -99,7 +139,8 @@ a:hover {
   flex: 1;
 }
 
-p, h1 {
+p,
+h1 {
   margin: 0;
   padding: 10px 0.5em;
 }
@@ -126,9 +167,85 @@ main p {
   animation-delay: calc(var(--move-in-base-delay) * 5);
 }
 
-main p:nth-child(2) { animation-delay: calc(var(--move-in-base-delay) * 6) }
-main p:nth-child(3) { animation-delay: calc(var(--move-in-base-delay) * 7) }
-main p:nth-child(4) { animation-delay: calc(var(--move-in-base-delay) * 8) }
+main p:nth-child(2) {
+  animation-delay: calc(var(--move-in-base-delay) * 6)
+}
+
+main p:nth-child(3) {
+  animation-delay: calc(var(--move-in-base-delay) * 7)
+}
+
+main p:nth-child(4) {
+  animation-delay: calc(var(--move-in-base-delay) * 8)
+}
+
+main .image-contributors {
+  width: auto;
+  display: block;
+  margin: 70px auto 5px auto;
+  text-align: center;
+}
+
+main .image-contributors .author {
+  display: inline-block;
+  background-size: cover;
+  background-position: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 30px;
+  border: 3px solid rgba(255, 255, 255, .5);
+  margin-left: -20px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 5;
+  animation: var(--move-in-animation);
+}
+
+main .image-contributors .author:nth-child(1) {
+  animation-delay: calc(var(--move-in-base-delay) * 9);
+}
+
+main .image-contributors .author:nth-child(2) {
+  animation-delay: calc(var(--move-in-base-delay) * 10);
+}
+
+main .image-contributors .author:nth-child(3) {
+  animation-delay: calc(var(--move-in-base-delay) * 11);
+}
+
+main .image-contributors .author:nth-child(4) {
+  animation-delay: calc(var(--move-in-base-delay) * 12);
+}
+
+main .image-contributors .author:nth-child(5) {
+  animation-delay: calc(var(--move-in-base-delay) * 13);
+}
+
+main .image-contributors .author:first-child {
+  margin-left: 0;
+}
+
+main .image-contributors .author:last-child::after {
+  content: attr(data-count) "+ ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background: #121212;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main .image-contributors-title {
+  font-size: 14px;
+  text-align: center;
+  animation: var(--move-in-animation);
+  animation-delay: calc(var(--move-in-base-delay) * 14);
+}
 
 .logo-link {
   display: block;
@@ -137,7 +254,9 @@ main p:nth-child(4) { animation-delay: calc(var(--move-in-base-delay) * 8) }
   margin: 2rem auto;
 }
 
-.logo-link:hover { animation: 1s both logo-tiles-hover linear infinite; }
+.logo-link:hover {
+  animation: 1s both logo-tiles-hover linear infinite;
+}
 
 .logo-image {
   display: block;
@@ -161,10 +280,24 @@ main p:nth-child(4) { animation-delay: calc(var(--move-in-base-delay) * 8) }
   animation: var(--logo-tiles-in-animation);
 }
 
-.logo-tile--red    { background-color: #F35325; }
-.logo-tile--green  { background-color: #81BC06; animation-delay: var(--logo-tiles-in-delay); }
-.logo-tile--blue   { background-color: #05A6F0; animation-delay: calc(var(--logo-tiles-in-delay) * 2); }
-.logo-tile--yellow { background-color: #FFBA08; animation-delay: calc(var(--logo-tiles-in-delay) * 3); }
+.logo-tile--red {
+  background-color: #F35325;
+}
+
+.logo-tile--green {
+  background-color: #81BC06;
+  animation-delay: var(--logo-tiles-in-delay);
+}
+
+.logo-tile--blue {
+  background-color: #05A6F0;
+  animation-delay: calc(var(--logo-tiles-in-delay) * 2);
+}
+
+.logo-tile--yellow {
+  background-color: #FFBA08;
+  animation-delay: calc(var(--logo-tiles-in-delay) * 3);
+}
 
 .footer {
   font-size: 80%;
@@ -187,18 +320,15 @@ footer [href*="github"]:hover {
     max-width: calc(100vw - 20vw);
     margin: 0 auto;
   }
-
   .container p {
     font-size: 18px;
   }
-
   footer {
     text-align: unset;
     padding: 1em 0 2em;
     max-width: calc(100vw - 20vw);
     margin: 0 auto;
   }
-
   footer span {
     display: block;
   }
