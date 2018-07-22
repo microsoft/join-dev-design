@@ -10,7 +10,8 @@ new Vue({
       blue: false
     },
     userClicks: [],
-    currentScore: 0
+    currentScore: 0,
+    difficulty: 1000
   },
   created() {
     console.log(
@@ -51,6 +52,9 @@ new Vue({
       this.userClicks.push(color);
       if (this.checkCorrect()) {
         this.userClicks = [];
+        if (this.difficulty > 100) {
+          this.difficulty -= 100;
+        }
         this.currentScore++;
         console.log(
           `Simon says..."correct!" 🎉 Your score is`,
@@ -80,9 +84,9 @@ new Vue({
       await this.timer(2000);
       for (var i = 0; i < this.currentSequence.length; i++) {
         this.colorStatus[this.currentSequence[i]] = true;
-        await this.timer(1000);
+        await this.timer(this.difficulty);
         this.colorStatus[this.currentSequence[i]] = false;
-        await this.timer(500);
+        await this.timer(this.difficulty / 2);
       }
     },
     lightUp: async function() {
