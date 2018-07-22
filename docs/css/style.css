@@ -80,8 +80,7 @@
 html {
   position: relative;
   font-size: 125%;
-  font-family: Inconsolata, Consolas, "SFMono-Regular", Menlo,
-    "DejaVu Sans Mono", monospace;
+  font-family: Inconsolata, Consolas, 'SFMono-Regular', Menlo, 'DejaVu Sans Mono', monospace;
   line-height: 1.25;
   background-color: var(--page-background);
 }
@@ -90,7 +89,7 @@ html[data-loaded] {
 }
 
 html:before {
-  content: "";
+  content: '';
   position: absolute;
   display: block;
   top: 0;
@@ -189,7 +188,7 @@ h1 {
   width: 45%;
   height: 45%;
   margin: 2.5%;
-  outline : 1px solid transparent;
+  outline: 1px solid transparent;
   animation: var(--logo-tiles-in-animation);
 }
 
@@ -261,8 +260,8 @@ footer p {
   animation-delay: calc(var(--move-in-base-delay) * 11);
 }
 
-footer [href*="github"]:hover,
-footer [href*="github"]:focus {
+footer [href*='github']:hover,
+footer [href*='github']:focus {
   color: var(--green);
 }
 
