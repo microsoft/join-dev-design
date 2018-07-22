@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -17,6 +18,7 @@
   <link rel="stylesheet" href="theme/theme.css">
   <link rel="shortcut icon" href="https://c.s-microsoft.com/favicon.ico?v2" type="image/x-icon">
 </head>
+
 <body>
   <div class="container">
     <header role="banner">
@@ -31,19 +33,18 @@
     </header>
     <main role="main">
       <h1>
-        Microsoft is looking for designers who code to help create the most compelling developer tools&nbsp;&amp;&nbsp;services
-        on the planet.
+        Microsoft is looking for designers who code to help create the most compelling developer tools&nbsp;&amp;&nbsp;services on
+        the planet.
       </h1>
       <p>
         We have open positions for technical product designers &amp; design leaders in San Francisco, Seattle, and elsewhere.
       </p>
       <p>
-        We use PCs, Macs, Figma, Sketch, GitHub, JavaScript, ZEIT, and other modern tools to design, prototype, and build
-        the future of software development.
+        We use PCs, Macs, Figma, Sketch, GitHub, JavaScript, ZEIT, and other modern tools to design, prototype, and build the future
+        of software development.
       </p>
       <p>
-        We believe in diversity, openness, and building delightful tools that empower every person and organization to
-        achieve more.
+        We believe in diversity, openness, and building delightful tools that empower every person and organization to achieve more.
       </p>
       <p>
         Interested? Send a PR with any improvement to
@@ -53,13 +54,17 @@
     </main>
   </div>
   <footer class="footer" role="contentinfo">
-    <div class="theme">
+    <div class="theme" v-cloak>
+
+      <label class="theme-auto">
+        <input checked v-model="auto" class="theme-auto__input" type="checkbox" name="autotheme" />
+        <span class="theme-auto__label">auto theme {{ auto ? 'on' : 'off' }}</span>
+      </label>
+
       <ul class="theme__list">
-        <li class="theme__item">
-          <button class="theme__button js-theme-button" value="dark" title="Enable dark theme">Dark</button>
-        </li>
-        <li class="theme__item">
-          <button class="theme__button js-theme-button" value="light" title="Enable light theme">Light</button>
+        <li class="theme__item" v-for="(t, key) in themes">
+          <button class="theme__button js-theme-button" v-on:click="changeTheme(t)" v-bind:value="t" v-bind:disabled="theme === t"
+            title="Enable dark theme">{{ t }}</button>
         </li>
       </ul>
     </div>
@@ -91,7 +96,8 @@
         .catch(err => console.log('Fetch Error :-S', err));
     </script>
   </footer>
-  <script async src="theme/theme.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script defer src="theme/theme.js"></script>
   <script>
     function logLogo(sz) {
       const sp = 10;
@@ -111,12 +117,13 @@
         'background-size: ' + (sz * 2 + sp) + 'px ' + sz + 'px',
         'background-position: 0 0, 0 ' + (sz + sp) + 'px'
       ];
-      
+
       console.log('%c ', styles.join(';'));
       console.log('👋 Hi there! 👋\n\nIt seems you like to poke around as much as we do.\n\nhttps://github.com/Microsoft/join-dev-design')
     }
-    
+
     logLogo(100);
   </script>
 </body>
+
 </html>
