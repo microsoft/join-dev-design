@@ -82,7 +82,8 @@
             response.json().then(function (data) {
                 var img_contributors = document.getElementById("image-contributors");
                 img_contributors.innerHTML = "";
-                var subData = data.slice(0, 5);
+                var subLength = 6
+                var subData = data.slice(0, subLength);
                 subData.forEach(function (e) {
                     img_contributors.insertAdjacentHTML('beforeend',
                         '<div class="author" style="background-image: url(' + e.author.avatar_url +
@@ -91,7 +92,7 @@
 
                 var author_last_count = document.querySelector(
                     "#image-contributors .author:last-child");
-                author_last_count.setAttribute("data-count", data.length - 5);
+                author_last_count.setAttribute("data-count", data.length - subLength);
 
                 var contributors = document.getElementById("contributors");
                 contributors.innerText = data.length;
