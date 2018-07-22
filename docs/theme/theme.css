@@ -69,6 +69,7 @@
 
 .theme__button:not([disabled]) {
   cursor: pointer;
+  z-index: 100;
 }
 
 @media only screen and (min-width: 640px) {
