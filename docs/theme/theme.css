@@ -55,11 +55,11 @@
   border-radius: 0.6rem;
 }
 
-.theme__button[value="dark"] {
+.theme__button[value='dark'] {
   background: black;
 }
 
-.theme__button[value="light"] {
+.theme__button[value='light'] {
   background: white;
 }
 
@@ -109,7 +109,7 @@ body.js-theme-light {
 
 body.js-theme-code {
   color: lightslategrey;
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .js-theme-light .theme__button {
