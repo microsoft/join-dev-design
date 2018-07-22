@@ -154,6 +154,7 @@ h1 {
   width: 45%;
   height: 45%;
   margin: 2.5%;
+  outline : 1px solid transparent;
   animation: var(--logo-tiles-in-animation);
 }
 
