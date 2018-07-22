@@ -39,7 +39,7 @@
   vertical-align: top;
 }
 
-.theme__item + .theme__item {
+.theme__item+.theme__item {
   margin-left: 0.5rem;
   transition: margin-left 0.3s ease;
 }
@@ -78,10 +78,10 @@
   .theme:hover {
     opacity: 1;
   }
-  .theme__item + .theme__item {
+  .theme__item+.theme__item {
     margin-left: -0.8rem;
   }
-  .theme:hover .theme__item + .theme__item {
+  .theme:hover .theme__item+.theme__item {
     margin-left: 0.5rem;
   }
 }
@@ -116,4 +116,12 @@ body.js-theme-code {
 
 .js-theme-light .theme__button:disabled {
   border: 3px solid #dedede;
+}
+
+.js-theme-light .image-contributors .author {
+  border: 3px solid rgba(165, 165, 165, .5);
+}
+
+.js-theme-light .image-contributors .author:last-child:after {
+  background: white;
 }

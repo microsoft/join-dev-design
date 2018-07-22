@@ -221,6 +221,10 @@ main .image-contributors .author:nth-child(5) {
   animation-delay: calc(var(--move-in-base-delay) * 13);
 }
 
+main .image-contributors .author:nth-child(6) {
+  animation-delay: calc(var(--move-in-base-delay) * 14);
+}
+
 main .image-contributors .author:first-child {
   margin-left: 0;
 }
@@ -240,10 +244,10 @@ main .image-contributors .author:last-child::after {
 }
 
 main .image-contributors-title {
-  font-size: 14px;
+  font-size: 15px;
   text-align: center;
   animation: var(--move-in-animation);
-  animation-delay: calc(var(--move-in-base-delay) * 14);
+  animation-delay: calc(var(--move-in-base-delay) * 15);
 }
 
 .logo-link {
