@@ -22,20 +22,20 @@ new Vue({
   },
   computed: {
     logoTitleRed: function() {
-      return this.colorStatus.red ? "logo-tile--lightred" : "logo-tile--red";
+      return this.colorStatus.red ? "logo-tile--largered" : "logo-tile--red";
     },
     logoTitleGreen: function() {
       return this.colorStatus.green
-        ? "logo-tile--lightgreen"
+        ? "logo-tile--largegreen"
         : "logo-tile--green";
     },
     logoTitleYellow: function() {
       return this.colorStatus.yellow
-        ? "logo-tile--lightyellow"
+        ? "logo-tile--largeyellow"
         : "logo-tile--yellow";
     },
     logoTitleBlue: function() {
-      return this.colorStatus.blue ? "logo-tile--lightblue" : "logo-tile--blue";
+      return this.colorStatus.blue ? "logo-tile--largeblue" : "logo-tile--blue";
     },
     winner: function() {
       return this.currentScore >= 10 ? true : false;
@@ -90,15 +90,22 @@ new Vue({
       }
     },
     lightUp: async function() {
+      let t = 150;
       this.colorStatus.red = true;
-      this.colorStatus.green = true;
-      this.colorStatus.yellow = true;
-      this.colorStatus.blue = true;
-      await this.timer(1000);
+      await this.timer(t);
       this.colorStatus.red = false;
+      this.colorStatus.green = true;
+      await this.timer(t);
       this.colorStatus.green = false;
+      this.colorStatus.yellow = true;
+      await this.timer(t);
       this.colorStatus.yellow = false;
+      this.colorStatus.blue = true;
+      await this.timer(t);
       this.colorStatus.blue = false;
+      this.colorStatus.red = true;
+      await this.timer(t);
+      this.colorStatus.red = false;
     }
   }
 });
