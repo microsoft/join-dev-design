@@ -7,7 +7,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "start": "live-server docs",
+    "start": "npm install && npm run serve",
+    "serve": "live-server docs",
     "precommit": "pretty-quick --staged",
     "prettier": "prettier"
   },
