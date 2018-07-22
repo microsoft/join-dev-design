@@ -83,8 +83,10 @@ html {
   font-family: Inconsolata, Consolas, "SFMono-Regular", Menlo,
     "DejaVu Sans Mono", monospace;
   line-height: 1.25;
-  background: linear-gradient(to bottom, var(--blue) 33%, var(--yellow) 67%);
   background-color: var(--page-background);
+}
+html[data-loaded] {
+  background: linear-gradient(to bottom, var(--blue) 33%, var(--yellow) 67%);
 }
 
 html:before {
@@ -95,7 +97,6 @@ html:before {
   left: 0;
   height: 100%;
   width: 100%;
-  opacity: 0;
   z-index: -1;
   background: linear-gradient(to bottom, var(--yellow) 33%, var(--blue) 67%);
   animation: var(--root-gradient-animation);
