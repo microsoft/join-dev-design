@@ -100,6 +100,11 @@ a:focus {
   color: var(--blue);
 }
 
+:focus {
+  outline: 2px dashed currentColor;
+  outline-offset: 4px;
+}
+
 p,
 h1 {
   margin: 1rem 0;
