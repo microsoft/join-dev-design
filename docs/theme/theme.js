@@ -1,20 +1,43 @@
-var $body = document.body;
-var $themeBtns = document.querySelectorAll(".js-theme-button");
+const THEMES = Object.freeze({
+  DARK: "dark",
+  LIGHT: "light"
+});
 
-$themeBtns[0].setAttribute("disabled", true);
-
-$themeBtns.forEach(function(ele) {
-  ele.onclick = function(e) {
-    var selectedName = e.target.value;
-
-    $themeBtns.forEach(function(ele) {
-      var themeName = ele.value;
-      if (themeName === selectedName) return;
-      $body.classList.remove("js-theme-" + themeName);
-      ele.removeAttribute("disabled");
-    });
-
-    $body.classList.add("js-theme-" + selectedName);
-    ele.setAttribute("disabled", true);
-  };
+const app = new Vue({
+  el: document.querySelector(".theme"),
+  data: {
+    auto: true,
+    theme: THEMES.DARK,
+    themes: THEMES
+  },
+  methods: {
+    changeTheme(theme) {
+      this.theme = theme;
+      this.auto = false;
+    },
+    autoTheme() {
+      const d = new Date();
+      const isDay = d.getHours() < 21 && d.getHours() > 5;
+      if (this.auto) {
+        if (isDay) {
+          this.theme = THEMES.LIGHT;
+        } else {
+          this.theme = THEMES.DARK;
+        }
+      }
+    }
+  },
+  watch: {
+    theme(nextVal, prevVal) {
+      document.body.classList.remove(`js-theme-${prevVal}`);
+      document.body.classList.add(`js-theme-${nextVal}`);
+    }
+  },
+  beforeDestroy() {
+    clearInterval(this.autoThemeInterval);
+  },
+  mounted() {
+    this.autoTheme();
+    this.autoThemeInterval = setInterval(this.autoTheme.bind(this), 1000);
+  }
 });
