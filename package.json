@@ -12,6 +12,9 @@
     "precommit": "pretty-quick --staged && npm run build",
     "prettier": "prettier"
   },
+  "pre-commit": [
+    "build"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Microsoft/join-dev-design.git"
