@@ -144,18 +144,18 @@ main p:nth-child(4) { animation-delay: calc(var(--move-in-base-delay) * 8) }
   text-align: center;
 }
 
-.logo-tile--red    { background-color: #F35325; }
-.logo-tile--lightred { background-color: rgb(238, 118, 84); }
-.logo-tile--red:active { background-color: rgb(238, 118, 84); }
-.logo-tile--green  { background-color: #81BC06; animation-delay: var(--logo-tiles-in-delay); }
-.logo-tile--lightgreen { background-color: rgb(166, 214, 62); animation-delay: var(--logo-tiles-in-delay); }
-.logo-tile--green:active { background-color: rgb(166, 214, 62); animation-delay: var(--logo-tiles-in-delay); }
-.logo-tile--blue   { background-color: #05A6F0; animation-delay: calc(var(--logo-tiles-in-delay) * 2); }
-.logo-tile--lightblue { background-color: rgb(90, 198, 248); animation-delay: calc(var(--logo-tiles-in-delay) * 2); }
-.logo-tile--blue:active { background-color: rgb(90, 198, 248); animation-delay: calc(var(--logo-tiles-in-delay) * 2); }
-.logo-tile--yellow { background-color: #FFBA08; animation-delay: calc(var(--logo-tiles-in-delay) * 3); }
-.logo-tile--lightyellow { background-color: rgb(253, 208, 94); animation-delay: calc(var(--logo-tiles-in-delay) * 3); }
-.logo-tile--yellow:active { background-color: rgb(253, 208, 94); animation-delay: calc(var(--logo-tiles-in-delay) * 3); }
+.logo-tile--red    { background-color: #F35325; transition: 150ms }
+.logo-tile--largered { background-color: #F35325; transform: scale(1.2) translateY(-3px); transition: 150ms}
+.logo-tile--red:active { transform: scale(0.8); }
+.logo-tile--green  { background-color: #81BC06; animation-delay: var(--logo-tiles-in-delay); transition: 150ms }
+.logo-tile--largegreen { background-color: #81BC06; transform: scale(1.2) translateY(-3px); animation-delay: var(--logo-tiles-in-delay); transition: 150ms }
+.logo-tile--green:active { transform: scale(0.8); }
+.logo-tile--blue   { background-color: #05A6F0; animation-delay: calc(var(--logo-tiles-in-delay) * 2); transition: 150ms }
+.logo-tile--largeblue { background-color: #05A6F0; transform: scale(1.2) translateY(-3px); animation-delay: calc(var(--logo-tiles-in-delay) * 2); transition: 150ms }
+.logo-tile--blue:active { transform: scale(0.8); }
+.logo-tile--yellow { background-color: #FFBA08; animation-delay: calc(var(--logo-tiles-in-delay) * 3); transition: 150ms}
+.logo-tile--largeyellow { background-color: #FFBA08; transform: scale(1.2) translateY(-3px); animation-delay: calc(var(--logo-tiles-in-delay) * 3); transition: 150ms }
+.logo-tile--yellow:active { transform: scale(0.8); }
 
 .footer {
   font-size: 80%;
