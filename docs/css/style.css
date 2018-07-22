@@ -13,7 +13,7 @@
   --move-in-base-delay: 100ms;
   --logo-tiles-in-animation: 1s both logo-tiles-in;
   --logo-tiles-in-delay: 100ms;
-  --contibutors-animation: 1s contributor-hover infinite;
+  --link-animation: 3s logo-tiles-link-hover ease-in-out infinite;
 }
 
 @keyframes move-in {
@@ -51,7 +51,7 @@
   }
 }
 
-@keyframes logo-tiles-hover {
+@keyframes logo-tiles-link-hover {
   from {
     filter: hue-rotate(0deg)
   }
@@ -64,7 +64,7 @@
   0% {
     opacity: 0.0;
   }
-  40% {
+  0% {
     opacity: 1.0;
   }
   60% {
@@ -72,17 +72,6 @@
   }
   100% {
     opacity: 0.0;
-  }
-}
-
-@keyframes contributor-hover {
-  from {
-    z-index: 10;
-    transform: scale(1.1);
-  }
-  to {
-    z-index: 10;
-    transform: scale(1.2);
   }
 }
 
@@ -143,6 +132,7 @@ a {
 a:hover,
 a:focus {
   color: var(--blue);
+  animation: var(--link-animation);
 }
 
 p,
@@ -258,7 +248,7 @@ main .image-contributors-title {
 }
 
 .logo-link:hover {
-  animation: 1s both logo-tiles-hover linear infinite;
+  animation: 1s both logo-tiles-link-hover linear infinite;
 }
 
 .logo-image {
