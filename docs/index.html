@@ -110,7 +110,8 @@
             var subData = data.slice(0, subLength);
             subData.forEach(function (e) {
               img_contributors.insertAdjacentHTML('beforeend',
-                '<div class="author" style="background-image: url(' + e.author.avatar_url +
+                '<div class="author" title="' + e.author.login + '" style="background-image: url(' + e.author
+                .avatar_url +
                 ')"></div>');
             })
 
