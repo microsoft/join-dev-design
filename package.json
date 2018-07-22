@@ -8,8 +8,22 @@
   },
   "scripts": {
     "start": "npm install && npm run serve",
+    "fix:all": "prettier-eslint -l \"error\" --write \"docs/**/*.{css,js}\"",
     "serve": "live-server docs",
-    "prettier": "prettier"
+    "prettier": "prettier",
+    "eslint": "eslint",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "docs/**/*.js": [
+      "prettier-eslint --write",
+      "eslint",
+      "git add"
+    ],
+    "docs/**/*.css": [
+      "prettier-eslint --write",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",
@@ -22,9 +36,13 @@
   },
   "homepage": "https://github.com/Microsoft/join-dev-design#readme",
   "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "^2.13.0",
     "husky": "^1.0.0-rc.13",
     "lint-staged": "^7.2.0",
     "live-server": "^1.2.0",
-    "prettier": "^1.13.7"
+    "prettier": "^1.13.7",
+    "prettier-eslint-cli": "^4.7.1"
   }
 }
