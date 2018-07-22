@@ -9,9 +9,12 @@
   "scripts": {
     "build": "sw-precache --root=docs",
     "start": "npm run build && live-server docs",
-    "precommit": "pretty-quick --staged && npm run build",
+    "precommit": "pretty-quick --staged",
     "prettier": "prettier"
   },
+  "pre-commit": [
+    "build"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Microsoft/join-dev-design.git"
