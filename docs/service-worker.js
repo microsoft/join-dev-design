@@ -37,7 +37,6 @@
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
 'use strict';
 
-var precacheConfig = [["css/style.css", "3e59111ac8f58d798b38de41d517ff59"], ["images/icon-splash.png", "9a68141e25bc1a00401b978fec49486a"], ["images/icon.png", "014a94477e04155b550fd8bb87419991"], ["images/microsoft-og-image.png", "c443e4a2ddf5dc28bb9f68f0af0c3652"], ["index.html", "fb0b5f4c5f00f93bf3f17dfaaa506026"], ["manifest.json", "96a6b8984e6aec12e10758a6aff6ab00"], ["theme/theme.css", "7999d7c2e41be093e173630ee56530cf"], ["theme/theme.js", "13861f86ed469ce1a9bb6ac2765faa72"]];
 var precacheConfig = [["css/style.css","3e59111ac8f58d798b38de41d517ff59"],["images/icon-splash.png","9a68141e25bc1a00401b978fec49486a"],["images/icon.png","014a94477e04155b550fd8bb87419991"],["images/microsoft-og-image.png","c443e4a2ddf5dc28bb9f68f0af0c3652"],["index.html","fb0b5f4c5f00f93bf3f17dfaaa506026"],["manifest.json","96a6b8984e6aec12e10758a6aff6ab00"],["theme/theme.css","7999d7c2e41be093e173630ee56530cf"],["theme/theme.js","13861f86ed469ce1a9bb6ac2765faa72"]];
 var cacheName = 'sw-precache-v3-sw-precache-' + (self.registration ? self.registration.scope : '');
 
