@@ -7,7 +7,9 @@
     "doc": "docs"
   },
   "scripts": {
-    "start": "serve -s docs"
+    "start": "live-server docs",
+    "precommit": "pretty-quick --staged",
+    "prettier": "prettier"
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,9 @@
   },
   "homepage": "https://github.com/Microsoft/join-dev-design#readme",
   "devDependencies": {
-    "serve": "^9.2.0"
+    "husky": "^0.14.3",
+    "live-server": "^1.2.0",
+    "prettier": "^1.13.7",
+    "pretty-quick": "^1.6.0"
   }
 }
