@@ -64,6 +64,7 @@
 }
 
 .theme__button:disabled {
+  z-index: 95;
   border: 3px solid #444;
 }
 
