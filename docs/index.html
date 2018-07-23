@@ -157,8 +157,17 @@
       )
     }
 
-    //logLogo(100);
+    logLogo(100);
 
+  </script>
+  <script type="text/javascript">
+    function markDocumentAsLoaded() {
+      setTimeout(function() {
+        document.documentElement.dataset.loaded = true
+      }, 1000)
+    }
+
+    addEventListener('load', markDocumentAsLoaded);
   </script>
 </body>
 

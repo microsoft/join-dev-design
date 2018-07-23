@@ -62,16 +62,16 @@
 
 @keyframes root-gradient {
   0% {
-    opacity: 0.0;
+    opacity: 0;
   }
-  0% {
-    opacity: 1.0;
+  40% {
+    opacity: 1;
   }
   60% {
-    opacity: 1.0;
+    opacity: 1;
   }
   100% {
-    opacity: 0.0;
+    opacity: 0;
   }
 }
 
@@ -80,10 +80,13 @@
 html {
   position: relative;
   font-size: 125%;
-  font-family: Inconsolata, Consolas, "SFMono-Regular", Menlo, "DejaVu Sans Mono", monospace;
+  font-family: Inconsolata, Consolas, "SFMono-Regular", Menlo,
+    "DejaVu Sans Mono", monospace;
   line-height: 1.25;
-  background: linear-gradient(to bottom, var(--blue) 33%, var(--yellow) 67%);
   background-color: var(--page-background);
+}
+html[data-loaded] {
+  background: linear-gradient(to bottom, var(--blue) 33%, var(--yellow) 67%);
 }
 
 html:before {
@@ -94,7 +97,6 @@ html:before {
   left: 0;
   height: 100%;
   width: 100%;
-  opacity: 0;
   z-index: -1;
   background: linear-gradient(to bottom, var(--yellow) 33%, var(--blue) 67%);
   animation: var(--root-gradient-animation);
@@ -244,7 +246,7 @@ main .image-contributors-title {
   display: block;
   width: 4rem;
   height: 4rem;
-  margin: 2rem auto 2.5rem;
+  margin: 2rem auto;
 }
 
 .logo-link:hover {
@@ -270,6 +272,7 @@ main .image-contributors-title {
   width: 45%;
   height: 45%;
   margin: 2.5%;
+  outline : 1px solid transparent;
   animation: var(--logo-tiles-in-animation);
 }
 
@@ -321,19 +324,15 @@ main h1 {
 main p {
   animation: var(--move-in-animation);
 }
-
 main p:nth-of-type(1) {
   animation-delay: calc(var(--move-in-base-delay) * 5);
 }
-
 main p:nth-of-type(2) {
   animation-delay: calc(var(--move-in-base-delay) * 6);
 }
-
 main p:nth-of-type(3) {
   animation-delay: calc(var(--move-in-base-delay) * 7);
 }
-
 main p:nth-of-type(4) {
   animation-delay: calc(var(--move-in-base-delay) * 8);
 }
