@@ -3,7 +3,10 @@ require("dotenv").config();
 const fs = require("fs-extra");
 const path = require("path");
 const fetch = require("node-fetch");
-const unzip = require("unzip");
+// const unzip = require("unzipper");
+// const extract = require('tar-stream').extract();
+const tar = require("tar");
+// const gunzip = require('gunzip-maybe');
 
 const accessToken = process.env.ACCESS_TOKEN;
 const query = `
@@ -27,7 +30,7 @@ const query = `
           mergeCommit {
             committedDate
             id
-            zipballUrl
+            tarballUrl
           }
           id
         }
@@ -42,19 +45,18 @@ const historyFolderPath = path.resolve(
 );
 
 /**
- * TODOS
- * - Flush `./zips` folder.
+ * - Flush `.docs/time-travel/history` folder.
  */
-const flushHistoryFolder = data =>
-  fs
-    .remove(historyFolderPath)
-    .then(() => {
-      console.log("history folder flushed.");
-      return data;
-    })
-    .catch(err => {
-      console.error(err);
-    });
+const flushFolders = async data => {
+  try {
+    await fs.remove(historyFolderPath);
+    await fs.ensureDir(historyFolderPath);
+    console.log("`docs/time-travel/history` is flushed.");
+    return data;
+  } catch (err) {
+    console.error(err);
+  }
+};
 
 /**
  * getData from github
@@ -70,7 +72,7 @@ const getDataFromGithub = () =>
     }
   })
     .then(res => res.json())
-    .catch(err => console.error(err));
+    .catch(console.error);
 
 /**
  * Write github response to a json so the front end can use it later.
@@ -78,107 +80,78 @@ const getDataFromGithub = () =>
  * @return {Object} same data object
  */
 const writeJSONToDocs = data => {
-  return new Promise((resolve, reject) => {
-    fs.writeFile(
+  return fs
+    .writeFile(
       path.resolve(__dirname, `../docs/time-travel/index.json`),
-      JSON.stringify(data),
-      err => {
-        if (err) reject(err);
-        resolve(data);
-      }
-    );
-  });
+      JSON.stringify(data)
+    )
+    .then(() => data)
+    .catch(console.error);
 };
 
 /**
- * Download the whole repo & extract in docs.
- * Unzip's extract doesn't always emit 'close'. Maybe consider switching to a different zip library
- * @param {String} options.name A string that'll be used to name the folder.
- * @param {String} options.url github's url to a zipball.
- * @return {Promise}
+ * Parse tar, keep 'docs/', remove 'docs/time-travel' and everything else
+ * @param {String} options.url tarball url
+ * @param {String} oprions.id id of merged pull request
  */
-const writeHistoryFolder = options => {
-  const { name, url } = options;
-  return fetch(url)
-    .then(
-      res =>
-        new Promise((resolve, reject) => {
-          const downloadPath = path.resolve(__dirname, `zips/${name}.zip`);
-          const dest = fs.createWriteStream(downloadPath);
-          res.body.pipe(dest);
-          res.body.on("error", err => reject(err));
-          res.body.on("finish", () => resolve(downloadPath));
-          dest.on("error", err => reject(err));
+const parseTarball = async options => {
+  const { url, id } = options;
+  const tarball = await fetch(url);
+  const tarballStream = tarball.body;
+  const unzipPath = path.join(historyFolderPath, id);
+  const parse = new tar.Parse();
 
-          console.log(`downloaded ${name}.zip`);
-        })
-    )
-    .then(downloadPath => {
-      console.log(`now unzipping...`);
+  tarballStream
+    .on("error", console.error)
+    .pipe(parse)
+    .on("entry", async function(entry) {
+      const type = entry.type;
+      const tpath = entry.path;
+      const [root, subDir1, subDir2, ...rest] = tpath.split(path.sep);
+      console.log(type, tpath);
 
-      const unzipPath = path.join(historyFolderPath, name);
-      const parse = unzip.Parse();
+      if (subDir1 === "docs" && subDir2 !== "time-travel" && type === "File") {
+        const docsPath = path.join(unzipPath, subDir1, subDir2, rest.join(""));
 
-      fs.createReadStream(downloadPath)
-        // .pipe(extract);
-        .pipe(parse)
-        .on("entry", entry => {
-          const filePath = entry.path;
-          const type = entry.type;
-          const [root, subDir1, subDir2, ...rest] = filePath.split(path.sep);
+        try {
+          await fs.ensureFile(docsPath);
+        } catch (err) {
+          console.error(err);
+        }
 
-          if (
-            subDir1 === "docs" &&
-            subDir2 !== "time-travel" &&
-            type === "File"
-          ) {
-            const docsPath = path.join(
-              unzipPath,
-              subDir1,
-              subDir2,
-              rest.join("")
-            );
+        entry.pipe(fs.createWriteStream(docsPath));
+      } else {
+        entry.resume();
+      }
 
-            fs.ensureFile(docsPath)
-              .then(() => {
-                console.log(`path for ${docsPath} is created`);
-                entry.pipe(fs.createWriteStream(docsPath));
-              })
-              .catch(err => {
-                console.err(err);
-              });
-          } else {
-            entry.autodrain();
-          }
-        });
-
-      return new Promise((resolve, reject) => {
-        parse.on("close", () => {
-          console.log("unzip done.");
-          resolve(unzipPath);
-        });
-
-        parse.on("error", err => reject(err));
-      });
+      // entry.on('end', () => { console.log(`${tpath} is written`) });
+      entry.on("error", console.error);
     })
-    .catch(err => console.error(err));
+    .on("error", console.error);
+
+  return new Promise(function(resolve, reject) {
+    tarballStream.on("finish", () => {
+      resolve(unzipPath);
+    });
+    tarballStream.on("error", reject);
+  });
 };
 
 getDataFromGithub()
-  .then(flushHistoryFolder)
+  .then(flushFolders)
   .then(writeJSONToDocs)
   .then(res => {
-    const unzipPromises = res.data.repository.pullRequests.edges.map(edge => {
-      const url = edge.node.mergeCommit.zipballUrl;
-      const name = edge.node.id;
+    const tarPromises = res.data.repository.pullRequests.edges.map(edge => {
+      const url = edge.node.mergeCommit.tarballUrl;
+      const id = edge.node.id;
 
-      return writeHistoryFolder({
-        name,
+      return parseTarball({
+        id,
         url
       });
     });
 
-    return Promise.all(unzipPromises);
+    return Promise.all(tarPromises);
   })
   .then(paths => {
     console.log(

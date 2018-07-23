@@ -71,7 +71,7 @@ const timeTravel = async () => {
     // https://stackoverflow.com/a/2257295
     $display.contentWindow.location.replace(`./history/${id}/docs/`);
 
-    $historyId.textContent = count;
+    $historyId.textContent = count + 1;
     $prTitle.textContent = title;
 
     $prAuthor.textContent = author.login;
@@ -114,9 +114,11 @@ const timeTravel = async () => {
     updateDisplay(count.jumpTo(getHashCount()));
   };
 
-  $historyMax.textContent = count.max;
+  // start
+  $historyMax.textContent = count.max + 1;
   updateView(count.jumpTo(getHashCount()));
 
+  // button control
   $buttonFirst.onclick = () => {
     updateView(count.reset());
   };
