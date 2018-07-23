@@ -9,13 +9,20 @@
   --medium-grey: #777;
   --dark-grey: #121212;
   /* typeface defaults */
-  --primary-typeface: Inconsolata, Consolas, monospace;
+  --primary-typeface: Segoe UI, SegoeUI, Segoe WP, Helvetica Neue, Helvetica, Tahoma, Arial, sans-serif;
+  --h1: 1.25rem;
+  --base-font-size: 20px;
+  --small-font-size: .75em;
   /* animations */
   --move-in-offset: 20px;
   --move-in-animation: 1s both move-in;
   --move-in-base-delay: 100ms;
   --logo-tiles-in-animation: 1s both logo-tiles-in;
   --logo-tiles-in-delay: 100ms;
+  /* spacing */
+  --small-space: 1em;
+  --large-space: 2em;
+  --text-block-spacing: .75em .5em;
 }
 
 @keyframes move-in {
@@ -79,7 +86,7 @@
 
 html {
   position: relative;
-  font-size: 20px;
+  font-size: var(--base-font-size);
   font-family: var(--primary-typeface);
   line-height: 1.25;
   background: -webkit-gradient(linear, left bottom, left top, color-stop(0.33, var(--primary-color)), color-stop(0.67, var(--secondary-color)));
@@ -108,7 +115,7 @@ body {
   flex-flow: column nowrap;
   min-height: calc(100vh - 10px);
   margin: 5px;
-  padding: 0 1rem;
+  padding: 0 var(--small-space);
   color: var(--off-white);
   background-color: var(--dark-grey);
   -webkit-font-smoothing: antialiased;
@@ -145,13 +152,13 @@ a:hover {
 p,
 h1 {
   margin: 0;
-  padding: 10px 0.5em;
+  padding: var(--text-block-spacing);
 }
 
 header h1 {
   animation: var(--move-in-animation);
   animation-delay: calc(var(--move-in-base-delay) * 4);
-  font-size: 27px;
+  font-size: var(--h1);
   font-weight: bolder;
 }
 
@@ -185,20 +192,14 @@ main p:nth-child(4) {
   display: block;
   width: 4rem;
   height: 4rem;
-  margin: 2rem auto;
+  margin: var(--large-space) auto;
 }
 
 .logo-link:hover {
   animation: 1s both logo-tiles-hover linear infinite;
 }
 
-.logo-image {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.logo-css {
+.logo {
   display: flex;
   flex-wrap: wrap;
   height: 100%;
@@ -234,19 +235,19 @@ main p:nth-child(4) {
 }
 
 .footer {
-  font-size: 80%;
+  font-size: var(--small-font-size);
   text-align: center;
-  padding: 1rem 0;
+  padding: var(--small-space) 0;
   animation: var(--move-in-animation);
   animation-delay: calc(var(--move-in-base-delay) * 9);
 }
 
 footer [href*="code"]:hover {
-  color: #007ACC;
+  color: var(--primary-color);
 }
 
 footer [href*="github"]:hover {
-  color: #6cc644;
+  color: var(--brand-green);
 }
 
 @media only screen and (max-width: 40em) {
@@ -255,11 +256,11 @@ footer [href*="github"]:hover {
     margin: 0 auto;
   }
   .container p {
-    font-size: 18px;
+    font-size: calc(var(--base-font-size)/1.1);
   }
   footer {
     text-align: unset;
-    padding: 1em 0 2em;
+    padding: var(--small-space) 0 var(--large-space);
     max-width: calc(100vw - 10vw);
     margin: 0 auto;
   }
