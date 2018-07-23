@@ -98,7 +98,7 @@ body.js-theme-light {
 }
 
 .js-theme-light a {
-  color: #05a6f0;
+  color: var(--blue);
 }
 
 .js-theme-light a:hover {
