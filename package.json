@@ -29,10 +29,14 @@
   "dependencies": {
     "dotenv": "^6.0.0",
     "fs-extra": "^7.0.0",
+    "gunzip-maybe": "^1.4.1",
     "husky": "^0.14.3",
     "live-server": "^1.2.0",
     "node-fetch": "^2.1.2",
     "prettier": "^1.13.7",
-    "pretty-quick": "^1.6.0"
+    "pretty-quick": "^1.6.0",
+    "tar": "^4.4.4",
+    "tar-stream": "^1.6.1",
+    "unzipper": "github:ZJONSSON/node-unzipper#bad-zip-working"
   }
 }
