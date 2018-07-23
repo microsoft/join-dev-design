@@ -1,0 +1,21 @@
+{
+  "name": "Join Microsoft Developer Design",
+  "short_name": "Join MDD",
+  "theme_color": "#ffba08",
+  "background_color": "#000",
+  "icons": [
+    {
+      "src": "/images/icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icon-splash.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "orientation": "portrait",
+  "display": "standalone"
+}

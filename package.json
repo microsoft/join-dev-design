@@ -7,10 +7,14 @@
     "doc": "docs"
   },
   "scripts": {
-    "start": "live-server docs",
+    "build": "sw-precache --root=docs",
+    "start": "npm run build && live-server docs",
     "precommit": "pretty-quick --staged",
     "prettier": "prettier"
   },
+  "pre-commit": [
+    "build"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Microsoft/join-dev-design.git"
@@ -25,6 +29,7 @@
     "husky": "^0.14.3",
     "live-server": "^1.2.0",
     "prettier": "^1.13.7",
-    "pretty-quick": "^1.6.0"
+    "pretty-quick": "^1.6.0",
+    "sw-precache": "^5.2.1"
   }
 }
