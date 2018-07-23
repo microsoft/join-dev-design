@@ -1,0 +1,52 @@
+.icon-left {
+    background-position: left;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-left: 28px;
+}
+
+.icon-design {
+    background-image: url(../images/design-white.png);
+    padding-left: 36px;
+}
+
+.icon-code {
+    background-image: url(../images/code-white.png);
+    padding-left: 24px;
+}
+
+.icon-pc {
+    background-image: url(../images/ic_surface_pro.svg);
+    padding-bottom: 8px;
+}
+
+.icon-mac {
+    background-image: url(../images/ic_macbook_pro.svg);
+    padding-bottom: 8px;
+}
+
+.icon-figma {
+    background-image: url(../images/figma.png);
+}
+
+.icon-sketch {
+    background-image: url(../images/sketch-symbol.svg);
+}
+
+.icon-github {
+    background-image: url(../images/ic_github.svg);
+}
+
+.icon-js {
+    background-image: url(../images/ic_javascript.svg);
+}
+
+.icon-zeit {
+    background-image: url(../images/ic_zeit.svg);
+    background-size: 32px;
+    padding-left: 32px;
+}
+
+.icon-vscode {
+    background-image: url(../images/vscode.png);
+}
