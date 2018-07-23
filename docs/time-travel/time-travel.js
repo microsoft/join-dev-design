@@ -63,10 +63,11 @@ const timeTravel = async () => {
   const $prEditor = getEl("js-pr-editor");
   const $prEditorAvatar = getEl("js-pr-editor-avatar");
   const $prMergedAt = getEl("js-pr-mergedAt");
+  const $prUrl = getEl("js-pr-url");
 
   const updateDisplay = count => {
     const pr = pullRequests[count];
-    const { id, title, author, editor, mergedAt } = pr.node;
+    const { id, title, author, editor, mergedAt, url } = pr.node;
 
     // https://stackoverflow.com/a/2257295
     $display.contentWindow.location.replace(`./history/${id}/docs/`);
@@ -88,11 +89,12 @@ const timeTravel = async () => {
       $prAuthorAvatar.setAttribute("alt", `No editor`);
     }
 
-    $prMergedAt.textContent = mergedAt;
+    $prMergedAt.textContent = `Merged at ${mergedAt}`;
+    $prUrl.href = url;
   };
 
   const updateHashURL = hash => {
-    window.history.pushState(null, null, `#${hash}`);
+    window.history.pushState(null, null, `#${hash + 1}`);
   };
 
   const updateView = currentCount => {
