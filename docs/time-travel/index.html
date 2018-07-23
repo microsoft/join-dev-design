@@ -24,10 +24,10 @@
       <iframe id="js-display" class="display" src="" frameborder="0"></iframe>
     </main>
     <div class="history">
-      <h2>
+      <h2 class="history__count">
         <span id="js-history-id">1</span>
-        /
-        <span id="js-history-max">-</span>
+        <span class="-text--fade">/</span>
+        <span id="js-history-max" class="-text-fade">-</span>
       </h2>
       <div class="history__controller">
         <button id="js-button-first">First</button>
@@ -37,19 +37,21 @@
       </div>
       <hr>
       <div class="pr">
-        <div class="pr-people-wrapper">
-          <div class="pr-people">
-            <img id="js-pr-author-avatar" class="pr-avatar" src="">
+        <div class="pr__people-wrapper">
+          <div class="pr__people people--author">
+            <img id="js-pr-author-avatar" class="pr__avatar" src="">
             <p id="js-pr-author"></p>
           </div>
-          <div class="pr-people">
-            <img id="js-pr-editor-avatar" class="pr-avatar" src="">
+          <div class="pr__people people--editor">
+            <img id="js-pr-editor-avatar" class="pr__avatar" src="">
             <p id="js-pr-editor"></p>
           </div>
         </div>
-        <h1 id="js-pr-title" class="history__header"></h1>
+        <h1 id="js-pr-title" class="pr__title" class="history__header"></h1>
+        <a id="js-pr-url" class="history__link" title="See pull request" href="#">See pull request</a>
         <p id="js-pr-mergedAt" class="pr__mergedAt"></p>
       </div>
+      <a class="history__exit" href="/" title="Exit to main page">Exit</a>
     </div>
   </div>
 </body>

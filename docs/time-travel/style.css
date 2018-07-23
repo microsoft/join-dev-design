@@ -30,10 +30,19 @@ hr {
   margin-bottom: 1rem;
 }
 
+/* utils  */
+
+.-text--fade {
+  opacity: 0.4;
+}
+
+/* components */
+
 .container {
   position: relative;
   display: flex;
   flex-flow: row nowrap;
+  height: 100%;
 }
 
 .display-wrapper {
@@ -42,15 +51,24 @@ hr {
 
 .display {
   width: 100%;
-  height: 100vh;
+  height: 100%;
 }
 
 .history {
   flex: 1 1 10rem;
   padding: 2rem;
   background: rgba(18, 18, 18, 1);
-  color: white;
+  color: #bbb;
   border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.history > a {
+  color: #ffba08;
+  text-decoration: none;
+}
+
+.history > a:hover {
+  color: #05a6f0;
 }
 
 .history__header {
@@ -78,23 +96,28 @@ hr {
   /* flex: 1; */
 }
 
-.pr-people-wrapper {
+.pr__title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.pr__people-wrapper {
   position: relative;
   padding: 0.5rem 0;
 }
 
-.pr-people {
+.pr__people {
   position: relative;
   display: block;
   margin-bottom: 0.5rem;
 }
 
-.pr-people > * {
+.pr__people > * {
   display: inline-block;
   vertical-align: middle;
 }
 
-.pr-avatar {
+.pr__avatar {
   position: relative;
   width: 2rem;
   height: 2rem;
@@ -102,7 +125,7 @@ hr {
   overflow: hidden;
 }
 
-.pr-avatar:before {
+.pr__avatar:before {
   content: "/";
   position: absolute;
   display: block;
@@ -119,4 +142,45 @@ hr {
 .pr__mergedAt {
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.5);
+}
+
+.history__link,
+.history__exit {
+  color: #ffba08;
+  text-decoration: none;
+}
+
+.history__link:hover,
+.history__exit:hover {
+  color: #05a6f0;
+}
+
+.history__exit {
+  position: absolute;
+  font-size: 1rem;
+  padding: 0.25rem 0.75rem;
+  top: 2.1rem;
+  right: 1.5rem;
+}
+
+@media only screen and (max-width: 640px) {
+  .container {
+    flex-flow: column nowrap;
+  }
+  .display-wrapper {
+    height: calc(100%-5.5rem);
+    overflow-y: scroll;
+  }
+  .history__count {
+    font-size: 1rem;
+  }
+  .pr__title {
+    font-size: 1.25rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .people--editor {
+    display: none;
+  }
 }
