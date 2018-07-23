@@ -91,6 +91,12 @@
   }
 }
 
+@keyframes text-gradient {
+  to {
+    background-position: 400% center;
+  }
+}
+
 /* Common */
 
 html {
@@ -173,11 +179,22 @@ body {
 a {
   color: var(--brand-yellow);
   text-decoration: none;
-  transition: 400ms color;
 }
 
-a:hover {
-  color: var(--brand-blue);
+a:hover,
+a:focus {
+  background-image: linear-gradient(
+    to right,
+    var(--yellow) 25%,
+    var(--blue) 50%,
+    var(--green) 75%,
+    var(--yellow) 100%
+  );
+  background-size: 400% auto;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: text-gradient 3.5s linear infinite;
 }
 
 p,
@@ -287,18 +304,18 @@ main p {
   animation: var(--move-in-animation);
 }
 
+main p {
+  animation: var(--move-in-animation);
+}
 main p:nth-of-type(1) {
   animation-delay: calc(var(--move-in-base-delay) * 5);
 }
-
 main p:nth-of-type(2) {
   animation-delay: calc(var(--move-in-base-delay) * 6);
 }
-
 main p:nth-of-type(3) {
   animation-delay: calc(var(--move-in-base-delay) * 7);
 }
-
 main p:nth-of-type(4) {
   animation-delay: calc(var(--move-in-base-delay) * 8);
 }

@@ -108,7 +108,13 @@ body.js-theme-light {
 }
 
 .js-theme-light a:hover {
-  color: #f35325;
+  background-image: linear-gradient(
+    to right,
+    var(--blue) 25%,
+    var(--yellow) 50%,
+    var(--green) 75%,
+    var(--blue) 100%
+  );
 }
 
 body.js-theme-code {
