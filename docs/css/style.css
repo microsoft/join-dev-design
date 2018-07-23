@@ -10,9 +10,12 @@
   --dark-grey: #121212;
   /* typeface defaults */
   --primary-typeface: Segoe UI, SegoeUI, Segoe WP, Helvetica Neue, Helvetica, Tahoma, Arial, sans-serif;
-  --h1: 1.25rem;
+  --title-font-size: 24px;
+  --title-line-height: 30px;
   --base-font-size: 20px;
-  --small-font-size: .75em;
+  --base-font-line-height: 28px;
+  --small-font-size: 12px;
+  --small-font-line-height: 14px;
   /* animations */
   --move-in-offset: 20px;
   --move-in-animation: 1s both move-in;
@@ -88,7 +91,7 @@ html {
   position: relative;
   font-size: var(--base-font-size);
   font-family: var(--primary-typeface);
-  line-height: 1.25;
+  line-height: var(--base-font-line-height);
   background: -webkit-gradient(linear, left bottom, left top, color-stop(0.33, var(--primary-color)), color-stop(0.67, var(--secondary-color)));
   background: unquote('-moz-linear-gradient(center bottom, var(--primary-color) 33%, var(--secondary-color) 67%)');
   background: unquote('linear-gradient(center bottom, var(--primary-color), var(--secondary-color))');
@@ -158,7 +161,8 @@ h1 {
 header h1 {
   animation: var(--move-in-animation);
   animation-delay: calc(var(--move-in-base-delay) * 4);
-  font-size: var(--h1);
+  font-size: var(--title-font-size);
+  line-height: var(--title-line-height);
   font-weight: bolder;
 }
 
@@ -236,6 +240,7 @@ main p:nth-child(4) {
 
 .footer {
   font-size: var(--small-font-size);
+  line-height: var(--small-font-line-height);
   text-align: center;
   padding: var(--small-space) 0;
   animation: var(--move-in-animation);
