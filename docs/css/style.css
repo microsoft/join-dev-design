@@ -14,6 +14,7 @@
   --move-in-base-delay: 100ms;
   --logo-tiles-in-animation: 1s both logo-tiles-in;
   --logo-tiles-in-delay: 100ms;
+  --divider-movement-animation: 7s both divider-movement infinite;
 }
 
 @keyframes move-in {
@@ -72,6 +73,18 @@
   }
   100% {
     opacity: 0;
+  }
+}
+
+@keyframes divider-movement {
+  0% {
+    width: 100%;
+  }
+  50% {
+    width: 95%;
+  }
+  100% {
+    width: 100%;
   }
 }
 
@@ -189,7 +202,7 @@ h1 {
   width: 45%;
   height: 45%;
   margin: 2.5%;
-  outline : 1px solid transparent;
+  outline: 1px solid transparent;
   animation: var(--logo-tiles-in-animation);
 }
 
@@ -220,7 +233,17 @@ main h1 {
   font-size: 1.3rem;
   font-weight: bold;
   padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+main h1::after {
+  animation: var(--divider-movement-animation);
+  content: "";
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 main p {
