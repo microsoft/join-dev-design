@@ -1,40 +1,53 @@
-class DisplayCount {
-  constructor(length = 0) {
-    this.max = length - 1;
-    this.count = 0;
-  }
-  reset() {
-    this.count = 0;
-    return this.count;
-  }
-  maximize() {
-    this.count = this.max;
-    return this.count;
-  }
-  add(v = 0) {
-    if (!Number.isFinite(v)) {
-      console.warn(
-        `invalid arguments passed in DisplayCount.add() (has to be a finite number)`
-      );
+const timeTravel = async () => {
+  class DisplayCount {
+    constructor(length = 0) {
+      this.max = length - 1;
+      this.count = this.max;
+    }
+    validate(v) {
+      const parsedV = parseInt(v, 10);
+      if (isNaN(parsedV)) {
+        console.warn(
+          `DisplayCount: invalid value (${v} has to be a finite number.)`
+        );
+        return this.max;
+      }
+      return parsedV;
+    }
+    reset() {
+      this.count = 0;
       return this.count;
     }
-
-    this.count += v;
-    if (this.count > this.max) this.reset();
-    if (this.count < 0) this.maximize();
-    return this.count;
+    maximize() {
+      this.count = this.max;
+      return this.count;
+    }
+    limit(v) {
+      v = this.validate(v);
+      if (v > this.max) v = this.max;
+      if (v < 0) v = 0;
+      return v;
+    }
+    add(v = 0) {
+      v = this.validate(v);
+      this.count = this.limit(this.count + v);
+      return this.count;
+    }
+    jumpTo(v) {
+      v = this.validate(v);
+      this.count = this.limit(v);
+      return this.count;
+    }
   }
-}
 
-const getPullRequests = () =>
-  fetch("./index.json")
-    .then(res => res.json())
-    .then(res => res.data.repository.pullRequests.edges)
-    .catch(err => console.warn(err));
+  const getPullRequests = () =>
+    fetch("./index.json")
+      .then(res => res.json())
+      .then(res => res.data.repository.pullRequests.edges)
+      .catch(err => console.warn(err));
 
-const getEl = id => document.getElementById(id);
+  const getEl = id => document.getElementById(id);
 
-window.onload = async () => {
   const $buttonFirst = getEl("js-button-first");
   const $buttonNext = getEl("js-button-next");
   const $buttonPrevious = getEl("js-button-previous");
@@ -51,12 +64,14 @@ window.onload = async () => {
   const $prEditorAvatar = getEl("js-pr-editor-avatar");
   const $prMergedAt = getEl("js-pr-mergedAt");
 
-  const updateDisplay = currentDisplay => {
-    const pr = pullRequests[currentDisplay];
+  const updateDisplay = count => {
+    const pr = pullRequests[count];
     const { id, title, author, editor, mergedAt } = pr.node;
 
-    $display.src = `./history/${id}/docs/`;
-    $historyId.textContent = currentDisplay;
+    // https://stackoverflow.com/a/2257295
+    $display.contentWindow.location.replace(`./history/${id}/docs/`);
+
+    $historyId.textContent = count;
     $prTitle.textContent = title;
 
     $prAuthor.textContent = author.login;
@@ -76,22 +91,44 @@ window.onload = async () => {
     $prMergedAt.textContent = mergedAt;
   };
 
+  const updateHashURL = hash => {
+    window.history.pushState(null, null, `#${hash}`);
+  };
+
+  const updateView = currentCount => {
+    updateHashURL(currentCount);
+    updateDisplay(currentCount);
+  };
+
   const pullRequests = await getPullRequests();
   const count = new DisplayCount(pullRequests.length);
 
+  // get hash link
+  const getHashCount = () => {
+    if (window.location.hash) return window.location.hash.split("#")[1];
+    return null;
+  };
+  // pop back
+  window.onpopstate = () => {
+    console.log(`state popped: ${window.location.hash}`);
+    updateDisplay(count.jumpTo(getHashCount()));
+  };
+
   $historyMax.textContent = count.max;
-  updateDisplay(count.maximize());
+  updateView(count.jumpTo(getHashCount()));
 
   $buttonFirst.onclick = () => {
-    updateDisplay(count.reset());
+    updateView(count.reset());
   };
   $buttonNext.onclick = () => {
-    updateDisplay(count.add(1));
+    updateView(count.add(1));
   };
   $buttonPrevious.onclick = () => {
-    updateDisplay(count.add(-1));
+    updateView(count.add(-1));
   };
   $buttonLast.onclick = () => {
-    updateDisplay(count.maximize());
+    updateView(count.maximize());
   };
 };
+
+window.onload = timeTravel;
