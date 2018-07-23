@@ -1,8 +1,8 @@
 @charset "UTF-8";
 :root {
   /* color defaults */
-  --primary-color: #05a6f0;
-  --secondary-color: #FFBA08;
+  --brand-blue: #05a6f0;
+  --brand-yellow: #FFBA08;
   --brand-red: #F35325;
   --brand-green: #81BC06;
   --white: #ffffff;
@@ -98,14 +98,14 @@ html {
   font-size: var(--base-font-size);
   font-family: var(--primary-typeface);
   line-height: var(--base-font-line-height);
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(0.33, var(--primary-color)), color-stop(0.67, var(--secondary-color)));
-  background: unquote('-moz-linear-gradient(center bottom, var(--primary-color) 33%, var(--secondary-color) 67%)');
-  background: unquote('linear-gradient(center bottom, var(--primary-color), var(--secondary-color))');
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0.33, var(--brand-blue)), color-stop(0.67, var(--brand-yellow)));
+  background: unquote('-moz-linear-gradient(center bottom, var(--brand-blue) 33%, var(--brand-yellow) 67%)');
+  background: unquote('linear-gradient(center bottom, var(--brand-blue), var(--brand-yellow))');
   background-color: var(--dark-grey);
 }
 
 html[data-loaded] {
-  background: linear-gradient(to bottom, var(--primary-color) 33%, var(--secondary-color) 67%);
+  background: linear-gradient(to bottom, var(--brand-blue) 33%, var(--brand-yellow) 67%);
 }
 
 html:before {
@@ -117,9 +117,9 @@ html:before {
   height: 100%;
   width: 100%;
   z-index: -1;
-  background: unquote('-moz-linear-gradient(center bottom, var(--secondary-color) 33%, var(--primary-color) 67%)');
-  background: unquote('linear-gradient(center bottom, var(--secondary-color) 33%, var(--primary-color) 67%)');
-  background: linear-gradient(to bottom, var(--secondary-color) 33%, var(--primary-color) 67%);
+  background: unquote('-moz-linear-gradient(center bottom, var(--brand-yellow) 33%, var(--brand-blue) 67%)');
+  background: unquote('linear-gradient(center bottom, var(--brand-yellow) 33%, var(--brand-blue) 67%)');
+  background: linear-gradient(to bottom, var(--brand-yellow) 33%, var(--brand-blue) 67%);
   animation: var(--root-gradient-animation);
 }
 
@@ -138,24 +138,24 @@ body {
 
 ::-moz-selection {
   color: var(--white);
-  background-color: var(--primary-color);
+  background-color: var(--brand-blue);
 }
 
 ::selection {
   color: var(--white);
   background: #05a6f0;
   /* Edge could not work with custom property here */
-  background-color: var(--primary-color);
+  background-color: var(--brand-blue);
 }
 
 a {
-  color: var(--secondary-color);
+  color: var(--brand-yellow);
   text-decoration: none;
   transition: 400ms color;
 }
 
 a:hover {
-  color: var(--primary-color);
+  color: var(--brand-blue);
 }
 
 p,
@@ -240,12 +240,12 @@ main p:nth-child(4) {
 }
 
 .logo-tile--blue {
-  background-color: var(--primary-color);
+  background-color: var(--brand-blue);
   animation-delay: calc(var(--logo-tiles-in-delay) * 2);
 }
 
 .logo-tile--yellow {
-  background-color: var(--secondary-color);
+  background-color: var(--brand-yellow);
   animation-delay: calc(var(--logo-tiles-in-delay) * 3);
 }
 
