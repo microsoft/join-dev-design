@@ -2,15 +2,16 @@
 :root {
   /* color defaults */
   --brand-blue: #05a6f0;
-  --brand-yellow: #FFBA08;
-  --brand-red: #F35325;
-  --brand-green: #81BC06;
+  --brand-yellow: #ffba08;
+  --brand-red: #f35325;
+  --brand-green: #81bc06;
   --white: #ffffff;
   --off-white: #bbb;
   --medium-grey: #777;
   --dark-grey: #121212;
   /* typeface defaults */
-  --primary-typeface: Segoe UI, SegoeUI, Segoe WP, Helvetica Neue, Helvetica, Tahoma, Arial, sans-serif;
+  --primary-typeface: Segoe UI, SegoeUI, Segoe WP, Helvetica Neue, Helvetica,
+    Tahoma, Arial, sans-serif;
   --title-font-size: 24px;
   --title-line-height: 30px;
   --base-font-size: 20px;
@@ -29,7 +30,7 @@
   /* spacing */
   --small-space: 1em;
   --large-space: 2em;
-  --text-block-spacing: .5em;
+  --text-block-spacing: 0.5em;
 }
 
 @keyframes move-in {
@@ -98,18 +99,32 @@ html {
   font-size: var(--base-font-size);
   font-family: var(--primary-typeface);
   line-height: var(--base-font-line-height);
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(0.33, var(--brand-blue)), color-stop(0.67, var(--brand-yellow)));
-  background: unquote('-moz-linear-gradient(center bottom, var(--brand-blue) 33%, var(--brand-yellow) 67%)');
-  background: unquote('linear-gradient(center bottom, var(--brand-blue), var(--brand-yellow))');
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.33, var(--brand-blue)),
+    color-stop(0.67, var(--brand-yellow))
+  );
+  background: unquote(
+    "-moz-linear-gradient(center bottom, var(--brand-blue) 33%, var(--brand-yellow) 67%)"
+  );
+  background: unquote(
+    "linear-gradient(center bottom, var(--brand-blue), var(--brand-yellow))"
+  );
   background-color: var(--dark-grey);
 }
 
 html[data-loaded] {
-  background: linear-gradient(to bottom, var(--brand-blue) 33%, var(--brand-yellow) 67%);
+  background: linear-gradient(
+    to bottom,
+    var(--brand-blue) 33%,
+    var(--brand-yellow) 67%
+  );
 }
 
 html:before {
-  content: '';
+  content: "";
   position: absolute;
   display: block;
   top: 0;
@@ -117,9 +132,17 @@ html:before {
   height: 100%;
   width: 100%;
   z-index: -1;
-  background: unquote('-moz-linear-gradient(center bottom, var(--brand-yellow) 33%, var(--brand-blue) 67%)');
-  background: unquote('linear-gradient(center bottom, var(--brand-yellow) 33%, var(--brand-blue) 67%)');
-  background: linear-gradient(to bottom, var(--brand-yellow) 33%, var(--brand-blue) 67%);
+  background: unquote(
+    "-moz-linear-gradient(center bottom, var(--brand-yellow) 33%, var(--brand-blue) 67%)"
+  );
+  background: unquote(
+    "linear-gradient(center bottom, var(--brand-yellow) 33%, var(--brand-blue) 67%)"
+  );
+  background: linear-gradient(
+    to bottom,
+    var(--brand-yellow) 33%,
+    var(--brand-blue) 67%
+  );
   animation: var(--root-gradient-animation);
 }
 
@@ -155,40 +178,13 @@ a {
 }
 
 a:hover {
-<<<<<<< HEAD
   color: var(--brand-blue);
-=======
-  color: var(--blue);
-}
-
-.container {
-  max-width: 40rem;
-  margin: 0 auto;
-  flex: 1;
-  margin: 0 auto;
-  max-width: 40rem;
-  width: 40rem;
->>>>>>> ba5f713... put back the time travel link
 }
 
 p,
 h1 {
   margin: 0;
-<<<<<<< HEAD
   padding: var(--text-block-spacing) 0;
-=======
-  padding: 10px 0.5em;
-}
-
-p {
-  font-size: 1.125rem;
-}
-
-@media only screen and (min-width: 40em) {
-  p {
-    font-size: 1.25rem;
-  }
->>>>>>> ba5f713... put back the time travel link
 }
 
 header h1 {
@@ -199,7 +195,6 @@ header h1 {
   font-weight: bolder;
 }
 
-<<<<<<< HEAD
 /* Container */
 
 .container {
@@ -214,40 +209,22 @@ header h1 {
   .container p {
     font-size: 1.125rem;
   }
-=======
-header hr {
-  border: 0;
-  height: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  width: 97%;
-  animation: var(--move-in-animation);
-  animation-delay: 250ms;
-}
-
-main p {
-  animation: var(--move-in-animation);
-  animation-delay: calc(var(--move-in-base-delay) * 5);
->>>>>>> ba5f713... put back the time travel link
 }
 
 main p:nth-child(2) {
-  animation-delay: calc(var(--move-in-base-delay) * 6)
+  animation-delay: calc(var(--move-in-base-delay) * 6);
 }
 
 main p:nth-child(3) {
-  animation-delay: calc(var(--move-in-base-delay) * 7)
+  animation-delay: calc(var(--move-in-base-delay) * 7);
 }
 
 main p:nth-child(4) {
-  animation-delay: calc(var(--move-in-base-delay) * 8)
+  animation-delay: calc(var(--move-in-base-delay) * 8);
 }
 
-<<<<<<< HEAD
 /* Logo */
 
-=======
->>>>>>> ba5f713... put back the time travel link
 .logo-link {
   display: block;
   width: 4rem;
@@ -259,17 +236,7 @@ main p:nth-child(4) {
   animation: 1s both logo-tiles-hover linear infinite;
 }
 
-<<<<<<< HEAD
 .logo {
-=======
-.logo-image {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.logo-css {
->>>>>>> ba5f713... put back the time travel link
   display: flex;
   flex-wrap: wrap;
   height: 100%;
@@ -305,15 +272,9 @@ main p:nth-child(4) {
   animation-delay: calc(var(--logo-tiles-in-delay) * 3);
 }
 
-<<<<<<< HEAD
 /* Main */
 
 main h1 {
-=======
-.footer {
-  text-align: center;
-  padding: 1.25rem 0;
->>>>>>> ba5f713... put back the time travel link
   animation: var(--move-in-animation);
   animation-delay: calc(var(--move-in-base-delay) * 4);
   font-size: 1.3rem;
@@ -331,7 +292,6 @@ main p:nth-of-type(1) {
   animation-delay: calc(var(--move-in-base-delay) * 5);
 }
 
-<<<<<<< HEAD
 main p:nth-of-type(2) {
   animation-delay: calc(var(--move-in-base-delay) * 6);
 }
@@ -355,16 +315,6 @@ main p:nth-of-type(4) {
   overflow: hidden;
 }
 
-=======
-footer [href*="code"]:hover {
-  color: #007acc;
-}
-
-footer [href*="github"]:hover {
-  color: #6cc644;
-}
-
->>>>>>> ba5f713... put back the time travel link
 @media only screen and (max-width: 40em) {
   footer {
     font-size: 1rem;
@@ -393,20 +343,12 @@ footer [href*="github"]:focus {
   }
 }
 
-<<<<<<< HEAD
-
-#time-travel-button-container  {
-  text-align: center;
-}
-
-#time-travel-button-container a {
-
-=======
 .time-travel {
   text-align: center;
+  animation: var(--move-in-animation);
+  animation-delay: calc(var(--move-in-base-delay) * 10);
 }
 
 .time-travel a {
->>>>>>> ba5f713... put back the time travel link
   cursor: pointer;
 }
