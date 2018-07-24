@@ -1,3 +1,7 @@
+/**
+ * compile with `babel`, sourcemap inline & preset `babel-preset-env`.
+ */
+
 const timeTravel = async () => {
   class DisplayCount {
     constructor(length = 0) {
