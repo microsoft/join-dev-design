@@ -9,15 +9,17 @@ new Vue({
       yellow: false,
       blue: false
     },
+    colorSymbols: {
+      red: "❤️",
+      green: "💚",
+      yellow: "💛",
+      blue: "💙",
+    },
     userClicks: [],
     currentScore: 0,
     difficulty: 1000
   },
   created() {
-    console.log(
-      "👋 Simon says check out the microsoft logo when the page loads ✅"
-    );
-    console.log("🚨 Reload the page to reset the game 👌");
     this.generateSequence();
   },
   computed: {
@@ -46,7 +48,19 @@ new Vue({
       this.currentSequence.push(
         this.colors[this.getRandomInt(this.colors.length)]
       );
-      this.play();
+      if(this.currentScore > 0) {
+        this.play();
+      } else {
+        console.log(
+          `
+          👋
+          Hello fellow curious person. 
+          There is a game inside this webpage...try clicking on the 
+          ${this.colorSymbols[this.currentSequence[0]]} tile on the Microsoft logo to get started!
+          Goodluck! 🚀`
+        );
+        console.log("🚨 Reload the page to reset the game 👌");
+      }
     },
     clickColor: function(color) {
       this.userClicks.push(color);
