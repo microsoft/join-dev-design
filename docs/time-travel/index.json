@@ -628,6 +628,31 @@
           },
           {
             "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyNzgxMDc2",
+              "title": "Added Time Travel Functionality",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/55",
+              "mergedAt": "2018-07-24T03:23:53Z",
+              "author": {
+                "login": "georgewritescode",
+                "avatarUrl":
+                  "https://avatars1.githubusercontent.com/u/8780812?v=4"
+              },
+              "editor": {
+                "login": "georgewritescode",
+                "avatarUrl":
+                  "https://avatars1.githubusercontent.com/u/8780812?v=4"
+              },
+              "mergeCommit": {
+                "committedDate": "2018-07-24T03:23:52Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjkxZDU2MzM2ODM1NTRjOTVjZTU2NmI5ZmZhYzVmNGY4OGQ0ZDhiOTU=",
+                "tarballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.tar.gz/91d5633683554c95ce566b9ffac5f4f88d4d8b95"
+              }
+            }
+          },
+          {
+            "node": {
               "id": "MDExOlB1bGxSZXF1ZXN0MjAyODAwMDY2",
               "title": "Minor spacing fixes",
               "url": "https://github.com/Microsoft/join-dev-design/pull/58",
@@ -1132,6 +1157,73 @@
                   "MDY6Q29tbWl0MTQxNTAzNjgzOmIxZDNmOTdhOWQ5YzZlZjQ4ZDNmNTkwMWNkZmNjZjIxZmRhMjE0MzY=",
                 "tarballUrl":
                   "https://codeload.github.com/Microsoft/join-dev-design/legacy.tar.gz/b1d3f97a9d9c6ef48d3f5901cdfccf21fda21436"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAzMDcyNjQw",
+              "title": "Improve HTML markup quality",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/103",
+              "mergedAt": "2018-07-24T01:34:07Z",
+              "author": {
+                "login": "karol-majewski",
+                "avatarUrl":
+                  "https://avatars1.githubusercontent.com/u/20233319?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-24T01:34:07Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOmY4NGEwMjI3NzA0YjI5YWIyZjYxMmY3OTlkZWNkYTdiN2M5OWI4M2Q=",
+                "tarballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.tar.gz/f84a0227704b29ab2f612f799decda7b7c99b83d"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAzMjQ4ODAz",
+              "title": "Make lock files consistent",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/107",
+              "mergedAt": "2018-07-24T01:28:05Z",
+              "author": {
+                "login": "prichodko",
+                "avatarUrl":
+                  "https://avatars2.githubusercontent.com/u/14926950?v=4"
+              },
+              "editor": {
+                "login": "prichodko",
+                "avatarUrl":
+                  "https://avatars2.githubusercontent.com/u/14926950?v=4"
+              },
+              "mergeCommit": {
+                "committedDate": "2018-07-24T01:28:05Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjIzM2IxYWQ1NDAwYjllZTY0YjUwN2U4MjBlMjRjYWU2NWFhYjY2MTM=",
+                "tarballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.tar.gz/233b1ad5400b9ee64b507e820e24cae65aab6613"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAzMjU1ODAx",
+              "title": "Creates a pattern of style guides",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/108",
+              "mergedAt": "2018-07-24T01:25:00Z",
+              "author": {
+                "login": "LadyCarni",
+                "avatarUrl":
+                  "https://avatars3.githubusercontent.com/u/6787230?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-24T01:25:00Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOmIwZjUyMjliNmRjOWE3NzIzMDA5ZjYxZDQ0OGNkODU5YzI2YWY3NzU=",
+                "tarballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.tar.gz/b0f5229b6dc9a7723009f61d448cd859c26af775"
               }
             }
           }
