@@ -356,3 +356,13 @@ footer [href*="github"]:focus {
 .time-travel a {
   cursor: pointer;
 }
+
+@media only screen and (max-width: 40em) {
+  header {
+    padding: var(--small-space) 0;
+    padding-top: calc(var(--small-space) + 0.5rem);
+  }
+  main {
+    transform: none;
+  }
+}
