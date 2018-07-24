@@ -51,6 +51,21 @@
         <a href="https://github.com/Microsoft/join-dev-design" title="GitHub repository join-dev-design by the Microsoft organization">microsoft/join-dev-design</a> or
         <a href="mailto:dasiege@microsoft.com" title="Email address for dasiege@microsoft.com">email us</a>.
       </p>
+
+      <div class="image-contributors" id="image-contributors">
+        <div class="author" style="background-image: url(https://avatars1.githubusercontent.com/u/4813262?v=4)">
+        </div>
+        <div class="author" style="background-image: url(https://avatars3.githubusercontent.com/u/928396?v=4)">
+        </div>
+        <div class="author" style="background-image: url(https://avatars3.githubusercontent.com/u/8355536?v=4)">
+        </div>
+        <div class="author" style="background-image: url(https://avatars0.githubusercontent.com/u/9019878?v=4)">
+        </div>
+      </div>
+      <p class="image-contributors-title">
+        Contributors
+        <a href="https://github.com/Microsoft/join-dev-design/graphs/contributors">see all</a>
+      </p>
     </main>
   </div>
   <footer class="footer">
@@ -79,29 +94,66 @@
         <a href="https://github.com/Microsoft/join-dev-design" title="GitHub repository join-dev-design by the Microsoft organization">GitHub</a>.
       </span>
     </p>
-    <script>
-      fetch('https://api.github.com/repos/Microsoft/join-dev-design/stats/contributors')
-        .then(response => {
-          if (response.status !== 200) {
-            console.log('Looks like there was a problem. Status Code: ' + response.status);
-            return;
-          }
-          return response.json();
-        })
-        .then(data => document.getElementById('contributors').innerText = data.length)
-        .catch(err => console.log('Fetch Error :-S', err));
-
-    </script>
   </footer>
+  <script>
+    fetch("https://api.github.com/repos/Microsoft/join-dev-design/stats/contributors")
+      .then(function (response) {
+        if (response.status !== 200) {
+          console.log(
+            "Looks like there was a problem. Status Code: " + response.status
+          );
+          return;
+        }
+        response.json().then(function (data) {
+          var img_contributors = document.getElementById("image-contributors");
+          img_contributors.innerHTML = "";
+          var subLength = 6
+          var subData = data.slice(0, subLength);
+          subData.forEach(function (e) {
+            img_contributors.insertAdjacentHTML('beforeend',
+              '<div class="author" title="' + e.author.login + '" style="background-image: url(' + e.author
+              .avatar_url +
+              ')"></div>');
+          })
+
+          var author_last_count = document.querySelector(
+            "#image-contributors .author:last-child");
+          author_last_count.setAttribute("data-count", data.length - subLength);
+
+          var contributors = document.getElementById("contributors");
+          contributors.innerText = data.length;
+        });
+      })
+      .catch(function (err) {
+        console.log("Fetch Error :-S", err);
+      });
+
+  </script>
   <script async src="theme/theme.js"></script>
   <script>
-    function logLogo(size) {
-      const style =
-        `font-family: Arial; font-size: ${size}px; line-height: 2em; color: #f33525; text-shadow: 0.5em 0 0 #81bc06, 0 0.5em 0 #05a6f0, 0.5em 0.5em 0 #ffba08;`;
-      console.log('%c■     ', style);
+    function logLogo(sz) {
+      const sp = 10;
+      const styles = [
+        'font-size: 1px',
+        'display: inline-block',
+        'padding-left: ' + (sz * 2 + sp) + 'px',
+        'padding-top: ' + (sz * 2 + sp) + 'px',
+        'background-image: linear-gradient(90deg, #F0521F 0px, #F0521F <p1>px, transparent <p1>px, transparent <p2>px, #7FCC2C <p2>px, #7FCC2C <p3>px, transparent <p3>px), linear-gradient(90deg, #00ADF0 0px, #00ADF0 <p4>px, transparent <p4>px, transparent <p5>px, #FCBA12 <p5>px, #FCBA12 <p6>px, transparent <p6>px)'
+        .replace(/<p1>/g, '' + (sz))
+        .replace(/<p2>/g, '' + (sz + sp))
+        .replace(/<p3>/g, '' + (sz * 2 + sp))
+        .replace(/<p4>/g, '' + (sz))
+        .replace(/<p5>/g, '' + (sz + sp))
+        .replace(/<p6>/g, '' + (sz * 2 + sp)),
+        'background-repeat: no-repeat',
+        'background-size: ' + (sz * 2 + sp) + 'px ' + sz + 'px',
+        'background-position: 0 0, 0 ' + (sz + sp) + 'px'
+      ];
+
+      console.log('%c ', styles.join(';'));
       console.log(
         '👋 Hi there! 👋\n\nIt seems you like to poke around as much as we do.\n\nhttps://github.com/Microsoft/join-dev-design'
-      );
+      )
     }
 
     logLogo(100);
