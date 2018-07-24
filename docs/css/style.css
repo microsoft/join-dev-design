@@ -319,3 +319,11 @@ footer [href*="github"]:focus {
     display: block;
   }
 }
+
+.time-travel {
+  text-align: center;
+}
+
+.time-travel a {
+  cursor: pointer;
+}

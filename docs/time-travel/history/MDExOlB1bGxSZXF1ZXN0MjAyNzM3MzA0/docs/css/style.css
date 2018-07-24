@@ -1,0 +1,234 @@
+:root {
+  --blue: #05a6f0;
+  --link-color: rgba(244, 99, 97, 1);
+  --move-in-offset: 20px;
+  --move-in-animation: 1s both move-in;
+  --move-in-base-delay: 100ms;
+  --logo-tiles-in-animation: 1s both logo-tiles-in;
+  --logo-tiles-in-delay: 100ms;
+}
+
+@keyframes move-in {
+  from {
+    transform: translateY(var(--move-in-offset));
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes logo-tiles-in {
+  0% {
+    opacity: 0;
+    filter: grayscale(1) hue-rotate(100deg);
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+    filter: grayscale(1) hue-rotate(100deg);
+  }
+  100% {
+    opacity: 1;
+    filter: grayscale(0) hue-rotate(0deg);
+  }
+}
+
+@keyframes logo-tiles-hover {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+html {
+  font-size: 125%;
+  font-family: Inconsolata, Consolas, monospace;
+  line-height: 1.25;
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.33, #f45326),
+    color-stop(0.67, #80bc07)
+  );
+  background-image: -moz-linear-gradient(
+    center bottom,
+    #f45326 33%,
+    #80bc07 67%
+  );
+}
+
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  min-height: calc(100vh - 10px);
+  margin: 5px;
+  color: #bbb;
+  background-color: rgba(18, 18, 18, 1);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-moz-selection {
+  color: white;
+  background-color: var(--blue);
+}
+
+::selection {
+  color: white;
+  background-color: var(--blue);
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: 150ms color;
+}
+
+a:hover {
+  color: var(--blue);
+}
+
+.container {
+  max-width: 32rem;
+  margin: 0 auto;
+  flex: 1;
+}
+
+p {
+  margin: 0;
+  padding: 10px 0.5em;
+}
+
+header p {
+  animation: var(--move-in-animation);
+  animation-delay: calc(var(--move-in-base-delay) * 4);
+  font-size: 27px;
+  font-weight: bolder;
+}
+
+header hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  width: 97%;
+  animation: var(--move-in-animation);
+  animation-delay: 250ms;
+}
+
+main p {
+  animation: var(--move-in-animation);
+  animation-delay: calc(var(--move-in-base-delay) * 5);
+}
+
+main p:nth-child(2) {
+  animation-delay: calc(var(--move-in-base-delay) * 6);
+}
+main p:nth-child(3) {
+  animation-delay: calc(var(--move-in-base-delay) * 7);
+}
+main p:nth-child(4) {
+  animation-delay: calc(var(--move-in-base-delay) * 8);
+}
+
+.logo-link {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  margin: 2rem auto;
+}
+
+.logo-link:hover {
+  animation: 1s both logo-tiles-hover linear infinite;
+}
+
+.logo-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.logo-css {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.logo-tile {
+  display: block;
+  width: 45%;
+  height: 45%;
+  margin: 2.5%;
+  animation: var(--logo-tiles-in-animation);
+}
+
+.logo-tile--red {
+  background-color: #f35325;
+}
+.logo-tile--green {
+  background-color: #81bc06;
+  animation-delay: var(--logo-tiles-in-delay);
+}
+.logo-tile--blue {
+  background-color: #05a6f0;
+  animation-delay: calc(var(--logo-tiles-in-delay) * 2);
+}
+.logo-tile--yellow {
+  background-color: #ffba08;
+  animation-delay: calc(var(--logo-tiles-in-delay) * 3);
+}
+
+.footer {
+  font-size: 80%;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+footer [href*="figma"]:hover {
+  color: #8420ff;
+}
+
+footer [href*="code"]:hover {
+  color: #007acc;
+}
+
+footer [href*="github"]:hover {
+  color: #6cc644;
+}
+
+@media only screen and (max-width: 40em) {
+  .container {
+    max-width: calc(100vw - 20vw);
+    margin: 0 auto;
+  }
+
+  .container p {
+    font-size: 18px;
+  }
+
+  footer {
+    text-align: unset;
+    padding: 1em 0 2em;
+    max-width: calc(100vw - 20vw);
+    margin: 0 auto;
+  }
+
+  footer span {
+    display: block;
+  }
+}
