@@ -21,9 +21,9 @@
 
 <body>
   <div class="container">
-    <header role="banner">
+    <header>
       <a class="logo-link" href="https://microsoft.com" title="Microsoft Website">
-        <div class="logo-css" role="img" aria-label="Microsoft Logo">
+        <div class="logo" role="img" aria-label="Microsoft Logo">
           <span class="logo-tile logo-tile--red"></span>
           <span class="logo-tile logo-tile--green"></span>
           <span class="logo-tile logo-tile--blue"></span>
@@ -31,7 +31,7 @@
         </div>
       </a>
     </header>
-    <main role="main">
+    <main>
       <h1>
         Microsoft is looking for designers who code to help create the most compelling developer tools&nbsp;&amp;&nbsp;services on
         the planet.
@@ -68,7 +68,7 @@
       </p>
     </main>
   </div>
-  <footer class="footer" role="contentinfo">
+  <footer class="footer">
     <div class="theme">
       <ul class="theme__list">
         <li class="theme__item">
@@ -94,42 +94,41 @@
         <a href="https://github.com/Microsoft/join-dev-design" title="GitHub repository join-dev-design by the Microsoft organization">GitHub</a>.
       </span>
     </p>
-    <script>
-      fetch("https://api.github.com/repos/Microsoft/join-dev-design/stats/contributors")
-        .then(function (response) {
-          if (response.status !== 200) {
-            console.log(
-              "Looks like there was a problem. Status Code: " + response.status
-            );
-            return;
-          }
-          response.json().then(function (data) {
-            var img_contributors = document.getElementById("image-contributors");
-            img_contributors.innerHTML = "";
-            var subLength = 6
-            var subData = data.slice(0, subLength);
-            subData.forEach(function (e) {
-              img_contributors.insertAdjacentHTML('beforeend',
-                '<div class="author" title="' + e.author.login + '" style="background-image: url(' + e.author
-                .avatar_url +
-                ')"></div>');
-            })
-
-            var author_last_count = document.querySelector(
-              "#image-contributors .author:last-child");
-            author_last_count.setAttribute("data-count", data.length - subLength);
-
-            var contributors = document.getElementById("contributors");
-            contributors.innerText = data.length;
-            console.log(data);
-          });
-        })
-        .catch(function (err) {
-          console.log("Fetch Error :-S", err);
-        });
-
-    </script>
   </footer>
+  <script>
+    fetch("https://api.github.com/repos/Microsoft/join-dev-design/stats/contributors")
+      .then(function (response) {
+        if (response.status !== 200) {
+          console.log(
+            "Looks like there was a problem. Status Code: " + response.status
+          );
+          return;
+        }
+        response.json().then(function (data) {
+          var img_contributors = document.getElementById("image-contributors");
+          img_contributors.innerHTML = "";
+          var subLength = 6
+          var subData = data.slice(0, subLength);
+          subData.forEach(function (e) {
+            img_contributors.insertAdjacentHTML('beforeend',
+              '<div class="author" title="' + e.author.login + '" style="background-image: url(' + e.author
+              .avatar_url +
+              ')"></div>');
+          })
+
+          var author_last_count = document.querySelector(
+            "#image-contributors .author:last-child");
+          author_last_count.setAttribute("data-count", data.length - subLength);
+
+          var contributors = document.getElementById("contributors");
+          contributors.innerText = data.length;
+        });
+      })
+      .catch(function (err) {
+        console.log("Fetch Error :-S", err);
+      });
+
+  </script>
   <script async src="theme/theme.js"></script>
   <script>
     function logLogo(sz) {
@@ -160,14 +159,15 @@
     logLogo(100);
 
   </script>
-  <script type="text/javascript">
+  <script>
     function markDocumentAsLoaded() {
-      setTimeout(function() {
+      setTimeout(function () {
         document.documentElement.dataset.loaded = true
       }, 1000)
     }
 
     addEventListener('load', markDocumentAsLoaded);
+
   </script>
 </body>
 
