@@ -349,3 +349,63 @@ footer [href*="github"]:focus {
 .time-travel a {
   cursor: pointer;
 }
+
+/* COPY TO CLIPBOARD */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  font-size: var(--small-font-size);
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 110%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip > button {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font-size: var(--base-font-size);
+  font-family: var(--primary-typeface);
+  line-height: var(--base-font-line-height);
+  color: var(--brand-yellow);
+  text-decoration: none;
+  transition: 400ms color;
+}
+
+.tooltip > button:focus {
+  outline: 0;
+}
+
+input#emailInput {
+  display: none;
+}
