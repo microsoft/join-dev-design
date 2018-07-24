@@ -86,6 +86,11 @@ new Vue({
     },
     checkCorrect: function() {
       let matching = true;
+      let sequence = this.userClicks[this.userClicks.length-1] === this.currentSequence[this.userClicks.length-1];
+      console.log(`${this.userClicks[this.userClicks.length-1]} ${sequence === true ? "👍" : "👎"}`)
+      if(!sequence) {
+        this.reset()
+      }
       for (let i = 0; i < this.currentSequence.length; i++) {
         if (this.userClicks[i] !== this.currentSequence[i]) {
           matching = false;
@@ -93,6 +98,17 @@ new Vue({
         }
       }
       return matching;
+    },
+    reset: function() {
+      console.log(`
+      😢
+      Oh no! Game Over! Your score was ${this.currentScore} 
+      `);
+      this.currentSequence = [];
+      this.userClicks = [];
+      this.currentScore = 0;
+      this.difficulty = 1000;
+      this.generateSequence();
     },
     play: async function() {
       await this.timer(2000);
