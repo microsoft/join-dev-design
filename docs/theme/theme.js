@@ -1,7 +1,7 @@
 var $body = document.body;
 var $themeBtns = document.querySelectorAll(".js-theme-button");
 
-$themeBtns[0].setAttribute("disabled", true);
+$themeBtns[0].setAttribute("disabled", "disabled");
 
 $themeBtns.forEach(function(ele) {
   ele.onclick = function(e) {
@@ -15,6 +15,6 @@ $themeBtns.forEach(function(ele) {
     });
 
     $body.classList.add("js-theme-" + selectedName);
-    ele.setAttribute("disabled", true);
+    ele.setAttribute("disabled", "disabled");
   };
 });
