@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -117,6 +117,9 @@
 
     addEventListener('load', markDocumentAsLoaded);
 
+    document.querySelector('.footer').addEventListener('animationend', function () {
+      document.querySelector('body').style.overflowY = 'auto';
+    }, false);
   </script>
 </body>
 

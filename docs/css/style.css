@@ -143,6 +143,7 @@ body {
   background-color: var(--dark-grey);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-y: hidden;
 }
 
 ::-moz-selection {
