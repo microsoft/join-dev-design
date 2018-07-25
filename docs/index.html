@@ -65,9 +65,7 @@
       </ul>
     </div>
     <div class="time-travel">
-      <p>
-        <a href="./time-travel/" title="See past versions of this site">Time Travel</a>
-      </p>
+      <p><a href="./time-travel/" title="See past versions of this site">Time Travel</a></p>
     </div>
     <p>
       <span class="footer-piece">
@@ -95,6 +93,7 @@
         })
         .then(data => document.getElementById('contributors').innerText = data.length)
         .catch(err => console.log('Fetch Error :-S', err));
+
     </script>
   </footer>
   <script async src="theme/theme.js"></script>
@@ -103,12 +102,11 @@
       const style =
         `font-family: Arial; font-size: ${size}px; line-height: 2em; color: #f33525; text-shadow: 0.5em 0 0 #81bc06, 0 0.5em 0 #05a6f0, 0.5em 0.5em 0 #ffba08;`;
       console.log('%c■     ', style);
-      console.log(
-        '👋 Hi there! 👋\n\nIt seems you like to poke around as much as we do.\n\nhttps://github.com/Microsoft/join-dev-design'
-      );
+      console.log('👋 Hi there! 👋\n\nIt seems you like to poke around as much as we do.\n\nhttps://github.com/Microsoft/join-dev-design');
     }
 
     logLogo(100);
+
   </script>
   <script>
     function markDocumentAsLoaded() {
