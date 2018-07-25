@@ -349,3 +349,43 @@ footer [href*="github"]:focus {
 .time-travel a {
   cursor: pointer;
 }
+
+/*** Share Bar **/
+.share-bar {
+  left: 0;
+  top: 30%;
+  background-color: transparent;
+  line-height: 32px;
+  border-radius: 6px;
+  position: fixed;
+  z-index: 999;
+}
+.social-sharing {
+  list-style: none;
+}
+.social-sharing li {
+  clear: left;
+  display: block;
+  overflow: hidden;
+  padding: 4px;
+  text-decoration: none;
+  background: unquote(
+    "-moz-linear-gradient(center bottom, var(--brand-yellow) 33%, var(--brand-blue) 67%)"
+  );
+  background: unquote(
+    "linear-gradient(center bottom, var(--brand-yellow) 33%, var(--brand-blue) 67%)"
+  );
+  background: linear-gradient(
+    to bottom,
+    var(--brand-yellow) 33%,
+    var(--brand-blue) 67%
+  );
+  color: var(--off-white);
+  width: 25px;
+  height: 25px;
+  margin: 0 5px 5px 0;
+  cursor: pointer;
+}
+.share-bar svg > path {
+  fill: var(--dark-grey);
+}
