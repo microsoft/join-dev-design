@@ -441,6 +441,9 @@ footer [href*="github"]:focus {
   height: 70px;
   width: 70px;
   opacity: 0;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 
 .cta-group .cta-btn--secondary:hover {
