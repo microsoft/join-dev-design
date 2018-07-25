@@ -27,6 +27,33 @@ The page for time-travel is intentionally kept separated from `docs/` (not reusi
 
 There's a [Figma file](https://www.figma.com/file/Nkddv9KabDaTFtqZ5vlSzUxr/Developer-Design-Recruiting-Site?node-id=1%3A2) for the design but it's currently Microsoft internal.
 
+## Git Contributions Instructions
+
+1.  **Fork this repo & clone your forked repo**
+2.  **Set up a new upsteam remote** - to pull updates from Microsoft repo
+
+    ```
+    git remote add upstream https://github.com/Microsoft/join-dev-design.git
+    ```
+
+3.  **Improve a small part of the code & keep updating**
+
+    - To avoid merge conflicts, change a small part of the code
+    - And constantly pull upstream's latest updates
+
+      ```
+      git pull upstream master
+      ```
+
+4.  **Push your changes** - to your personal github repo
+
+    ```
+    git push origin master
+    ```
+
+5.  **Pull request** - personal repo into Microsoft repo
+    - base fork: Microsoft/join-dev-design ⬅ head fork: userName/join-dev-design
+
 ## Contributing
 
 _We have to include these for legal reasons:_
