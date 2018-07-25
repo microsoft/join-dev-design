@@ -387,7 +387,9 @@ footer [href*="github"]:focus {
 }
 
 .cta-group:hover .cta-btn__email,
-.cta-group:hover .cta-btn__pr {
+.cta-group:hover .cta-btn__pr,
+.cta-group:focus .cta-btn__email,
+.cta-group:focus .cta-btn__pr {
   transform: translateX(0px) rotate(0deg) scale(1);
   opacity: 1;
 }
@@ -463,12 +465,13 @@ footer [href*="github"]:focus {
   .cta-group {
     margin: 20px 0;
   }
-  .cta-btn--secondary {
-    opacity: 1;
-    transform: translateX(0px) rotate(0deg) scale(1);
-  }
   .cta-btn--primary {
-    transition: background-color 0.2s;
-    background-color: var(--off-white);
+    height: 70px;
+    width: 70px;
+    pointer-events: all;
+  }
+
+  .cta-group .cta-btn--secondary:hover {
+    transform: translateX(0px) rotate(0deg) scale(1);
   }
 }

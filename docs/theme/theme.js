@@ -1,5 +1,6 @@
 var $body = document.body;
 var $themeBtns = document.querySelectorAll(".js-theme-button");
+var $ctaBtnPrimary = document.getElementById("btnApply");
 
 $themeBtns[0].setAttribute("disabled", "disabled");
 
@@ -18,3 +19,7 @@ $themeBtns.forEach(function(ele) {
     ele.setAttribute("disabled", "disabled");
   };
 });
+
+$ctaBtnPrimary.onclick = function(event) {
+  event.preventDefault();
+};
