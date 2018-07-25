@@ -99,10 +99,6 @@ body.js-theme-light {
   background-color: #fdfdfd;
 }
 
-.js-theme-light main h1 {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
-
 .js-theme-light a {
   color: #05a6f0;
 }

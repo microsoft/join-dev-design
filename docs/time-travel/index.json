@@ -1226,6 +1226,27 @@
                   "https://codeload.github.com/Microsoft/join-dev-design/legacy.tar.gz/b0f5229b6dc9a7723009f61d448cd859c26af775"
               }
             }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAzNDA5NTQw",
+              "title": "Fix link that exits time travel to top page",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/113",
+              "mergedAt": "2018-07-24T04:53:53Z",
+              "author": {
+                "login": "dvdsgl",
+                "avatarUrl":
+                  "https://avatars0.githubusercontent.com/u/108197?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-24T04:53:52Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjY4NTVhMGEyY2NhOWM4ZjJkZjZhZGMxNmI3NmMwOGRkMTNjZWYwYmU=",
+                "tarballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.tar.gz/6855a0a2cca9c8f2df6adc16b76c08dd13cef0be"
+              }
+            }
           }
         ]
       }
