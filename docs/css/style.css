@@ -137,8 +137,7 @@ body {
   flex-direction: column;
   align-items: center;
   min-height: calc(100vh - 10px);
-  margin: 5px;
-  padding: 0 var(--small-space);
+  margin: 0.5rem;
   color: var(--off-white);
   background-color: var(--dark-grey);
   -webkit-font-smoothing: antialiased;
@@ -173,12 +172,14 @@ h1 {
   padding: var(--text-block-spacing) 0;
 }
 
-header h1 {
-  animation: var(--move-in-animation);
-  animation-delay: calc(var(--move-in-base-delay) * 4);
-  font-size: var(--title-font-size);
-  line-height: var(--title-line-height);
-  font-weight: bolder;
+header {
+  position: sticky;
+  top: -0.5px;
+  padding: var(--large-space) 0;
+  padding-top: calc(var(--large-space) + 0.5rem);
+  background: var(--dark-grey);
+  z-index: 2;
+  width: 100%;
 }
 
 /* Container */
@@ -186,6 +187,7 @@ header h1 {
 .container {
   max-width: 31rem;
   margin: 0 auto auto;
+  padding: 0 var(--small-space);
 }
 
 @media only screen and (max-width: 40em) {
@@ -213,8 +215,8 @@ main p:nth-child(4) {
 
 .logo-link {
   display: block;
-  width: 4rem;
-  height: 4rem;
+  width: 15vw;
+  height: 15vw;
   margin: var(--large-space) auto;
 }
 
@@ -259,6 +261,10 @@ main p:nth-child(4) {
 }
 
 /* Main */
+
+main {
+  transform: translate(1rem, 0);
+}
 
 main h1 {
   animation: var(--move-in-animation);
@@ -336,3 +342,14 @@ footer [href*="github"]:focus {
 .time-travel a {
   cursor: pointer;
 }
+
+@media only screen and (max-width: 40em) {
+  header {
+    padding: var(--small-space) 0;
+    padding-top: calc(var(--small-space) + 0.5rem);
+  }
+  main {
+    transform: none;
+  }
+}
+
