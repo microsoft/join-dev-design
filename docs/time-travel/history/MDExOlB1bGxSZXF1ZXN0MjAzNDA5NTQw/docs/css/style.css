@@ -7,6 +7,7 @@
   --brand-green: #81bc06;
   --white: #ffffff;
   --off-white: #bbb;
+  --medium-grey: #777;
   --dark-grey: #121212;
   /* typeface defaults */
   --primary-typeface: Segoe UI, SegoeUI, Segoe WP, Helvetica Neue, Helvetica,
@@ -98,6 +99,19 @@ html {
   font-size: var(--base-font-size);
   font-family: var(--primary-typeface);
   line-height: var(--base-font-line-height);
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.33, var(--brand-blue)),
+    color-stop(0.67, var(--brand-yellow))
+  );
+  background: unquote(
+    "-moz-linear-gradient(center bottom, var(--brand-blue) 33%, var(--brand-yellow) 67%)"
+  );
+  background: unquote(
+    "linear-gradient(center bottom, var(--brand-blue), var(--brand-yellow))"
+  );
   background-color: var(--dark-grey);
 }
 
@@ -265,7 +279,7 @@ main h1 {
   animation-delay: calc(var(--move-in-base-delay) * 4);
   font-size: 1.3rem;
   font-weight: bold;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid var(--medium-grey);
   margin-bottom: var(--small-space);
   padding-bottom: var(--small-space);
 }

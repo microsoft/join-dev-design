@@ -42,6 +42,12 @@ const timeTravel = async () => {
       this.count = this.limit(v);
       return this.count;
     }
+    isFirst() {
+      return this.count === 0;
+    }
+    isLast() {
+      return this.count === this.max;
+    }
   }
 
   const getPullRequests = () =>
@@ -68,6 +74,15 @@ const timeTravel = async () => {
   const $prEditorAvatar = getEl("js-pr-editor-avatar");
   const $prMergedAt = getEl("js-pr-mergedAt");
   const $prUrl = getEl("js-pr-url");
+
+  const onKeyPress = (key, callback) => {
+    window.addEventListener("keyup", e => {
+      if (e.key === key) {
+        callback();
+      }
+    });
+    return callback;
+  };
 
   const updateDisplay = count => {
     const pr = pullRequests[count];
@@ -126,16 +141,24 @@ const timeTravel = async () => {
 
   // button control
   $buttonFirst.onclick = () => {
-    updateView(count.reset());
+    if (!count.isFirst()) {
+      updateView(count.reset());
+    }
   };
-  $buttonNext.onclick = () => {
-    updateView(count.add(1));
-  };
-  $buttonPrevious.onclick = () => {
-    updateView(count.add(-1));
-  };
+  $buttonPrevious.onclick = onKeyPress("ArrowLeft", () => {
+    if (!count.isFirst()) {
+      updateView(count.add(-1));
+    }
+  });
+  $buttonNext.onclick = onKeyPress("ArrowRight", () => {
+    if (!count.isLast()) {
+      updateView(count.add(1));
+    }
+  });
   $buttonLast.onclick = () => {
-    updateView(count.maximize());
+    if (!count.isLast()) {
+      updateView(count.maximize());
+    }
   };
 };
 
