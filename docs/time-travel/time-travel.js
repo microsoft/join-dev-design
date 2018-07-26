@@ -162,4 +162,10 @@ const timeTravel = async () => {
   };
 };
 
+// Remove the `no-js` class if the user has javascript
+var $html = document.documentElement;
+if ($html.classList.contains("no-js")) {
+  $html.classList.remove("no-js");
+}
+
 window.onload = timeTravel;

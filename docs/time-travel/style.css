@@ -30,6 +30,15 @@ hr {
   margin-bottom: 1rem;
 }
 
+a {
+  color: #ffba08;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #05a6f0;
+}
+
 /* utils  */
 
 .-text--fade {
@@ -62,13 +71,9 @@ hr {
   border-left: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.history > a {
-  color: #ffba08;
-  text-decoration: none;
-}
-
-.history > a:hover {
-  color: #05a6f0;
+/* Disable the history section when javascript is disabled */
+.no-js .history {
+  display: none;
 }
 
 .history__header {
@@ -183,4 +188,11 @@ hr {
   .people--editor {
     display: none;
   }
+}
+
+noscript p {
+  padding-top: 4rem;
+  max-width: 31em;
+  margin: 0 auto;
+  text-align: center;
 }
