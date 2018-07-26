@@ -91,6 +91,18 @@
   }
 }
 
+@keyframes text-gradient-ltr {
+  to {
+    background-position: -600% center;
+  }
+}
+
+@keyframes text-gradient-rtl {
+  to {
+    background-position: 600% center;
+  }
+}
+
 /* Common */
 
 html {
@@ -160,11 +172,31 @@ body {
 a {
   color: var(--brand-yellow);
   text-decoration: none;
-  transition: 400ms color;
 }
 
-a:hover {
-  color: var(--brand-blue);
+a:hover,
+a:focus {
+  background-image: linear-gradient(
+    to right,
+    var(--brand-yellow) 25%,
+    var(--brand-green) 50%,
+    var(--brand-blue) 75%,
+    var(--brand-yellow) 100%
+  );
+  background-size: 600% auto;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+html[dir="ltr"] a:not(.logo-link):hover,
+html[dir="ltr"] a:not(.logo-link):focus {
+  animation: text-gradient-ltr 6.5s linear infinite;
+}
+
+html[dir="rtl"] a:not(.logo-link):hover,
+html[dir="rtl"] a:not(.logo-link):focus {
+  animation: text-gradient-rtl 6.5s linear infinite;
 }
 
 p,
@@ -265,19 +297,15 @@ main h1 {
 main p {
   animation: var(--move-in-animation);
 }
-
 main p:nth-of-type(1) {
   animation-delay: calc(var(--move-in-base-delay) * 5);
 }
-
 main p:nth-of-type(2) {
   animation-delay: calc(var(--move-in-base-delay) * 6);
 }
-
 main p:nth-of-type(3) {
   animation-delay: calc(var(--move-in-base-delay) * 7);
 }
-
 main p:nth-of-type(4) {
   animation-delay: calc(var(--move-in-base-delay) * 8);
 }
