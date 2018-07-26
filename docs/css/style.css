@@ -11,15 +11,12 @@
   /* typeface defaults */
   --primary-typeface: Segoe UI, SegoeUI, Segoe WP, Helvetica Neue, Helvetica,
     Tahoma, Arial, sans-serif;
-  --title-font-size: 24px;
-  --title-line-height: 30px;
+  --title-font-size: 1.3rem;
   --base-font-size: 20px;
   --base-font-line-height: 28px;
   --small-font-size: 12px;
   --small-font-line-height: 14px;
   /* animations */
-  --page-background: #121212;
-  --page-color: #bbb;
   --root-gradient-animation: 4s both root-gradient linear infinite;
   --move-in-offset: 20px;
   --move-in-animation: 1s both move-in;
@@ -287,7 +284,7 @@ main p:nth-child(4) {
 main h1 {
   animation: var(--move-in-animation);
   animation-delay: calc(var(--move-in-base-delay) * 4);
-  font-size: 1.3rem;
+  font-size: var(--title-font-size);
   font-weight: bold;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   margin-bottom: var(--small-space);
