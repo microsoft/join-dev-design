@@ -186,6 +186,17 @@ a:focus {
   background-clip: text;
 }
 
+h1 {
+  font-size: var(--title-font-size);
+  font-weight: bold;
+}
+
+p,
+h1 {
+  margin: 0;
+  padding: var(--text-block-spacing) 0;
+}
+
 html[dir="ltr"] a:not(.logo-link):hover,
 html[dir="ltr"] a:not(.logo-link):focus {
   animation: text-gradient-ltr 6.5s linear infinite;
@@ -194,12 +205,6 @@ html[dir="ltr"] a:not(.logo-link):focus {
 html[dir="rtl"] a:not(.logo-link):hover,
 html[dir="rtl"] a:not(.logo-link):focus {
   animation: text-gradient-rtl 6.5s linear infinite;
-}
-
-p,
-h1 {
-  margin: 0;
-  padding: var(--text-block-spacing) 0;
 }
 
 /* Container */
@@ -284,8 +289,6 @@ main p:nth-child(4) {
 main h1 {
   animation: var(--move-in-animation);
   animation-delay: calc(var(--move-in-base-delay) * 4);
-  font-size: var(--title-font-size);
-  font-weight: bold;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   margin-bottom: var(--small-space);
   padding-bottom: var(--small-space);
