@@ -110,10 +110,10 @@ body.js-theme-light {
 .js-theme-light a:hover {
   background-image: linear-gradient(
     to right,
-    var(--blue) 25%,
-    var(--green) 50%,
-    var(--yellow) 75%,
-    var(--blue) 100%
+    var(--brand-blue) 25%,
+    var(--brand-green) 50%,
+    var(--brand-yellow) 75%,
+    var(--brand-blue) 100%
   );
 }
 
