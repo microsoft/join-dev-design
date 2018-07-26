@@ -26,6 +26,7 @@
   --move-in-base-delay: 100ms;
   --logo-tiles-in-animation: 1s both logo-tiles-in;
   --logo-tiles-in-delay: 100ms;
+  --cta-rotation: 30deg;
   /* spacing */
   --small-space: 1em;
   --large-space: 2em;
@@ -88,6 +89,29 @@
   }
   100% {
     opacity: 0;
+  }
+}
+
+@keyframes shake-hand {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0) rotate(-2deg);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0) rotate(2deg);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0) rotate(-2deg);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0) rotate(2deg);
   }
 }
 
@@ -335,4 +359,106 @@ footer [href*="github"]:focus {
 
 .time-travel a {
   cursor: pointer;
+}
+
+/* Call To Action */
+
+.cta-group {
+  animation: var(--move-in-animation);
+  animation-delay: calc(var(--move-in-base-delay) * 9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 20px 170px;
+}
+
+.cta-group:hover .cta-btn__email,
+.cta-group:hover .cta-btn__pr,
+.cta-group:focus .cta-btn__email,
+.cta-group:focus .cta-btn__pr {
+  transform: translateX(0px) rotate(0deg) scale(1);
+  opacity: 1;
+}
+
+.cta-group:hover .cta-btn__apply {
+  background-color: var(--off-white);
+}
+
+.cta-group:hover .cta-btn__apply img {
+  transform-origin: 92% center;
+  animation: shake-hand 0.8s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+.cta-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  color: #fff;
+  background-color: var(--brand-yellow);
+  margin: 0 6px;
+  transition: transform 0.45s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.3s;
+}
+
+.cta-btn--primary {
+  z-index: 2;
+  pointer-events: none;
+  cursor: default;
+}
+
+.cta-btn__apply img {
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.cta-btn--primary::after {
+  content: "APPLY";
+  font-family: var(--primary-typeface);
+  font-size: 14px;
+  color: var(--off-white);
+  display: block;
+  position: absolute;
+  bottom: -35px;
+}
+
+.cta-btn--secondary {
+  z-index: 1;
+  height: 70px;
+  width: 70px;
+  opacity: 0;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.cta-group .cta-btn--secondary:hover {
+  transform: translateX(0px) rotate(0deg) scale(1.15);
+}
+.cta-btn__email {
+  transform: translateX(70px) rotate(var(--cta-rotation));
+}
+.cta-btn__apply {
+  transition: background-color 0.2s;
+}
+.cta-btn__pr {
+  transform: translateX(-70px) rotate(calc(var(--cta-rotation) * -1));
+}
+
+@media only screen and (max-width: 40em) {
+  .cta-group {
+    margin: 20px 0;
+  }
+  .cta-btn--primary {
+    height: 70px;
+    width: 70px;
+    pointer-events: all;
+  }
+
+  .cta-group .cta-btn--secondary:hover {
+    transform: translateX(0px) rotate(0deg) scale(1);
+  }
 }

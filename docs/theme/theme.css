@@ -11,6 +11,8 @@
 /* UI Styling */
 
 .theme {
+  animation: var(--move-in-animation);
+  animation-delay: calc(var(--move-in-base-delay) * 10);
   position: relative;
   margin: 1rem 0;
   font-size: 0;
