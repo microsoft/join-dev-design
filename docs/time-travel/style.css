@@ -89,7 +89,7 @@ hr {
 .history__controller > button {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 0.2rem;
-  border: 1px solid transparent;
+  border: 1px solid #ffba08;
   color: #bbb;
   cursor: pointer;
   display: inline-block;
@@ -99,14 +99,8 @@ hr {
   transform: translateY(0);
 }
 
-.history__controller > button > span {
-  outline: none;
-  padding: 4px 9px;
-  margin: -4px -9px;
-}
-
 .history__controller > button:hover {
-  border-color: rgba(255, 255, 255, 0.1);
+  border-color: #05a6f0;
   box-shadow: 2px 3px #000;
   transform: translateY(-1px);
 }
@@ -114,6 +108,12 @@ hr {
 .history__controller > button:active {
   box-shadow: none;
   transform: translateY(0);
+}
+
+.history__controller > button > span {
+  outline: none;
+  padding: 4px 9px;
+  margin: -4px -9px;
 }
 
 .pr__title {
