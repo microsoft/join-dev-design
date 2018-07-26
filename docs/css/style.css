@@ -189,13 +189,13 @@ a:focus {
   background-clip: text;
 }
 
-html[dir="ltr"] a:hover,
-html[dir="ltr"] a:focus {
+html[dir="ltr"] a:not(.logo-link):hover,
+html[dir="ltr"] a:not(.logo-link):focus {
   animation: text-gradient-ltr 6.5s linear infinite;
 }
 
-html[dir="rtl"] a:hover,
-html[dir="rtl"] a:focus {
+html[dir="rtl"] a:not(.logo-link):hover,
+html[dir="rtl"] a:not(.logo-link):focus {
   animation: text-gradient-rtl 6.5s linear infinite;
 }
 
