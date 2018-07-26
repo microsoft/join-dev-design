@@ -173,14 +173,6 @@ h1 {
   padding: var(--text-block-spacing) 0;
 }
 
-header h1 {
-  animation: var(--move-in-animation);
-  animation-delay: calc(var(--move-in-base-delay) * 4);
-  font-size: var(--title-font-size);
-  line-height: var(--title-line-height);
-  font-weight: bolder;
-}
-
 /* Container */
 
 .container {
