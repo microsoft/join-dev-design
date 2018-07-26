@@ -93,7 +93,13 @@ hr {
   color: #bbb;
   border-radius: 0.25rem;
   background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #ffba08;
+  cursor: pointer;
   /* flex: 1; */
+}
+
+.history__controller > button:hover {
+  border-color: #05a6f0;
 }
 
 .pr__title {
