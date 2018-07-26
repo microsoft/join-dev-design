@@ -93,13 +93,13 @@
 
 @keyframes text-gradient-ltr {
   to {
-    background-position: -400% center;
+    background-position: -600% center;
   }
 }
 
 @keyframes text-gradient-rtl {
   to {
-    background-position: 400% center;
+    background-position: 600% center;
   }
 }
 
@@ -192,11 +192,11 @@ a:focus {
   background-image: linear-gradient(
     to right,
     var(--yellow) 25%,
-    var(--blue) 50%,
-    var(--green) 75%,
+    var(--green) 50%,
+    var(--blue) 75%,
     var(--yellow) 100%
   );
-  background-size: 400% auto;
+  background-size: 600% auto;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
@@ -204,12 +204,12 @@ a:focus {
 
 html[dir="ltr"] a:hover,
 html[dir="ltr"] a:focus {
-  animation: text-gradient-ltr 3.5s linear infinite;
+  animation: text-gradient-ltr 6.5s linear infinite;
 }
 
 html[dir="rtl"] a:hover,
 html[dir="rtl"] a:focus {
-  animation: text-gradient-rtl 3.5s linear infinite;
+  animation: text-gradient-rtl 6.5s linear infinite;
 }
 
 p,
