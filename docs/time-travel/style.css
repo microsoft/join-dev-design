@@ -80,6 +80,12 @@ a:hover {
   color: var(--brand-blue);
 }
 
+main h1 {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: var(--small-space);
+  padding-bottom: var(--small-space);
+}
+
 /* utils  */
 
 .-text--fade {

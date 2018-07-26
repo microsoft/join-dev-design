@@ -21,12 +21,26 @@
   <div class="container">
     <main class="display-wrapper">
       <noscript>
-        <p>👋😔</p>
-        <p>Time travel is a feature that allows users to see previous iterations of the website. To do this it
-          <i>requires javascript</i> to get the pull requests from github.</p>
-        <p>
-          <a href="/">Return to the site</a>
-        </p>
+        <div class="no-script-container">
+          <header>
+            <a class="logo-link" href="https://microsoft.com" title="Microsoft Website">
+              <div class="logo" role="img" aria-label="Microsoft Logo">
+                <span class="logo-tile logo-tile--red"></span>
+                <span class="logo-tile logo-tile--green"></span>
+                <span class="logo-tile logo-tile--blue"></span>
+                <span class="logo-tile logo-tile--yellow"></span>
+              </div>
+            </a>
+          </header>
+          <main>
+            <h1>JavaScript is required to use this page</h1>
+            <p>👋 😔 Time travel is a feature that allows users to see previous iterations of the website. To do this it
+              <i>requires JavaScript</i> to get the latest pull requests from GitHub.</p>
+            <p>
+              <a href="/">← Back to the site</a>
+            </p>
+          </main>
+        </div>
       </noscript>
       <iframe id="js-display" class="display" src="" frameborder="0"></iframe>
     </main>
@@ -37,12 +51,19 @@
         <span id="js-history-max" class="-text-fade">-</span>
       </h2>
       <div class="history__controller">
-        <button id="js-button-first"><span tabindex="-1">First</span></button>
-        <button id="js-button-previous"><span tabindex="-1">Previous</span></button>
-        <button id="js-button-next"><span tabindex="-1">Next</span></button>
-        <button id="js-button-last"><span tabindex="-1">Latest</span></button>
+        <button id="js-button-first">
+          <span tabindex="-1">First</span>
+        </button>
+        <button id="js-button-previous">
+          <span tabindex="-1">Previous</span>
+        </button>
+        <button id="js-button-next">
+          <span tabindex="-1">Next</span>
+        </button>
+        <button id="js-button-last">
+          <span tabindex="-1">Latest</span>
+        </button>
       </div>
-      <hr>
       <div class="pr">
         <div class="pr__people-wrapper">
           <div class="pr__people people--author">
@@ -54,7 +75,7 @@
             <p id="js-pr-editor"></p>
           </div>
         </div>
-        <h1 id="js-pr-title" class="pr__title" class="history__header"></h1>
+        <h1 id="js-pr-title" class="pr__title"></h1>
         <a id="js-pr-url" class="history__link" title="See pull request" href="#" target="_blank">See pull request</a>
         <p id="js-pr-mergedAt" class="pr__mergedAt"></p>
       </div>
