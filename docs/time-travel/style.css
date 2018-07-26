@@ -1,3 +1,34 @@
+@charset "UTF-8";
+:root {
+  /* color defaults */
+  --brand-blue: #05a6f0;
+  --brand-yellow: #ffba08;
+  --brand-red: #f35325;
+  --brand-green: #81bc06;
+  --white: #ffffff;
+  --off-white: #bbb;
+  --dark-grey: #121212;
+  /* typeface defaults */
+  --primary-typeface: Segoe UI, SegoeUI, Segoe WP, Helvetica Neue, Helvetica,
+    Tahoma, Arial, sans-serif;
+  --title-font-size: 1.3rem;
+  --base-font-size: 20px;
+  --base-font-line-height: 28px;
+  --small-font-size: 12px;
+  --small-font-line-height: 14px;
+  /* animations */
+  --root-gradient-animation: 4s both root-gradient linear infinite;
+  --move-in-offset: 20px;
+  --move-in-animation: 1s both move-in;
+  --move-in-base-delay: 100ms;
+  --logo-tiles-in-animation: 1s both logo-tiles-in;
+  --logo-tiles-in-delay: 100ms;
+  /* spacing */
+  --small-space: 1em;
+  --large-space: 2em;
+  --text-block-spacing: 0.5em;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,32 +42,42 @@ body {
 }
 
 html {
-  background-color: rgba(18, 18, 18, 1);
+  font-size: var(--base-font-size);
+  font-family: var(--primary-typeface);
+  line-height: var(--base-font-line-height);
+  background-color: var(--dark-grey);
+  color: var(--off-white);
 }
 
-body {
-  font-size: 16px;
-  font-family: Segoe UI, SegoeUI, Segoe WP, Helvetica Neue, Helvetica, Tahoma, Arial, sans-serif;
-  line-height: 1.25;
-  color: #bbb;
+h1 {
+  font-size: var(--title-font-size);
+  font-weight: bold;
 }
 
-hr {
-  border: 0;
-  height: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  width: 97%;
-  margin-bottom: 1rem;
+h2 {
+  font-size: 1.1rem;
+}
+
+p,
+h1 {
+  margin: 0;
+  padding: var(--text-block-spacing) 0;
+}
+
+p,
+h1 {
+  margin: 0;
+  padding: var(--text-block-spacing) 0;
 }
 
 a {
-  color: #ffba08;
+  color: var(--brand-yellow);
   text-decoration: none;
+  transition: 400ms color;
 }
 
 a:hover {
-  color: #05a6f0;
+  color: var(--brand-blue);
 }
 
 /* utils  */
@@ -74,12 +115,6 @@ a:hover {
 /* Disable the history section when javascript is disabled */
 .no-js .history {
   display: none;
-}
-
-.history__header {
-  font-size: 1.5rem;
-  line-height: 1.3;
-  margin-bottom: 1rem;
 }
 
 .history__controller {
@@ -120,9 +155,8 @@ a:hover {
   transform: translateY(0);
 }
 
-.pr__title {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+.pr {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .pr__people-wrapper {
@@ -170,20 +204,20 @@ a:hover {
 
 .history__link,
 .history__exit {
-  color: #ffba08;
+  color: var(--brand-yellow);
   text-decoration: none;
 }
 
 .history__link:hover,
 .history__exit:hover {
-  color: #05a6f0;
+  color: var(--brand-blue);
 }
 
 .history__exit {
   position: absolute;
-  font-size: 1rem;
+  font-size: 0.9rem;
   padding: 0.25rem 0.75rem;
-  top: 2.1rem;
+  top: 1.8rem;
   right: 1.5rem;
 }
 
@@ -209,9 +243,58 @@ a:hover {
   }
 }
 
-noscript p {
-  padding-top: 4rem;
+/* Microsoft logo */
+
+.logo-link {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  margin: var(--large-space) auto;
+}
+
+.logo-link:hover {
+  animation: 1s both logo-tiles-hover linear infinite;
+}
+
+.logo {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.logo-tile {
+  display: block;
+  width: 45%;
+  height: 45%;
+  margin: 2.5%;
+  outline: 1px solid transparent;
+  animation: var(--logo-tiles-in-animation);
+}
+
+.logo-tile--red {
+  background-color: var(--brand-red);
+}
+
+.logo-tile--green {
+  background-color: var(--brand-green);
+  animation-delay: var(--logo-tiles-in-delay);
+}
+
+.logo-tile--blue {
+  background-color: var(--brand-blue);
+  animation-delay: calc(var(--logo-tiles-in-delay) * 2);
+}
+
+.logo-tile--yellow {
+  background-color: var(--brand-yellow);
+  animation-delay: calc(var(--logo-tiles-in-delay) * 3);
+}
+
+/* No javascript styles */
+
+.no-script-container {
   max-width: 31em;
   margin: 0 auto;
-  text-align: center;
 }
