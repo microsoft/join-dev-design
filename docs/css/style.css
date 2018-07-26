@@ -305,10 +305,6 @@ main h1 {
 main p {
   animation: var(--move-in-animation);
 }
-
-main p {
-  animation: var(--move-in-animation);
-}
 main p:nth-of-type(1) {
   animation-delay: calc(var(--move-in-base-delay) * 5);
 }
