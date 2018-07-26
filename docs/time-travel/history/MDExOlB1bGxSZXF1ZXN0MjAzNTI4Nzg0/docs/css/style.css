@@ -7,16 +7,20 @@
   --brand-green: #81bc06;
   --white: #ffffff;
   --off-white: #bbb;
+  --medium-grey: #777;
   --dark-grey: #121212;
   /* typeface defaults */
   --primary-typeface: Segoe UI, SegoeUI, Segoe WP, Helvetica Neue, Helvetica,
     Tahoma, Arial, sans-serif;
-  --title-font-size: 1.3rem;
+  --title-font-size: 24px;
+  --title-line-height: 30px;
   --base-font-size: 20px;
   --base-font-line-height: 28px;
   --small-font-size: 12px;
   --small-font-line-height: 14px;
   /* animations */
+  --page-background: #121212;
+  --page-color: #bbb;
   --root-gradient-animation: 4s both root-gradient linear infinite;
   --move-in-offset: 20px;
   --move-in-animation: 1s both move-in;
@@ -88,18 +92,6 @@
   }
 }
 
-@keyframes text-gradient-ltr {
-  to {
-    background-position: -600% center;
-  }
-}
-
-@keyframes text-gradient-rtl {
-  to {
-    background-position: 600% center;
-  }
-}
-
 /* Common */
 
 html {
@@ -107,6 +99,19 @@ html {
   font-size: var(--base-font-size);
   font-family: var(--primary-typeface);
   line-height: var(--base-font-line-height);
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.33, var(--brand-blue)),
+    color-stop(0.67, var(--brand-yellow))
+  );
+  background: unquote(
+    "-moz-linear-gradient(center bottom, var(--brand-blue) 33%, var(--brand-yellow) 67%)"
+  );
+  background: unquote(
+    "linear-gradient(center bottom, var(--brand-blue), var(--brand-yellow))"
+  );
   background-color: var(--dark-grey);
 }
 
@@ -169,37 +174,25 @@ body {
 a {
   color: var(--brand-yellow);
   text-decoration: none;
+  transition: 400ms color;
 }
 
-a:hover,
-a:focus {
-  background-image: linear-gradient(
-    to right,
-    var(--brand-yellow) 25%,
-    var(--brand-green) 50%,
-    var(--brand-blue) 75%,
-    var(--brand-yellow) 100%
-  );
-  background-size: 600% auto;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-}
-
-html[dir="ltr"] a:not(.logo-link):hover,
-html[dir="ltr"] a:not(.logo-link):focus {
-  animation: text-gradient-ltr 6.5s linear infinite;
-}
-
-html[dir="rtl"] a:not(.logo-link):hover,
-html[dir="rtl"] a:not(.logo-link):focus {
-  animation: text-gradient-rtl 6.5s linear infinite;
+a:hover {
+  color: var(--brand-blue);
 }
 
 p,
 h1 {
   margin: 0;
   padding: var(--text-block-spacing) 0;
+}
+
+header h1 {
+  animation: var(--move-in-animation);
+  animation-delay: calc(var(--move-in-base-delay) * 4);
+  font-size: var(--title-font-size);
+  line-height: var(--title-line-height);
+  font-weight: bolder;
 }
 
 /* Container */
@@ -284,9 +277,9 @@ main p:nth-child(4) {
 main h1 {
   animation: var(--move-in-animation);
   animation-delay: calc(var(--move-in-base-delay) * 4);
-  font-size: var(--title-font-size);
+  font-size: 1.3rem;
   font-weight: bold;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid var(--medium-grey);
   margin-bottom: var(--small-space);
   padding-bottom: var(--small-space);
 }
@@ -294,15 +287,19 @@ main h1 {
 main p {
   animation: var(--move-in-animation);
 }
+
 main p:nth-of-type(1) {
   animation-delay: calc(var(--move-in-base-delay) * 5);
 }
+
 main p:nth-of-type(2) {
   animation-delay: calc(var(--move-in-base-delay) * 6);
 }
+
 main p:nth-of-type(3) {
   animation-delay: calc(var(--move-in-base-delay) * 7);
 }
+
 main p:nth-of-type(4) {
   animation-delay: calc(var(--move-in-base-delay) * 8);
 }
