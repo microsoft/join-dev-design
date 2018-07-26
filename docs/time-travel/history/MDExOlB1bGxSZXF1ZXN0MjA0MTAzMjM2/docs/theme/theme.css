@@ -11,16 +11,12 @@
 /* UI Styling */
 
 .theme {
-  cursor: pointer;
-  display: inline-block;
   position: relative;
-  margin: auto auto;
-  padding: 0.5rem 0.5rem;
+  margin: 1rem 0;
   font-size: 0;
   text-align: center;
   z-index: 1;
   transition: opacity 0.3s ease;
-  pointer-events: all;
 }
 
 .theme__list,
@@ -54,16 +50,8 @@
   width: 1.2rem;
   height: 1.2rem;
   background: blue;
-  border: 0px solid #444;
+  border: 1px solid #444;
   border-radius: 0.6rem;
-  cursor: pointer;
-  z-index: 100;
-}
-
-button.theme__button:focus {
-  text-decoration: none;
-  outline: none;
-  box-shadow: none;
 }
 
 .theme__button[value="dark"] {
@@ -72,6 +60,16 @@ button.theme__button:focus {
 
 .theme__button[value="light"] {
   background: white;
+}
+
+.theme__button:disabled {
+  z-index: 95;
+  border: 3px solid #444;
+}
+
+.theme__button:not([disabled]) {
+  cursor: pointer;
+  z-index: 100;
 }
 
 @media only screen and (min-width: 640px) {
@@ -105,17 +103,11 @@ body.js-theme-light {
 }
 
 .js-theme-light a {
-  color: var(--blue);
+  color: #05a6f0;
 }
 
 .js-theme-light a:hover {
-  background-image: linear-gradient(
-    to right,
-    var(--brand-blue) 25%,
-    var(--brand-green) 50%,
-    var(--brand-yellow) 75%,
-    var(--brand-blue) 100%
-  );
+  color: #f35325;
 }
 
 body.js-theme-code {
@@ -123,11 +115,10 @@ body.js-theme-code {
   font-family: "Courier New", Courier, monospace;
 }
 
-.js-theme-dark .theme__button[value="dark"] {
-  z-index: 95;
-  border: 3px solid #828282;
+.js-theme-light .theme__button {
+  border: 1px solid #dedede;
 }
-.js-theme-light .theme__button[value="light"] {
-  z-index: 95;
+
+.js-theme-light .theme__button:disabled {
   border: 3px solid #dedede;
 }

@@ -16,7 +16,8 @@ html {
 
 body {
   font-size: 16px;
-  font-family: Inconsolata, Consolas, monospace;
+  font-family: Segoe UI, SegoeUI, Segoe WP, Helvetica Neue, Helvetica, Tahoma,
+    Arial, sans-serif;
   line-height: 1.25;
   color: #bbb;
 }
@@ -86,20 +87,33 @@ hr {
 }
 
 .history__controller > button {
-  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0.2rem;
+  border: 1px solid transparent;
+  color: #bbb;
+  cursor: pointer;
   display: inline-block;
   padding: 0.25em 0.75em;
-  border: none;
-  color: #bbb;
-  border-radius: 0.25rem;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid #ffba08;
-  cursor: pointer;
-  /* flex: 1; */
+  position: relative;
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+.history__controller > button > span {
+  outline: none;
+  padding: 4px 9px;
+  margin: -4px -9px;
 }
 
 .history__controller > button:hover {
-  border-color: #05a6f0;
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 2px 3px #000;
+  transform: translateY(-1px);
+}
+
+.history__controller > button:active {
+  box-shadow: none;
+  transform: translateY(0);
 }
 
 .pr__title {

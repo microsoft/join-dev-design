@@ -11,12 +11,15 @@
   /* typeface defaults */
   --primary-typeface: Segoe UI, SegoeUI, Segoe WP, Helvetica Neue, Helvetica,
     Tahoma, Arial, sans-serif;
-  --title-font-size: 1.3rem;
+  --title-font-size: 24px;
+  --title-line-height: 30px;
   --base-font-size: 20px;
   --base-font-line-height: 28px;
   --small-font-size: 12px;
   --small-font-line-height: 14px;
   /* animations */
+  --page-background: #121212;
+  --page-color: #bbb;
   --root-gradient-animation: 4s both root-gradient linear infinite;
   --move-in-offset: 20px;
   --move-in-animation: 1s both move-in;
@@ -85,18 +88,6 @@
   }
   100% {
     opacity: 0;
-  }
-}
-
-@keyframes text-gradient-ltr {
-  to {
-    background-position: -600% center;
-  }
-}
-
-@keyframes text-gradient-rtl {
-  to {
-    background-position: 600% center;
   }
 }
 
@@ -169,31 +160,11 @@ body {
 a {
   color: var(--brand-yellow);
   text-decoration: none;
+  transition: 400ms color;
 }
 
-a:hover,
-a:focus {
-  background-image: linear-gradient(
-    to right,
-    var(--brand-yellow) 25%,
-    var(--brand-green) 50%,
-    var(--brand-blue) 75%,
-    var(--brand-yellow) 100%
-  );
-  background-size: 600% auto;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-}
-
-html[dir="ltr"] a:not(.logo-link):hover,
-html[dir="ltr"] a:not(.logo-link):focus {
-  animation: text-gradient-ltr 6.5s linear infinite;
-}
-
-html[dir="rtl"] a:not(.logo-link):hover,
-html[dir="rtl"] a:not(.logo-link):focus {
-  animation: text-gradient-rtl 6.5s linear infinite;
+a:hover {
+  color: var(--brand-blue);
 }
 
 p,
@@ -284,7 +255,7 @@ main p:nth-child(4) {
 main h1 {
   animation: var(--move-in-animation);
   animation-delay: calc(var(--move-in-base-delay) * 4);
-  font-size: var(--title-font-size);
+  font-size: 1.3rem;
   font-weight: bold;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   margin-bottom: var(--small-space);
@@ -294,15 +265,19 @@ main h1 {
 main p {
   animation: var(--move-in-animation);
 }
+
 main p:nth-of-type(1) {
   animation-delay: calc(var(--move-in-base-delay) * 5);
 }
+
 main p:nth-of-type(2) {
   animation-delay: calc(var(--move-in-base-delay) * 6);
 }
+
 main p:nth-of-type(3) {
   animation-delay: calc(var(--move-in-base-delay) * 7);
 }
+
 main p:nth-of-type(4) {
   animation-delay: calc(var(--move-in-base-delay) * 8);
 }
