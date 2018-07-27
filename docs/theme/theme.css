@@ -30,6 +30,11 @@
   box-sizing: border-box;
 }
 
+.theme__button:hover {
+  width: 5.5rem;
+  text-indent: 0px;
+}
+
 .theme__list {
   list-style: none;
   animation: 1s both fade-in;
@@ -51,8 +56,8 @@
   display: block;
   position: relative;
   text-indent: -9999px;
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1.4rem;
+  height: 1.4rem;
   background: blue;
   border: 0px solid #444;
   border-radius: 0.6rem;
@@ -69,11 +74,13 @@ button.theme__button:focus {
 .light {
   background: black;
   border: 3px solid #828282;
+  color: white;
 }
 
 .dark {
   background: white;
   border: 3px solid #dedede;
+  color: black;
 }
 
 @media only screen and (min-width: 640px) {

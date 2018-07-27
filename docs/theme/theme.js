@@ -1,5 +1,5 @@
 var $body = document.body;
-var switchButton = document.getElementById("switchTheme");
+var switchButton = document.getElementById("toggleTheme");
 var activeTheme = "dark";
 
 document.querySelector(".theme").onclick = function(e) {
