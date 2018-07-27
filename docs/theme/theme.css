@@ -63,6 +63,7 @@
   border-radius: 0.6rem;
   cursor: pointer;
   z-index: 100;
+  line-height: 0.7rem;
 }
 
 button.theme__button:focus {
