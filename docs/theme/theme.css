@@ -68,10 +68,12 @@ button.theme__button:focus {
 
 .light {
   background: black;
+  border: 3px solid #828282;
 }
 
 .dark {
   background: white;
+  border: 3px solid #dedede;
 }
 
 @media only screen and (min-width: 640px) {
@@ -123,11 +125,9 @@ body.js-theme-code {
   font-family: "Courier New", Courier, monospace;
 }
 
-.js-theme-dark .theme__button[value="dark"] {
+.js-theme-dark .theme__button {
   z-index: 95;
-  border: 3px solid #828282;
 }
-.js-theme-light .theme__button[value="light"] {
+.js-theme-light .theme__button {
   z-index: 95;
-  border: 3px solid #dedede;
 }
