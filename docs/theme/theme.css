@@ -66,11 +66,11 @@ button.theme__button:focus {
   box-shadow: none;
 }
 
-.theme__button[value="dark"] {
+.light {
   background: black;
 }
 
-.theme__button[value="light"] {
+.dark {
   background: white;
 }
 
