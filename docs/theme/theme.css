@@ -56,14 +56,14 @@
   display: block;
   position: relative;
   text-indent: -9999px;
-  width: 1.4rem;
-  height: 1.4rem;
+  width: 1.2rem;
+  height: 1.2rem;
   background: blue;
   border: 0px solid #444;
   border-radius: 0.6rem;
   cursor: pointer;
   z-index: 100;
-  line-height: 0.7rem;
+  line-height: 0.6rem;
 }
 
 button.theme__button:focus {
@@ -85,9 +85,6 @@ button.theme__button:focus {
 }
 
 @media only screen and (min-width: 640px) {
-  .theme {
-    opacity: 0.5;
-  }
   .theme:hover {
     opacity: 1;
   }
