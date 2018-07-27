@@ -6,3 +6,9 @@ document.querySelector(".theme").onclick = function(e) {
   activeTheme = activeTheme === "dark" ? "light" : "dark";
   $body.classList.add("js-theme-" + activeTheme);
 };
+
+var msdos = function() {
+  $body.classList.remove("js-theme-" + activeTheme);
+  activeTheme = "msdos";
+  $body.classList.add("js-theme-" + activeTheme);
+};
