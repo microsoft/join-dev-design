@@ -1,8 +1,67 @@
 /**
  * compile with `babel`, sourcemap inline & preset `babel-preset-env`.
  */
-
 const timeTravel = async () => {
+  class Toast {
+    constructor(parent) {
+      const $parent = parent || document.body;
+      const $toast = document.createElement("div");
+
+      $toast.classList.add("toast", "js-inactive");
+      $toast.id = "js-toast";
+      $parent.appendChild($toast);
+
+      this.toast = $toast;
+      this.currentTimer = null;
+    }
+    show(msg, typeClass) {
+      const $toast = this.toast;
+      $toast.classList.remove("js-inactive");
+
+      setTimeout(() => {
+        $toast.textContent = msg;
+        $toast.classList.add(typeClass, "js-active");
+      }, 16);
+    }
+    hide(typeClass) {
+      const $toast = this.toast;
+      $toast.classList.remove(typeClass, "js-active");
+
+      setTimeout(() => {
+        $toast.classList.add("js-inactive");
+        $toast.textContent = "";
+      }, 300);
+    }
+    send(options) {
+      if (!!this.currentTimer) clearTimeout(this.currentTimer);
+
+      const _options = Object.assign(
+        { duration: 2000, type: "default" },
+        options
+      );
+      const { msg, type, duration } = _options;
+      if (typeof msg !== "string") {
+        console.error(
+          `Error: in \`sendToast({msg, duration})\`,\`msg\` has to be a string. Got ${msg} instead`
+        );
+        return;
+      }
+      if (typeof duration !== "number") {
+        console.error(
+          `Error: in \`sendToast({msg, duration})\`,\`duration\` has to be a number. Got ${duration} instead`
+        );
+        return;
+      }
+
+      const typeClass = `toast--${type}`;
+      this.show(msg, typeClass);
+
+      this.currentTimer = setTimeout(() => {
+        this.hide(typeClass);
+      }, duration);
+    }
+  }
+
   class DisplayCount {
     constructor(length = 0) {
       this.max = length - 1;
@@ -64,6 +123,7 @@ const timeTravel = async () => {
   const $buttonLast = getEl("js-button-last");
 
   const $display = getEl("js-display");
+  const $history = getEl("js-history");
   const $historyId = getEl("js-history-id");
   const $historyMax = getEl("js-history-max");
 
@@ -84,12 +144,42 @@ const timeTravel = async () => {
     return callback;
   };
 
+  // handle links inside iframe
+  const handleInnerLinks = iframe => {
+    iframe.onload = () => {
+      const iframeDoc = iframe.contentWindow.document || iframe.contentDocument;
+      const innerLinks = Array.from(iframeDoc.querySelectorAll("a"));
+
+      if (innerLinks.length === 0) return;
+
+      innerLinks.forEach($link => {
+        // disable time travel
+        if ($link.href.includes("time-travel")) {
+          $link.onclick = e => {
+            e.preventDefault();
+
+            toast.send({
+              msg: `⚠️ Can't time travel while traveling time.`,
+              type: `warning`,
+              duration: 3000
+            });
+          };
+        }
+        // open external link in a new browser window
+        if ($link.href.includes("http")) {
+          $link.setAttribute("target", "_blank");
+        }
+      });
+    };
+  };
+
   const updateDisplay = count => {
     const pr = pullRequests[count];
     const { id, title, author, editor, mergedAt, url } = pr.node;
 
     // https://stackoverflow.com/a/2257295
     $display.contentWindow.location.replace(`./history/${id}/docs/`);
+    handleInnerLinks($display);
 
     $historyId.textContent = count + 1;
     $prTitle.textContent = title;
@@ -138,6 +228,9 @@ const timeTravel = async () => {
   // start
   $historyMax.textContent = count.max + 1;
   updateView(count.jumpTo(getHashCount()));
+
+  // placeholder for toast
+  toast = new Toast($history);
 
   // button control
   $buttonFirst.onclick = () => {
