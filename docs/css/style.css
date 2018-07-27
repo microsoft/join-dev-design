@@ -27,6 +27,8 @@
   --small-space: 1em;
   --large-space: 2em;
   --text-block-spacing: 0.5em;
+  /* widths */
+  --max-view-width: calc(90vw - 20px);
 }
 
 @keyframes move-in {
@@ -110,45 +112,12 @@ html {
   background-color: var(--dark-grey);
 }
 
-html[data-loaded] {
-  background: linear-gradient(
-    to bottom,
-    var(--brand-blue) 33%,
-    var(--brand-yellow) 67%
-  );
-}
-
-html:before {
-  content: "";
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: -1;
-  background: unquote(
-    "-moz-linear-gradient(center bottom, var(--brand-yellow) 33%, var(--brand-blue) 67%)"
-  );
-  background: unquote(
-    "linear-gradient(center bottom, var(--brand-yellow) 33%, var(--brand-blue) 67%)"
-  );
-  background: linear-gradient(
-    to bottom,
-    var(--brand-yellow) 33%,
-    var(--brand-blue) 67%
-  );
-  animation: var(--root-gradient-animation);
-}
-
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   min-height: calc(100vh - 10px);
   margin: 5px;
   padding: 0 var(--small-space);
-  color: var(--off-white);
+  color: black;
+  bsf: var(--off-white);
   background-color: var(--dark-grey);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -233,10 +202,12 @@ main p:nth-child(4) {
 /* Logo */
 
 .logo-link {
-  display: block;
-  width: 4rem;
-  height: 4rem;
-  margin: var(--large-space) auto;
+  position: fixed;
+  width: var(--max-view-width);
+  height: var(--max-view-width);
+  z-index: 1;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
 .logo-link:hover {
@@ -281,6 +252,10 @@ main p:nth-child(4) {
 
 /* Main */
 
+main {
+  position: relative;
+  z-index: 3;
+}
 main h1 {
   animation: var(--move-in-animation);
   animation-delay: calc(var(--move-in-base-delay) * 4);
