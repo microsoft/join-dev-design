@@ -209,9 +209,17 @@ main p:nth-child(4) {
   flex-wrap: wrap;
 }
 
-.logo-link:focus,
-.logo-link:active {
+.logo-link:focus-within,
+.logo-link:active,
+.logo-link:focus {
   transform: scale(1);
+}
+
+@supports (-ms-ime-align: auto) {
+  .logo-link:focus,
+  .logo-link:active {
+    transform: scale(1);
+  }
 }
 
 .logo-tile:focus p,
