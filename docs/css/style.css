@@ -373,15 +373,6 @@ footer [href*="github"]:focus {
   transform: translate3d(33.33%, 0, 0);
 }
 
-.side-panel {
-  background-color: red;
-  position: absolute;
-  height: 100%;
-  width: 33.33%;
-  z-index: -100;
-  visibility: hidden;
-}
-
 @-webkit-keyframes zoomIn {
   from {
     opacity: 0;
@@ -406,11 +397,60 @@ footer [href*="github"]:focus {
   }
 }
 
+@-webkit-keyframes zoomOut {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.8, 0.8, 0.8);
+    transform: scale3d(0.8, 0.8, 0.8);
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes zoomOut {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.8, 0.8, 0.8);
+    transform: scale3d(0.8, 0.8, 0.8);
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.side-panel,
 .side-panel-open {
-  -webkit-animation-duration: 0.8s;
+  -webkit-animation-duration: 0.75s;
   animation-duration: 0.8s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
+  -webkit-animation-name: zoomIn;
+}
+
+.side-panel {
+  background-color: red;
+  position: absolute;
+  height: 100%;
+  width: 33.33%;
+  z-index: -100;
+  visibility: hidden;
+  -webkit-animation-name: zoomOut;
+  animation-name: zoomOut;
+  visibility: visible;
+}
+
+.side-panel-open {
   -webkit-animation-name: zoomIn;
   animation-name: zoomIn;
   visibility: visible;
