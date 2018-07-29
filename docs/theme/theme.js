@@ -1,4 +1,4 @@
-var $body = document.body;
+var $body = document.getElementById("theme-background");
 var activeTheme = "dark";
 
 document.querySelector(".theme").onclick = function(e) {
