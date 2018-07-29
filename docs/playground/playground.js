@@ -15,10 +15,13 @@ document.getElementById("side-pushable-content").onclick = function(e) {
 var editorContainer = document.getElementById("editor-container");
 
 require(["vs/editor/editor.main"], function() {
+  var playgroundInitialCode = document.getElementById(
+    "playground-initial-code"
+  );
   var playgroundEditableArea = document.getElementById(
     "playground-editable-area"
   );
-  var sourceCode = playgroundEditableArea.innerHTML;
+  var sourceCode = playgroundInitialCode.innerHTML;
 
   var editor = monaco.editor.create(editorContainer, {
     value: sourceCode,
@@ -28,6 +31,17 @@ require(["vs/editor/editor.main"], function() {
   });
   editor.model.onDidChangeContent(event => {
     var newSourceCode = editor.model.getValue();
-    playgroundEditableArea.innerHTML = newSourceCode;
+
+    var parser = new DOMParser();
+    var newSourceCodeDocument = parser.parseFromString(
+      newSourceCode,
+      "text/html"
+    );
+
+    // only update code inside playground-editable-area
+    var newEditableArea = newSourceCodeDocument.getElementById(
+      "playground-editable-area"
+    );
+    playgroundEditableArea.innerHTML = newEditableArea.innerHTML;
   });
 });
