@@ -439,11 +439,9 @@ footer [href*="github"]:focus {
 }
 
 .side-panel {
-  background-color: red;
   position: absolute;
   height: 100%;
   width: 33.33%;
-  z-index: -100;
   visibility: hidden;
   -webkit-animation-name: zoomOut;
   animation-name: zoomOut;
@@ -454,4 +452,9 @@ footer [href*="github"]:focus {
   -webkit-animation-name: zoomIn;
   animation-name: zoomIn;
   visibility: visible;
+}
+
+.editor-container {
+  width: 100%;
+  height: 100%;
 }

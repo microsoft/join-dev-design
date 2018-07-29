@@ -11,3 +11,23 @@ document.getElementById("side-pushable-content").onclick = function(e) {
   sidePanel.classList.remove("side-panel-open");
   sidePushableContent.classList.remove("side-pushable-content-open");
 };
+
+var editorContainer = document.getElementById("editor-container");
+
+require(["vs/editor/editor.main"], function() {
+  var playgroundEditableArea = document.getElementById(
+    "playground-editable-area"
+  );
+  var sourceCode = playgroundEditableArea.innerHTML;
+
+  var editor = monaco.editor.create(editorContainer, {
+    value: sourceCode,
+    language: "html",
+    theme: "vs-dark",
+    scrollBeyondLastLine: false
+  });
+  editor.model.onDidChangeContent(event => {
+    var newSourceCode = editor.model.getValue();
+    playgroundEditableArea.innerHTML = newSourceCode;
+  });
+});
