@@ -19,7 +19,11 @@
 </head>
 
 <body class="js-theme-dark">
-  <div class="gradient-background">
+  <div class="side-panel"></div>
+  <div
+    class="gradient-background side-pushable-content"
+    id="side-pushable-content"
+  >
     <div class="content-background" id="theme-background">
       <div class="container">
         <header>
@@ -34,7 +38,7 @@
         </header>
         <main>
           <h1>
-            Microsoft is looking for designers who code to help create the most compelling developer tools&nbsp;&amp;&nbsp;services on
+            Microsoft is looking for designers who <a href="#" id="toggle-side-panel-open">code</a> to help create the most compelling developer tools&nbsp;&amp;&nbsp;services on
             the planet.
           </h1>
           <p>
@@ -123,6 +127,7 @@
     addEventListener('load', markDocumentAsLoaded);
 
   </script>
+  <script src="playground/playground.js"></script>
 </body>
 
 </html>
