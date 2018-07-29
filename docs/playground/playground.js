@@ -21,7 +21,10 @@ require(["vs/editor/editor.main"], function() {
   var playgroundEditableArea = document.getElementById(
     "playground-editable-area"
   );
-  var sourceCode = playgroundInitialCode.innerHTML;
+  var sourceCode =
+    "<!-- <html> <head>...</head> -->\n<body>" +
+    playgroundInitialCode.innerHTML.trim() +
+    "\n<body>\n<!-- </html> -->";
 
   var editor = monaco.editor.create(editorContainer, {
     value: sourceCode,
