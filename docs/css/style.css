@@ -1,21 +1,25 @@
 @charset "UTF-8";
 :root {
   /* color defaults */
+  --blue: #0050c7;
   --brand-blue: #05a6f0;
   --brand-yellow: #ffba08;
   --brand-red: #f35325;
   --brand-green: #81bc06;
   --white: #ffffff;
-  --off-white: #bbb;
+  --off-white: #dddddd;
   --dark-grey: #121212;
   /* typeface defaults */
   --primary-typeface: Segoe UI, SegoeUI, Segoe WP, Helvetica Neue, Helvetica,
     Tahoma, Arial, sans-serif;
-  --title-font-size: 1.3rem;
+  --title-font-size: 1.5rem;
+  --title-font-line-height: 1.7rem;
   --base-font-size: 20px;
   --base-font-line-height: 28px;
   --small-font-size: 12px;
   --small-font-line-height: 14px;
+  --medium-font-size: 16px;
+  --medium-font-line-height: 18px;
   /* animations */
   --root-gradient-animation: 4s both root-gradient linear infinite;
   --move-in-offset: 20px;
@@ -24,6 +28,7 @@
   --logo-tiles-in-animation: 1s both logo-tiles-in;
   --logo-tiles-in-delay: 100ms;
   /* spacing */
+  --xsmall-space: 0.7em;
   --small-space: 1em;
   --large-space: 2em;
   --text-block-spacing: 0.5em;
@@ -285,10 +290,12 @@ main h1 {
   animation: var(--move-in-animation);
   animation-delay: calc(var(--move-in-base-delay) * 4);
   font-size: var(--title-font-size);
+  line-height: var(--title-font-line-height);
   font-weight: bold;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  margin-bottom: var(--small-space);
+  margin-bottom: var(--xsmall-space);
   padding-bottom: var(--small-space);
+  color: var(--white);
 }
 
 main p {
@@ -347,9 +354,16 @@ footer [href*="github"]:focus {
 }
 
 .time-travel {
-  text-align: center;
+  text-align: left;
+  font-size: var(--medium-font-size);
+  margin-bottom: var(--small-space);
 }
 
 .time-travel a {
   cursor: pointer;
+}
+
+.sep {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }

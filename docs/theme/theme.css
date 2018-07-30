@@ -96,11 +96,12 @@ body {
 }
 
 body.js-theme-light {
-  color: #222;
+  color: var(--dark-grey);
   background-color: #fdfdfd;
 }
 
 .js-theme-light main h1 {
+  color: var(--);
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
