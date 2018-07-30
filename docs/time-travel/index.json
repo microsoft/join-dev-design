@@ -1376,6 +1376,27 @@
           },
           {
             "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAzNTk4NDI2",
+              "title": "adds hover state to time travel buttons",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/120",
+              "mergedAt": "2018-07-26T21:23:01Z",
+              "author": {
+                "login": "dabutvin",
+                "avatarUrl":
+                  "https://avatars2.githubusercontent.com/u/5168796?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-26T21:23:00Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjE3OWNhMWQ4MDI3ZDIyZmUyNjFlNWI5YTAxNWMyNTc4ZDhjYzdkMmM=",
+                "tarballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.tar.gz/179ca1d8027d22fe261e5b9a015c2578d8cc7d2c"
+              }
+            }
+          },
+          {
+            "node": {
               "id": "MDExOlB1bGxSZXF1ZXN0MjA0MDczMTU2",
               "title": "Improved UX of the theme switcher",
               "url": "https://github.com/Microsoft/join-dev-design/pull/124",
@@ -1438,6 +1459,27 @@
                   "MDY6Q29tbWl0MTQxNTAzNjgzOjE4ZTZmY2ZlZDAyMDMxMzczNmY0YjQ4MDBiZjg3M2NkY2VlZDNjMTg=",
                 "tarballUrl":
                   "https://codeload.github.com/Microsoft/join-dev-design/legacy.tar.gz/18e6fcfed020313736f4b4800bf873cdceed3c18"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjA0MTA4Nzg1",
+              "title": "Adjusting variables, removing unused vars",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/128",
+              "mergedAt": "2018-07-26T21:25:04Z",
+              "author": {
+                "login": "alex-page",
+                "avatarUrl":
+                  "https://avatars1.githubusercontent.com/u/19199063?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-07-26T21:25:03Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjhlZWRmMWM4ODE5ZjI1Mzk2OTlkZGQ2ZTFjZTg3MDBkYWU4NWVjOTI=",
+                "tarballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.tar.gz/8eedf1c8819f2539699ddd6e1ce8700dae85ec92"
               }
             }
           }
