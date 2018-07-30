@@ -1,8 +1,8 @@
 var $body = document.body;
 var activeTheme = "dark";
 
-document.querySelector(".theme").onclick = function(e) {
+function themeChange(theme) {
   $body.classList.remove("js-theme-" + activeTheme);
-  activeTheme = activeTheme === "dark" ? "light" : "dark";
+  activeTheme = theme.value === "dark" ? "dark" : "light";
   $body.classList.add("js-theme-" + activeTheme);
-};
+}
