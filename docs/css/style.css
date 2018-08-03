@@ -110,7 +110,15 @@ html {
   background-color: var(--dark-grey);
 }
 
-html[data-loaded] {
+body {
+  margin: 0;
+}
+
+.gradient-background {
+  padding: 5px;
+}
+
+.gradient-background[data-loaded] {
   background: linear-gradient(
     to bottom,
     var(--brand-blue) 33%,
@@ -118,7 +126,7 @@ html[data-loaded] {
   );
 }
 
-html:before {
+.gradient-background:before {
   content: "";
   position: absolute;
   display: block;
@@ -141,12 +149,11 @@ html:before {
   animation: var(--root-gradient-animation);
 }
 
-body {
+.content-background {
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: calc(100vh - 10px);
-  margin: 5px;
   padding: 0 var(--small-space);
   color: var(--off-white);
   background-color: var(--dark-grey);
@@ -352,4 +359,104 @@ footer [href*="github"]:focus {
 
 .time-travel a {
   cursor: pointer;
+}
+
+/* Editable Playground */
+
+@-webkit-keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.8, 0.8, 0.8);
+    transform: scale3d(0.8, 0.8, 0.8);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.8, 0.8, 0.8);
+    transform: scale3d(0.8, 0.8, 0.8);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes zoomOut {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.8, 0.8, 0.8);
+    transform: scale3d(0.8, 0.8, 0.8);
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes zoomOut {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.8, 0.8, 0.8);
+    transform: scale3d(0.8, 0.8, 0.8);
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.side-panel,
+.side-panel-open {
+  -webkit-animation-duration: 0.75s;
+  animation-duration: 0.8s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: zoomIn;
+}
+
+.side-pushable-content {
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+}
+
+.side-pushable-content-open {
+  width: 50%;
+  -webkit-transform: translate(97%, 0);
+  transform: translate(97%, 0);
+}
+
+.side-panel {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  visibility: hidden;
+  -webkit-animation-name: zoomOut;
+  animation-name: zoomOut;
+  visibility: visible;
+}
+
+.side-panel-open {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+  visibility: visible;
+}
+
+.editor-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* work-around for this issue: https://github.com/Microsoft/monaco-editor/issues/29 */
 }

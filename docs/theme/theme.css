@@ -91,11 +91,11 @@ button.theme__button:focus {
 
 /* Theme Setting */
 
-body {
+.content-background {
   transition: background-color 0.3s ease;
 }
 
-body.js-theme-light {
+.content-background.js-theme-light {
   color: #222;
   background-color: #fdfdfd;
 }
@@ -118,7 +118,7 @@ body.js-theme-light {
   );
 }
 
-body.js-theme-code {
+.content-background.js-theme-code {
   color: lightslategrey;
   font-family: "Courier New", Courier, monospace;
 }
