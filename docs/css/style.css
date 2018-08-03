@@ -12,8 +12,9 @@
   --primary-typeface: monospace;
   --something-else: Segoe UI, SegoeUI, Segoe WP, Helvetica Neue, Helvetica,
     Tahoma, Arial, sans-serif;
-  --title-font-size: 1.3rem;
+  --title-font-size: 2.7vmin;
   --base-font-size: 3vmin;
+  --card-font-size: 7vmin;
   --base-font-line-height: 3.6vmin;
   --small-font-size: 12px;
   --small-font-line-height: 14px;
@@ -116,7 +117,6 @@ html {
 body {
   min-height: calc(100vh - 10px);
   margin: 0;
-  padding: 0 var(--small-space);
   color: var(--off-white);
   background-color: var(--dark-grey);
   -webkit-font-smoothing: antialiased;
@@ -138,21 +138,6 @@ body {
 a {
   color: var(--brand-blue);
   text-decoration: none;
-}
-
-a:hover,
-a:focus {
-  background-image: linear-gradient(
-    to right,
-    var(--brand-yellow) 25%,
-    var(--brand-green) 50%,
-    var(--brand-blue) 75%,
-    var(--brand-yellow) 100%
-  );
-  background-size: 600% auto;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
 }
 
 .theme ~ * {
@@ -207,8 +192,14 @@ main p:nth-child(4) {
 .logo {
   display: flex;
   flex-wrap: wrap;
+  max-width: 100%;
+  margin: 0 auto;
+  width: 90vmin;
 }
 
+.logo > * {
+  margin: 0 auto;
+}
 .logo-link:focus-within,
 .logo-link:active,
 .logo-link:focus {
@@ -234,9 +225,40 @@ main p:nth-child(4) {
 
 .logo-tile {
   display: block;
-  width: 45%;
-  height: 45%;
-  margin: 2.5%;
+  width: 41vmin;
+  height: 41vmin;
+  margin: 2vmin;
+  outline: 1px solid transparent;
+  animation: var(--logo-tiles-in-animation);
+  padding: 0.5rem 1rem;
+  box-sizing: border-box;
+}
+
+.infobox {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  pointer-events: none;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 90vmin;
+}
+
+.infobox p {
+  font-size: var(--card-font-size);
+  line-height: var(--card-font-size);
+}
+
+.infobox .logo-tile:target {
+  display: block;
+}
+.infobox .logo-tile {
+  display: none;
+  width: 86vmin;
+  height: 86vmin;
+  margin: 2vmin;
   outline: 1px solid transparent;
   animation: var(--logo-tiles-in-animation);
   padding: 0.5rem 1rem;
@@ -274,15 +296,7 @@ main p:nth-child(4) {
 main {
   position: relative;
   z-index: 3;
-}
-header h1 {
-  animation: var(--move-in-animation);
-  animation-delay: calc(var(--move-in-base-delay) * 4);
-  font-size: var(--title-font-size);
-  font-weight: 300;
-  border-bottom: 3px solid;
-  margin-bottom: var(--small-space);
-  padding-bottom: var(--small-space);
+  margin-top: var(--small-space);
 }
 
 main p {
@@ -299,51 +313,4 @@ main p:nth-of-type(3) {
 }
 main p:nth-of-type(4) {
   animation-delay: calc(var(--move-in-base-delay) * 8);
-}
-
-/* Footer */
-
-.footer {
-  font-size: var(--small-font-size);
-  line-height: var(--small-font-line-height);
-  text-align: center;
-  margin: var(--small-space) 0 0;
-  padding: var(--small-space) 0;
-  overflow: hidden;
-}
-
-@media only screen and (max-width: 40em) {
-  footer {
-    font-size: 1rem;
-    margin: 0 auto;
-    max-width: 80vw;
-  }
-}
-
-footer p {
-  animation: var(--move-in-animation);
-  animation-delay: calc(var(--move-in-base-delay) * 11);
-}
-
-footer [href*="github"]:hover,
-footer [href*="github"]:focus {
-  color: var(--brand-green);
-}
-
-.footer-piece--separate {
-  display: block;
-}
-
-@media only screen and (max-width: 40em) {
-  .footer-piece {
-    display: block;
-  }
-}
-
-.time-travel {
-  text-align: center;
-}
-
-.time-travel a {
-  cursor: pointer;
 }
