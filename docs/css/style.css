@@ -232,6 +232,9 @@ main p:nth-child(4) {
   animation: var(--logo-tiles-in-animation);
   padding: 0.5rem 1rem;
   box-sizing: border-box;
+  color: black;
+  font-size: 4.51vmin;
+  line-height: 5vmin;
 }
 
 .infobox {
@@ -240,7 +243,6 @@ main p:nth-child(4) {
   top: 0;
   left: 50%;
   transform: translate(-50%, 0);
-  pointer-events: none;
   margin: 0 auto;
   max-width: 100%;
   width: 90vmin;
