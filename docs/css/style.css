@@ -336,13 +336,23 @@ footer [href*="github"]:focus {
   color: var(--brand-green);
 }
 
+footer img {
+  height: 30px;
+  padding: 5px;
+}
+
+footer img:hover {
+  opacity: 0.5;
+  transform: scale(1.1);
+}
+
 .footer-piece--separate {
   display: block;
 }
 
 @media only screen and (max-width: 40em) {
-  .footer-piece {
-    display: block;
+  footer img {
+    height: 20px;
   }
 }
 

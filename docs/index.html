@@ -64,39 +64,23 @@
         </li>
       </ul>
     </div>
-    <div class="time-travel">
+    <div>
       <p>
-        <a href="./time-travel/" title="See past versions of this site">Time Travel</a>
+        <span class="footer-piece">
+          <a href="./time-travel/" title="See past versions of this site"><img src="images/alarm-clock.svg"></a>
+        </span>
+        <span class="footer-piece">
+          <a href="https://figma.com" title="Figma is the first interface design tool based in the browser, making it easier for teams to create software."><img src="images/figma.svg"></a>
+        </span>
+        <span class="footer-piece">
+          <a href="https://code.visualstudio.com" title="Visual Studio Code is a code editor redefined and optimized for building and debugging modern web and cloud applications."><img src="images/vs-code.svg"></a>
+        </span>
+        <span class="footer-piece">
+          <a href="https://github.com/Microsoft/join-dev-design/graphs/contributors" id="contributors" title="Contributors to the GitHub repository join-dev-design by the Microsoft organization"></a>
+          <a href="https://github.com/Microsoft/join-dev-design" title="GitHub repository join-dev-design by the Microsoft organization"><img src="images/github.svg"></a>
+        </span>
       </p>
     </div>
-    <p>
-      <span class="footer-piece">
-        Designed in
-        <a href="https://figma.com" title="Figma is the first interface design tool based in the browser, making it easier for teams to create software.">Figma</a>.
-      </span>
-      <span class="footer-piece">
-        Built in
-        <a href="https://code.visualstudio.com" title="Visual Studio Code is a code editor redefined and optimized for building and debugging modern web and cloud applications.">Code</a>.
-      </span>
-      <span class="footer-piece footer-piece--separate">
-        Created by
-        <a href="https://github.com/Microsoft/join-dev-design/graphs/contributors" id="contributors" title="Contributors to the GitHub repository join-dev-design by the Microsoft organization">10</a> contributors on
-        <a href="https://github.com/Microsoft/join-dev-design" title="GitHub repository join-dev-design by the Microsoft organization">GitHub</a>.
-      </span>
-    </p>
-    <script>
-      fetch('https://api.github.com/repos/Microsoft/join-dev-design/stats/contributors')
-        .then(response => {
-          if (response.status !== 200) {
-            console.log('Looks like there was a problem. Status Code: ' + response.status);
-            return;
-          }
-          return response.json();
-        })
-        .then(data => document.getElementById('contributors').innerText = data.length)
-        .catch(err => console.log('Fetch Error :-S', err));
-
-    </script>
   </footer>
   <script async src="theme/theme.js"></script>
   <script>
