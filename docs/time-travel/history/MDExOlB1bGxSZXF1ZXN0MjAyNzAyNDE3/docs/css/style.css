@@ -1,0 +1,160 @@
+:root {
+  --blue: #05a6f0;
+  --move-in-offset: 20px;
+  --move-in-animation: 0.9s both move-in;
+  --link-color: rgba(244, 99, 97, 1);
+}
+
+@keyframes move-in {
+  from {
+    transform: translateY(var(--move-in-offset));
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+html {
+  font-size: 125%;
+  font-family: Inconsolata, Consolas, monospace;
+  line-height: 1.25;
+  background-color: rgba(18, 18, 18, 1);
+}
+
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  min-height: 100vh;
+  margin: 0;
+  color: #bbb;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-moz-selection {
+  color: white;
+  background-color: var(--blue);
+}
+
+::selection {
+  color: white;
+  background-color: var(--blue);
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: 150ms color;
+}
+
+a:hover {
+  color: var(--blue);
+}
+
+.container {
+  max-width: 32rem;
+  margin: 0 auto;
+  flex: 1;
+}
+
+p {
+  margin: 0;
+  padding: 10px 0.5em;
+}
+
+header p {
+  animation: var(--move-in-animation);
+  animation-delay: 200ms;
+  font-size: 27px;
+  font-weight: bolder;
+}
+
+header hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  width: 97%;
+  animation: var(--move-in-animation);
+  animation-delay: 250ms;
+}
+
+main p:nth-child(1) {
+  animation: var(--move-in-animation);
+  animation-delay: 300ms;
+}
+
+main p:nth-child(2) {
+  animation: var(--move-in-animation);
+  animation-delay: 350ms;
+}
+
+main p:nth-child(3) {
+  animation: var(--move-in-animation);
+  animation-delay: 400ms;
+}
+
+main p:nth-child(4) {
+  animation: var(--move-in-animation);
+  animation-delay: 450ms;
+}
+
+.logo-link {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  margin: 2rem auto;
+  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.logo-link:hover {
+  transform: scale(1.1);
+}
+
+.logo-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.footer {
+  font-size: 80%;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+footer [href*="figma"]:hover {
+  color: #8420ff;
+}
+
+footer [href*="code"]:hover {
+  color: #007acc;
+}
+
+footer [href*="github"]:hover {
+  color: #2b3137;
+}
+
+@media only screen and (max-width: 40em) {
+  .container {
+    max-width: calc(100vw - 20vw);
+    margin: 0 auto;
+  }
+
+  .container p {
+    font-size: 18px;
+  }
+
+  footer {
+    text-align: unset;
+    padding: 1em 0 2em;
+    max-width: calc(100vw - 20vw);
+    margin: 0 auto;
+  }
+
+  footer span {
+    display: block;
+  }
+}

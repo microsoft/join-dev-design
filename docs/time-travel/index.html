@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Join Microsoft Developer Design</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Join Microsoft Developer Design">
+  <meta property="og:site_name" content="https://microsoft.github.io/join-dev-design/">
+  <meta property="og:url" content="https://microsoft.github.io/join-dev-design/">
+  <meta property="og:description" content="Microsoft is hiring technical product designers and design leaders. ">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://microsoft.github.io/join-dev-design/microsoft-og-image.png">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="SHORTCUT ICON" href="https://c.s-microsoft.com/favicon.ico?v2" type="image/x-icon">
+  <script src="./time-travel.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <main class="display-wrapper">
+      <iframe id="js-display" class="display" src="" frameborder="0"></iframe>
+    </main>
+    <div class="history">
+      <h2 class="history__count">
+        <span id="js-history-id">1</span>
+        <span class="-text--fade">/</span>
+        <span id="js-history-max" class="-text-fade">-</span>
+      </h2>
+      <div class="history__controller">
+        <button id="js-button-first"><span tabindex="-1">First</span></button>
+        <button id="js-button-previous"><span tabindex="-1">Previous</span></button>
+        <button id="js-button-next"><span tabindex="-1">Next</span></button>
+        <button id="js-button-last"><span tabindex="-1">Latest</span></button>
+      </div>
+      <hr>
+      <div class="pr">
+        <div class="pr__people-wrapper">
+          <div class="pr__people people--author">
+            <img id="js-pr-author-avatar" class="pr__avatar" src="">
+            <p id="js-pr-author"></p>
+          </div>
+          <div class="pr__people people--editor">
+            <img id="js-pr-editor-avatar" class="pr__avatar" src="">
+            <p id="js-pr-editor"></p>
+          </div>
+        </div>
+        <h1 id="js-pr-title" class="pr__title" class="history__header"></h1>
+        <a id="js-pr-url" class="history__link" title="See pull request" href="#" target="_blank">See pull request</a>
+        <p id="js-pr-mergedAt" class="pr__mergedAt"></p>
+      </div>
+      <a class="history__exit" href=".." title="Exit to main page">Exit</a>
+    </div>
+  </div>
+</body>
+
+</html>

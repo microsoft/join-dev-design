@@ -1,0 +1,119 @@
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+/* UI Styling */
+
+.theme {
+  position: relative;
+  padding: 1rem;
+  font-size: 0;
+  text-align: center;
+  z-index: 900;
+  transition: opacity 0.3s ease;
+}
+
+.theme__list,
+.theme_item,
+.theme__button {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.theme__list {
+  list-style: none;
+  animation: 1s both fade-in;
+  animation-delay: 1.5s;
+}
+
+.theme__item {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.theme__item + .theme__item {
+  margin-left: 0.5rem;
+  transition: margin-left 0.3s ease;
+}
+
+.theme__button {
+  display: block;
+  position: relative;
+  text-indent: -9999px;
+  width: 1.2rem;
+  height: 1.2rem;
+  background: blue;
+  border: 1px solid #444;
+  border-radius: 0.6rem;
+}
+
+.theme__button[value="dark"] {
+  background: black;
+}
+
+.theme__button[value="light"] {
+  background: white;
+}
+
+.theme__button:disabled {
+  border: 3px solid #444;
+}
+
+.theme__button:not([disabled]) {
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 640px) {
+  .theme {
+    opacity: 0.5;
+  }
+  .theme:hover {
+    opacity: 1;
+  }
+  .theme__item + .theme__item {
+    margin-left: -0.8rem;
+  }
+  .theme:hover .theme__item + .theme__item {
+    margin-left: 0.5rem;
+  }
+}
+
+/* Theme Setting */
+
+body {
+  transition: background-color 0.3s ease;
+}
+
+body.js-theme-light {
+  color: #222;
+  background-color: #fdfdfd;
+}
+
+.js-theme-light a {
+  color: #05a6f0;
+}
+
+.js-theme-light a:hover {
+  color: #f35325;
+}
+
+body.js-theme-code {
+  color: lightslategrey;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.js-theme-light .theme__button {
+  border: 1px solid #dedede;
+}
+
+.js-theme-light .theme__button:disabled {
+  border: 3px solid #dedede;
+}

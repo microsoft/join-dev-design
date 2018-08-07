@@ -1,0 +1,277 @@
+@charset "UTF-8";
+
+/* Animations */
+
+:root {
+  --blue: #05a6f0;
+  --yellow: #ffba08;
+  --green: #6cc644;
+  --page-background: #121212;
+  --page-color: #bbb;
+  --root-gradient-animation: 4s both root-gradient linear infinite;
+  --move-in-offset: 20px;
+  --move-in-animation: 1s both move-in;
+  --move-in-base-delay: 100ms;
+  --logo-tiles-in-animation: 1s both logo-tiles-in;
+  --logo-tiles-in-delay: 100ms;
+}
+
+@keyframes move-in {
+  from {
+    transform: translateY(var(--move-in-offset));
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes logo-tiles-in {
+  0% {
+    opacity: 0;
+    filter: grayscale(1) hue-rotate(100deg);
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+    filter: grayscale(1) hue-rotate(100deg);
+  }
+  100% {
+    opacity: 1;
+    filter: grayscale(0) hue-rotate(0deg);
+  }
+}
+
+@keyframes logo-tiles-hover {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes root-gradient {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Common */
+
+html {
+  position: relative;
+  font-size: 125%;
+  font-family: Inconsolata, Consolas, "SFMono-Regular", Menlo,
+    "DejaVu Sans Mono", monospace;
+  line-height: 1.25;
+  background-color: var(--page-background);
+}
+html[data-loaded] {
+  background: linear-gradient(to bottom, var(--blue) 33%, var(--yellow) 67%);
+}
+
+html:before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: linear-gradient(to bottom, var(--yellow) 33%, var(--blue) 67%);
+  animation: var(--root-gradient-animation);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: calc(100vh - 10px);
+  margin: 5px;
+  color: var(--page-color);
+  background-color: var(--page-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-moz-selection {
+  color: white;
+  background: var(--blue);
+}
+
+::selection {
+  color: white;
+  background: #05a6f0; /* Edge could not work with custom property here */
+}
+
+a {
+  color: var(--yellow);
+  text-decoration: none;
+  transition: 400ms color;
+}
+
+a:hover,
+a:focus {
+  color: var(--blue);
+}
+
+p,
+h1 {
+  margin: 1rem 0;
+}
+
+/* Container */
+
+.container {
+  max-width: 31rem;
+  margin: 0 auto auto;
+}
+
+@media only screen and (max-width: 40em) {
+  .container {
+    max-width: 80vw;
+  }
+
+  .container p {
+    font-size: 1.125rem;
+  }
+}
+
+/* Logo */
+
+.logo-link {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  margin: 2rem auto;
+}
+
+.logo-link:hover {
+  animation: 1s both logo-tiles-hover linear infinite;
+}
+
+.logo-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.logo-css {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.logo-tile {
+  display: block;
+  width: 45%;
+  height: 45%;
+  margin: 2.5%;
+  outline: 1px solid transparent;
+  animation: var(--logo-tiles-in-animation);
+}
+
+.logo-tile--red {
+  background-color: #f33525;
+}
+
+.logo-tile--green {
+  background-color: #81bc06;
+  animation-delay: var(--logo-tiles-in-delay);
+}
+
+.logo-tile--blue {
+  background-color: #05a6f0;
+  animation-delay: calc(var(--logo-tiles-in-delay) * 2);
+}
+
+.logo-tile--yellow {
+  background-color: #ffba08;
+  animation-delay: calc(var(--logo-tiles-in-delay) * 3);
+}
+
+/* Main */
+
+main h1 {
+  animation: var(--move-in-animation);
+  animation-delay: calc(var(--move-in-base-delay) * 4);
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+main p {
+  animation: var(--move-in-animation);
+}
+main p:nth-of-type(1) {
+  animation-delay: calc(var(--move-in-base-delay) * 5);
+}
+main p:nth-of-type(2) {
+  animation-delay: calc(var(--move-in-base-delay) * 6);
+}
+main p:nth-of-type(3) {
+  animation-delay: calc(var(--move-in-base-delay) * 7);
+}
+main p:nth-of-type(4) {
+  animation-delay: calc(var(--move-in-base-delay) * 8);
+}
+
+/* Footer */
+
+footer {
+  margin: 1rem 0 0;
+  text-align: center;
+  font-size: 0.8rem;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 40em) {
+  footer {
+    font-size: 1rem;
+    margin: 0 auto;
+    max-width: 80vw;
+  }
+}
+
+footer p {
+  animation: var(--move-in-animation);
+  animation-delay: calc(var(--move-in-base-delay) * 11);
+}
+
+footer [href*="github"]:hover,
+footer [href*="github"]:focus {
+  color: var(--green);
+}
+
+.footer-piece--separate {
+  display: block;
+}
+
+@media only screen and (max-width: 40em) {
+  .footer-piece {
+    display: block;
+  }
+}
