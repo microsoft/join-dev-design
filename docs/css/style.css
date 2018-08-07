@@ -239,8 +239,10 @@ main p:nth-child(4) {
   margin: var(--large-space) auto;
 }
 
-.logo-link:hover {
-  animation: 1s both logo-tiles-hover linear infinite;
+.logo-image {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .logo {
@@ -260,23 +262,76 @@ main p:nth-child(4) {
   animation: var(--logo-tiles-in-animation);
 }
 
+.winner {
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
 .logo-tile--red {
   background-color: var(--brand-red);
+  transition: 150ms;
+}
+
+.logo-tile--largered {
+  background-color: var(--brand-red);
+  transform: scale(1.2) translateY(-3px);
+  transition: 150ms;
+}
+
+.logo-tile--red:active {
+  transform: scale(0.8);
 }
 
 .logo-tile--green {
   background-color: var(--brand-green);
   animation-delay: var(--logo-tiles-in-delay);
+  transition: 150ms;
+}
+
+.logo-tile--largegreen {
+  background-color: var(--brand-green);
+  transform: scale(1.2) translateY(-3px);
+  animation-delay: var(--logo-tiles-in-delay);
+  transition: 150ms;
+}
+
+.logo-tile--green:active {
+  transform: scale(0.8);
 }
 
 .logo-tile--blue {
   background-color: var(--brand-blue);
   animation-delay: calc(var(--logo-tiles-in-delay) * 2);
+  transition: 150ms;
+}
+
+.logo-tile--largeblue {
+  background-color: var(--brand-blue);
+  transform: scale(1.2) translateY(-3px);
+  animation-delay: calc(var(--logo-tiles-in-delay) * 2);
+  transition: 150ms;
+}
+
+.logo-tile--blue:active {
+  transform: scale(0.8);
 }
 
 .logo-tile--yellow {
   background-color: var(--brand-yellow);
   animation-delay: calc(var(--logo-tiles-in-delay) * 3);
+  transition: 150ms;
+}
+
+.logo-tile--largeyellow {
+  background-color: var(--brand-yellow);
+  transform: scale(1.2) translateY(-3px);
+  animation-delay: calc(var(--logo-tiles-in-delay) * 3);
+  transition: 150ms;
+}
+
+.logo-tile--yellow:active {
+  transform: scale(0.8);
 }
 
 /* Main */

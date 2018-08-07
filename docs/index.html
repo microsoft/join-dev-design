@@ -20,16 +20,17 @@
 </head>
 
 <body class="js-theme-dark">
-  <div class="container">
+  <div id="app" class="container">
     <header>
-      <a class="logo-link" href="https://microsoft.com" title="Microsoft Website">
+      <div class="logo-link" title="Microsoft Website">
         <div class="logo" role="img" aria-label="Microsoft Logo">
-          <span class="logo-tile logo-tile--red"></span>
-          <span class="logo-tile logo-tile--green"></span>
-          <span class="logo-tile logo-tile--blue"></span>
-          <span class="logo-tile logo-tile--yellow"></span>
+          <span @click="clickColor('red')" class="logo-tile" v-bind:class="logoTitleRed"></span>
+          <span @click="clickColor('green')" class="logo-tile" v-bind:class="logoTitleGreen"></span>
+          <span @click="clickColor('blue')" class="logo-tile" v-bind:class="logoTitleBlue"></span>
+          <span @click="clickColor('yellow')" class="logo-tile" v-bind:class="logoTitleYellow"></span>
         </div>
-      </a>
+      </div>
+      <span v-if="winner" class="winner">🎊 Simon says...A winner is you! 🎊</span>
     </header>
     <main>
       <h1>
@@ -120,5 +121,8 @@
     addEventListener('load', markDocumentAsLoaded);
 
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js "></script>
+  <script src="simon.js "></script>
 </body>
+
 </html>
