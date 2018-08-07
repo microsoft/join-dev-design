@@ -22,6 +22,13 @@ new Vue({
   created() {
     this.generateSequence();
   },
+  watch: {
+    winner: function(isWinner) {
+      if (isWinner) {
+        this.changeTheme();
+      }
+    }
+  },
   computed: {
     logoTitleRed: function() {
       return this.colorStatus.red ? "logo-tile--largered" : "logo-tile--red";
@@ -139,6 +146,11 @@ new Vue({
       this.colorStatus.red = true;
       await this.timer(t);
       this.colorStatus.red = false;
+    },
+    changeTheme: function() {
+      if (theme && theme.changeTo) {
+        theme.changeTo("msdos");
+      }
     }
   }
 });
