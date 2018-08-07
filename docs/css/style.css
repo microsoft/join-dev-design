@@ -336,6 +336,10 @@ main p:nth-child(4) {
 
 /* Main */
 
+main {
+  margin-left: 1.9rem;
+}
+
 main h1 {
   animation: var(--move-in-animation);
   animation-delay: calc(var(--move-in-base-delay) * 4);
@@ -360,6 +364,12 @@ main p:nth-of-type(3) {
 }
 main p:nth-of-type(4) {
   animation-delay: calc(var(--move-in-base-delay) * 8);
+}
+
+@media only screen and (max-width: 40em) {
+  main {
+    margin-left: 1rem;
+  }
 }
 
 /* Footer */
