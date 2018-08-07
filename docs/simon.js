@@ -59,11 +59,10 @@ new Vue({
         this.play();
       } else {
         console.log(
-          `🕵️‍♂️ 🕵️‍♀️ HEY! \n\n\n *whispers* \n\n\nThere is a game inside this webpage... \ntry clicking on the ${
+          `🕵️‍♂️🕵️‍♀️ PSSST! There is a game inside this webpage...\nClick the ${
             this.colorSymbols[this.currentSequence[0]]
-          } tile on the Microsoft logo to get started!`
+          } tile on the Microsoft logo to play!`
         );
-        console.log("\n\n\n🚨 Reload the page to reset the game 👌\n\n\n");
       }
     },
     clickColor: function(color) {
@@ -93,11 +92,6 @@ new Vue({
       let sequence =
         this.userClicks[this.userClicks.length - 1] ===
         this.currentSequence[this.userClicks.length - 1];
-      console.log(
-        `${this.userClicks[this.userClicks.length - 1]} ${
-          sequence === true ? "👍" : "👎"
-        }`
-      );
       if (!sequence) {
         this.reset();
       }
@@ -110,10 +104,7 @@ new Vue({
       return matching;
     },
     reset: function() {
-      console.log(`
-      😢
-      Oh no! Game Over! Your score was ${this.currentScore} 
-      `);
+      console.log(`😢 Game Over! Refresh to play again.`);
       this.currentSequence = [];
       this.userClicks = [];
       this.currentScore = 0;
