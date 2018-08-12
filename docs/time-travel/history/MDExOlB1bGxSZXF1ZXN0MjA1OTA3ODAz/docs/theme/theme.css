@@ -118,11 +118,15 @@ body.js-theme-light {
   );
 }
 
+body.js-theme-code {
+  color: lightslategrey;
+  font-family: "Courier New", Courier, monospace;
+}
+
 .js-theme-dark .theme__button[value="dark"] {
   z-index: 95;
   border: 3px solid #828282;
 }
-
 .js-theme-light .theme__button[value="light"] {
   z-index: 95;
   border: 3px solid #dedede;

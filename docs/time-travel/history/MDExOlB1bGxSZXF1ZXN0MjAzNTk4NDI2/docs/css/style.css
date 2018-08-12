@@ -11,12 +11,15 @@
   /* typeface defaults */
   --primary-typeface: Segoe UI, SegoeUI, Segoe WP, Helvetica Neue, Helvetica,
     Tahoma, Arial, sans-serif;
-  --title-font-size: 1.3rem;
+  --title-font-size: 24px;
+  --title-line-height: 30px;
   --base-font-size: 20px;
   --base-font-line-height: 28px;
   --small-font-size: 12px;
   --small-font-line-height: 14px;
   /* animations */
+  --page-background: #121212;
+  --page-color: #bbb;
   --root-gradient-animation: 4s both root-gradient linear infinite;
   --move-in-offset: 20px;
   --move-in-animation: 1s both move-in;
@@ -239,10 +242,8 @@ main p:nth-child(4) {
   margin: var(--large-space) auto;
 }
 
-.logo-image {
-  display: block;
-  width: 100%;
-  height: auto;
+.logo-link:hover {
+  animation: 1s both logo-tiles-hover linear infinite;
 }
 
 .logo {
@@ -262,76 +263,23 @@ main p:nth-child(4) {
   animation: var(--logo-tiles-in-animation);
 }
 
-.winner {
-  display: block;
-  margin: auto;
-  text-align: center;
-}
-
 .logo-tile--red {
   background-color: var(--brand-red);
-  transition: 150ms;
-}
-
-.logo-tile--largered {
-  background-color: var(--brand-red);
-  transform: scale(1.2) translateY(-3px);
-  transition: 150ms;
-}
-
-.logo-tile--red:active {
-  transform: scale(0.8);
 }
 
 .logo-tile--green {
   background-color: var(--brand-green);
   animation-delay: var(--logo-tiles-in-delay);
-  transition: 150ms;
-}
-
-.logo-tile--largegreen {
-  background-color: var(--brand-green);
-  transform: scale(1.2) translateY(-3px);
-  animation-delay: var(--logo-tiles-in-delay);
-  transition: 150ms;
-}
-
-.logo-tile--green:active {
-  transform: scale(0.8);
 }
 
 .logo-tile--blue {
   background-color: var(--brand-blue);
   animation-delay: calc(var(--logo-tiles-in-delay) * 2);
-  transition: 150ms;
-}
-
-.logo-tile--largeblue {
-  background-color: var(--brand-blue);
-  transform: scale(1.2) translateY(-3px);
-  animation-delay: calc(var(--logo-tiles-in-delay) * 2);
-  transition: 150ms;
-}
-
-.logo-tile--blue:active {
-  transform: scale(0.8);
 }
 
 .logo-tile--yellow {
   background-color: var(--brand-yellow);
   animation-delay: calc(var(--logo-tiles-in-delay) * 3);
-  transition: 150ms;
-}
-
-.logo-tile--largeyellow {
-  background-color: var(--brand-yellow);
-  transform: scale(1.2) translateY(-3px);
-  animation-delay: calc(var(--logo-tiles-in-delay) * 3);
-  transition: 150ms;
-}
-
-.logo-tile--yellow:active {
-  transform: scale(0.8);
 }
 
 /* Main */
@@ -339,7 +287,7 @@ main p:nth-child(4) {
 main h1 {
   animation: var(--move-in-animation);
   animation-delay: calc(var(--move-in-base-delay) * 4);
-  font-size: var(--title-font-size);
+  font-size: 1.3rem;
   font-weight: bold;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   margin-bottom: var(--small-space);

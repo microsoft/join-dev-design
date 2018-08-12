@@ -8,7 +8,7 @@ var theme = {
       $link.id = id;
       $link.rel = "stylesheet";
       $link.type = "text/css";
-      $link.href = "./theme/" + theme + "/theme.css";
+      $link.href = "/theme/" + theme + "/theme.css";
       $head.appendChild($link);
 
       $link.onload = function() {

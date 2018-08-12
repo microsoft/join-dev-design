@@ -12,7 +12,6 @@
   <meta property="og:url" content="https://microsoft.github.io/join-dev-design/">
   <meta property="og:description" content="Microsoft is hiring technical product designers and design leaders">
   <meta property="og:type" content="website">
-  <meta name="keywords" content="microsoft, code, designers">
   <meta property="og:image" content="images/microsoft-og-image.png">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="theme/theme.css">
@@ -20,17 +19,16 @@
 </head>
 
 <body class="js-theme-dark">
-  <div id="app" class="container">
+  <div class="container">
     <header>
-      <div class="logo-link" title="Microsoft Website">
+      <a class="logo-link" href="https://microsoft.com" title="Microsoft Website">
         <div class="logo" role="img" aria-label="Microsoft Logo">
-          <span @click="clickColor('red')" class="logo-tile" v-bind:class="logoTitleRed"></span>
-          <span @click="clickColor('green')" class="logo-tile" v-bind:class="logoTitleGreen"></span>
-          <span @click="clickColor('blue')" class="logo-tile" v-bind:class="logoTitleBlue"></span>
-          <span @click="clickColor('yellow')" class="logo-tile" v-bind:class="logoTitleYellow"></span>
+          <span class="logo-tile logo-tile--red"></span>
+          <span class="logo-tile logo-tile--green"></span>
+          <span class="logo-tile logo-tile--blue"></span>
+          <span class="logo-tile logo-tile--yellow"></span>
         </div>
-      </div>
-      <span v-if="winner" class="winner">🎊 Simon says...A winner is you! 🎊</span>
+      </a>
     </header>
     <main>
       <h1>
@@ -105,6 +103,7 @@
       const style =
         `font-family: Arial; font-size: ${size}px; line-height: 2em; color: #f33525; text-shadow: 0.5em 0 0 #81bc06, 0 0.5em 0 #05a6f0, 0.5em 0.5em 0 #ffba08;`;
       console.log('%c■     ', style);
+      console.log('👋 Hi there! 👋\n\nIt seems you like to poke around as much as we do.\n\nhttps://github.com/Microsoft/join-dev-design');
     }
 
     logLogo(100);
@@ -120,8 +119,6 @@
     addEventListener('load', markDocumentAsLoaded);
 
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js "></script>
-  <script src="simon.js "></script>
 </body>
 
 </html>
