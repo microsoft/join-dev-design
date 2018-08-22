@@ -73,6 +73,15 @@
   }
 }
 
+@keyframes logo-hover-scale {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+
 @keyframes root-gradient {
   0% {
     opacity: 0;
@@ -237,6 +246,19 @@ main p:nth-child(4) {
   width: 4rem;
   height: 4rem;
   margin: var(--large-space) auto;
+}
+
+.logo:hover span:nth-child(2) {
+  animation: logo-hover-scale 0.125s ease-in;
+}
+.logo:hover span:nth-child(4) {
+  animation: logo-hover-scale 0.125s ease-in 0.125s;
+}
+.logo:hover span:nth-child(3) {
+  animation: logo-hover-scale 0.125s ease-in 0.25s;
+}
+.logo:hover span:nth-child(1) {
+  animation: logo-hover-scale 0.125s ease-in 0.375s;
 }
 
 .logo-image {
