@@ -62,6 +62,7 @@ const timeTravel = async () => {
   const $buttonNext = getEl("js-button-next");
   const $buttonPrevious = getEl("js-button-previous");
   const $buttonLast = getEl("js-button-last");
+  const $historyOverview = getEl("history-overview");
 
   const $display = getEl("js-display");
   const $historyId = getEl("js-history-id");
@@ -110,6 +111,23 @@ const timeTravel = async () => {
 
     $prMergedAt.textContent = `Merged at ${mergedAt}`;
     $prUrl.href = url;
+
+    // update the navigable overview of all commits
+    // please note: the whole historyOverview div has
+    // its own eventListener (see EOF)
+    while ($historyOverview.lastChild) {
+      $historyOverview.removeChild($historyOverview.lastChild);
+    }
+    let fragment = document.createDocumentFragment();
+    for (let i = 1; i <= pullRequests.length; i++) {
+      let j = i - 1;
+      let elButton = document.createElement("button");
+      elButton.appendChild(document.createTextNode(i));
+      elButton.setAttribute("data-commit", j);
+      if (j === count) elButton.className = "currentCommit";
+      fragment.appendChild(elButton);
+    }
+    $historyOverview.appendChild(fragment);
   };
 
   const updateHashURL = hash => {
@@ -160,6 +178,10 @@ const timeTravel = async () => {
       updateView(count.maximize());
     }
   };
+  $historyOverview.addEventListener("click", e => {
+    const commitNr = e.target.dataset.commit;
+    if (commitNr) updateView(count.jumpTo(commitNr));
+  });
 };
 
 window.onload = timeTravel;

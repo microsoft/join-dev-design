@@ -105,15 +105,49 @@ hr {
   margin: -4px -9px;
 }
 
-.history__controller > button:hover {
+.history__controller > button:hover,
+#history-overview button:hover {
   border-color: rgba(255, 255, 255, 0.1);
   box-shadow: 2px 3px #000;
   transform: translateY(-1px);
 }
 
-.history__controller > button:active {
+.history__controller > button:active,
+#history-overview > button:active {
   box-shadow: none;
   transform: translateY(0);
+}
+
+#history-overview {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: flex-start;
+  margin-bottom: 0.5rem;
+  padding: 1rem 0;
+}
+
+#history-overview > button {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0.2rem;
+  border: 1px solid transparent;
+  color: #bbb;
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.3s ease;
+  transform: translateY(0);
+  margin: 2px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 10px;
+  padding: 2px;
+}
+
+#history-overview > button.currentCommit {
+  background-color: rgb(129, 188, 6);
+  color: rgb(18, 18, 18);
+  font-weight: 600;
 }
 
 .pr__title {
