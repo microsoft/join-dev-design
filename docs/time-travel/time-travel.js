@@ -96,7 +96,7 @@ const timeTravel = async () => {
 
     $prMergedAt.textContent = mergedAt.replace(
       /(\d{4})\-(\d{2})\-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z/,
-      "$3-$2-$1, $4:$5"
+      "$1-$2-$3, $4:$5"
     );
     $prUrl.href = url;
 

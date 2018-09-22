@@ -70,6 +70,8 @@ body {
   position: absolute;
   top: 15px;
   right: 15px;
+  width: 15px;
+  height: 15px;
 }
 
 .history__close:hover .close-button {
@@ -190,26 +192,4 @@ body {
   height: 5rem;
   border-radius: 0.25rem;
   overflow: hidden;
-}
-
-@media only screen and (max-width: 640px) {
-  .container {
-    flex-flow: column nowrap;
-  }
-  .display-wrapper {
-    height: calc(100%-5.5rem);
-    overflow-y: scroll;
-  }
-  .history__count {
-    font-size: 1rem;
-  }
-  .pr__title {
-    font-size: 1.25rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .people--editor {
-    display: none;
-  }
 }
