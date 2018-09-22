@@ -65,14 +65,10 @@ const timeTravel = async () => {
   const $historyOverview = getEl("history-overview");
 
   const $display = getEl("js-display");
-  const $historyId = getEl("js-history-id");
-  const $historyMax = getEl("js-history-max");
 
   const $prTitle = getEl("js-pr-title");
   const $prAuthor = getEl("js-pr-author");
   const $prAuthorAvatar = getEl("js-pr-author-avatar");
-  const $prEditor = getEl("js-pr-editor");
-  const $prEditorAvatar = getEl("js-pr-editor-avatar");
   const $prMergedAt = getEl("js-pr-mergedAt");
   const $prUrl = getEl("js-pr-url");
 
@@ -87,29 +83,21 @@ const timeTravel = async () => {
 
   const updateDisplay = count => {
     const pr = pullRequests[count];
-    const { id, title, author, editor, mergedAt, url } = pr.node;
+    const { id, title, author, mergedAt, url } = pr.node;
 
     // https://stackoverflow.com/a/2257295
     $display.contentWindow.location.replace(`./history/${id}/docs/`);
 
-    $historyId.textContent = count + 1;
     $prTitle.textContent = title;
 
     $prAuthor.textContent = author.login;
     $prAuthorAvatar.src = author.avatarUrl;
     $prAuthorAvatar.setAttribute("alt", `Author: ${author.login}`);
 
-    if (editor) {
-      $prEditor.textContent = editor && editor.login;
-      $prEditorAvatar.src = editor.avatarUrl;
-      $prAuthorAvatar.setAttribute("alt", `Author: ${author.login}`);
-    } else {
-      $prEditor.textContent = "No editor";
-      $prEditorAvatar.src = "";
-      $prAuthorAvatar.setAttribute("alt", `No editor`);
-    }
-
-    $prMergedAt.textContent = `Merged at ${mergedAt}`;
+    $prMergedAt.textContent = mergedAt.replace(
+      /(\d{4})\-(\d{2})\-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z/,
+      "$3-$2-$1, $4:$5"
+    );
     $prUrl.href = url;
 
     // update the navigable overview of all commits
@@ -154,7 +142,6 @@ const timeTravel = async () => {
   };
 
   // start
-  $historyMax.textContent = count.max + 1;
   updateView(count.jumpTo(getHashCount()));
 
   // button control
