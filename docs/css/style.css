@@ -11,11 +11,12 @@
   /* typeface defaults */
   --primary-typeface: Segoe UI, SegoeUI, Segoe WP, Helvetica Neue, Helvetica,
     Tahoma, Arial, sans-serif;
-  --title-font-size: 1.3rem;
-  --base-font-size: 20px;
-  --base-font-line-height: 28px;
-  --small-font-size: 12px;
-  --small-font-line-height: 14px;
+  /*   Modular scale: 1.2rem / 1.25                */
+  /*   https://www.modularscale.com/?1.2&rem&1.25  */
+  --title-font-size: 1.5rem;
+  --base-font-size: 1.2rem;
+  --small-font-size: 0.768rem;
+  --base-line-height: 1.4;
   /* animations */
   --root-gradient-animation: 4s both root-gradient linear infinite;
   --move-in-offset: 20px;
@@ -24,9 +25,15 @@
   --logo-tiles-in-animation: 1s both logo-tiles-in;
   --logo-tiles-in-delay: 100ms;
   /* spacing */
-  --small-space: 1em;
-  --large-space: 2em;
-  --text-block-spacing: 0.5em;
+  --small-space: calc(var(--base-line-height) * 1em);
+  --large-space: calc(var(--base-line-height) * 2em);
+}
+
+@media only screen and (max-width: 40em) {
+  :root {
+    --title-font-size: 1.2rem;
+    --base-font-size: 1.5rem;
+  }
 }
 
 @keyframes move-in {
@@ -106,7 +113,7 @@ html {
   position: relative;
   font-size: var(--base-font-size);
   font-family: var(--primary-typeface);
-  line-height: var(--base-font-line-height);
+  line-height: var(--base-line-height);
   background-color: var(--dark-grey);
 }
 
@@ -198,8 +205,7 @@ html[dir="rtl"] a:not(.logo-link):focus {
 
 p,
 h1 {
-  margin: 0;
-  padding: var(--text-block-spacing) 0;
+  margin: calc(var(--base-line-height) * 1rem) 0;
 }
 
 /* Container */
@@ -212,9 +218,6 @@ h1 {
 @media only screen and (max-width: 40em) {
   .container {
     max-width: 80vw;
-  }
-  .container p {
-    font-size: 1.125rem;
   }
 }
 
@@ -342,8 +345,7 @@ main h1 {
   font-size: var(--title-font-size);
   font-weight: bold;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  margin-bottom: var(--small-space);
-  padding-bottom: var(--small-space);
+  padding-bottom: calc(var(--base-line-height) * 1rem);
 }
 
 main p {
@@ -366,16 +368,12 @@ main p:nth-of-type(4) {
 
 .footer {
   font-size: var(--small-font-size);
-  line-height: var(--small-font-line-height);
   text-align: center;
-  margin: var(--small-space) 0 0;
-  padding: var(--small-space) 0;
   overflow: hidden;
 }
 
 @media only screen and (max-width: 40em) {
-  footer {
-    font-size: 1rem;
+  .footer {
     margin: 0 auto;
     max-width: 80vw;
   }
