@@ -407,3 +407,13 @@ footer [href*="github"]:focus {
 .time-travel a {
   cursor: pointer;
 }
+
+/* Reduced motion animation and transition fixes */
+@media screen and (prefers-reduced-motion: reduce) {
+  .logo-tile,
+  main h1,
+  main p,
+  footer p {
+    animation: none;
+  }
+}

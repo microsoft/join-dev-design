@@ -127,3 +127,10 @@ body.js-theme-light {
   z-index: 95;
   border: 3px solid #dedede;
 }
+
+/* Reduced motion animation and transition fixes */
+@media screen and (prefers-reduced-motion: reduce) {
+  .theme__list {
+    animation: none;
+  }
+}
