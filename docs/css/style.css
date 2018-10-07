@@ -408,3 +408,37 @@ footer [href*="github"]:focus {
 .time-travel a {
   cursor: pointer;
 }
+
+.toolTip {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  opacity: 0;
+  transition: 0.2s ease-in-out opacity !important;
+  background: white;
+  color: black;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 5px 20px -10px rgba(0, 0, 0, 1);
+  border-radius: 5px;
+  width: 300px;
+}
+
+.toolTip span {
+  display: block;
+  text-align: center;
+  font-size: 80%;
+}
+
+.toolTip:after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  margin-left: -10px;
+  width: 0;
+  height: 0;
+  border-top: solid 10px #fff;
+  border-left: solid 10px transparent;
+  border-right: solid 10px transparent;
+  transform: rotate(180deg);
+}
