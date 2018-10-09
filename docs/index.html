@@ -23,7 +23,7 @@
   <div id="app" class="container">
     <header>
       <div class="logo-link" title="Microsoft Website">
-        <div class="logo" role="img" aria-label="Microsoft Logo">
+        <div class="logo" role="img" aria-label="Microsoft Logo" data-tooltip data-message="It's a simon says game 🐸">
           <span @click="clickColor('red')" class="logo-tile" v-bind:class="logoTitleRed"></span>
           <span @click="clickColor('green')" class="logo-tile" v-bind:class="logoTitleGreen"></span>
           <span @click="clickColor('blue')" class="logo-tile" v-bind:class="logoTitleBlue"></span>
@@ -122,7 +122,9 @@
 
   </script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js "></script>
-  <script src="simon.js "></script>
+  <script src="simon.js"></script>
+  <script src="toolTips.js"></script>
+
 </body>
 
 </html>
