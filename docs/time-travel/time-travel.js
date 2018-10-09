@@ -8,6 +8,7 @@ const timeTravel = async () => {
       this.max = length - 1;
       this.count = this.max;
     }
+
     validate(v) {
       const parsedV = parseInt(v, 10);
       if (isNaN(parsedV)) {
@@ -18,33 +19,40 @@ const timeTravel = async () => {
       }
       return parsedV;
     }
+
     reset() {
       this.count = 0;
       return this.count;
     }
+
     maximize() {
       this.count = this.max;
       return this.count;
     }
+
     limit(v) {
       v = this.validate(v);
       if (v > this.max) v = this.max;
       if (v < 0) v = 0;
       return v;
     }
+
     add(v = 0) {
       v = this.validate(v);
       this.count = this.limit(this.count + v);
       return this.count;
     }
+
     jumpTo(v) {
       v = this.validate(v);
       this.count = this.limit(v);
       return this.count;
     }
+
     isFirst() {
       return this.count === 0;
     }
+
     isLast() {
       return this.count === this.max;
     }
@@ -99,12 +107,12 @@ const timeTravel = async () => {
     $prAuthorAvatar.setAttribute("alt", `Author: ${author.login}`);
 
     if (editor) {
-      $prEditor.textContent = editor && editor.login;
+      $prEditor.textContent = editor.login;
       $prEditorAvatar.src = editor.avatarUrl;
       $prAuthorAvatar.setAttribute("alt", `Author: ${author.login}`);
     } else {
       $prEditor.textContent = "No editor";
-      $prEditorAvatar.src = "";
+      $prEditorAvatar.src = "https://github.com/identicons/empty.png";
       $prAuthorAvatar.setAttribute("alt", `No editor`);
     }
 
@@ -129,9 +137,9 @@ const timeTravel = async () => {
     if (window.location.hash) return window.location.hash.split("#")[1];
     return null;
   };
+
   // pop back
   window.onpopstate = () => {
-    console.log(`state popped: ${window.location.hash}`);
     updateDisplay(count.jumpTo(getHashCount()));
   };
 
@@ -145,16 +153,19 @@ const timeTravel = async () => {
       updateView(count.reset());
     }
   };
+
   $buttonPrevious.onclick = onKeyPress("ArrowLeft", () => {
     if (!count.isFirst()) {
       updateView(count.add(-1));
     }
   });
+
   $buttonNext.onclick = onKeyPress("ArrowRight", () => {
     if (!count.isLast()) {
       updateView(count.add(1));
     }
   });
+
   $buttonLast.onclick = () => {
     if (!count.isLast()) {
       updateView(count.maximize());
