@@ -1,3 +1,7 @@
+var request = require("request");
+
+request(example.env.LOCATION_KEY);
+
 // Object to store location information based on user's IP
 // elsewhere is the default
 let appData = {
@@ -8,8 +12,9 @@ let appData = {
 
 // Gets user location, sets the appData object, and renders the user's city onto the page
 function getLocation() {
-  const api =
-    "http://api.ipstack.com/24.52.253.12?access_key=8fa1dab1f671740a6e295f8674fb1ca6";
+  const key = YOUR_ACCESS_KEY; // @Microsoft, this line needs to be replaced with your API key for IPStack.
+  const api = `http://api.ipstack.com/24.52.253.12?access_key=${key}`;
+
   fetch(api)
     .then(dataWrappedByPromise => dataWrappedByPromise.json())
     .then(APIdata => {
