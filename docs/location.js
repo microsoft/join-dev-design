@@ -1,7 +1,3 @@
-var request = require("request");
-
-request(example.env.LOCATION_KEY);
-
 // Object to store location information based on user's IP
 // elsewhere is the default
 let appData = {
