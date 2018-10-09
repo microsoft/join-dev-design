@@ -373,6 +373,23 @@ main p:nth-of-type(4) {
   overflow: hidden;
 }
 
+.footer-container {
+  display: flex;
+  flex-direction: row nowrap;
+  align-items: center;
+}
+
+.footer-container-column {
+  flex-direction: column;
+  align-content: space-between;
+  margin: 0 15px;
+  width: 90px;
+}
+
+.footer-container-row {
+  flex-direction: row;
+}
+
 @media only screen and (max-width: 40em) {
   footer {
     font-size: 1rem;
