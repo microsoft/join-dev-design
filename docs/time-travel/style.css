@@ -70,6 +70,8 @@ body {
   position: absolute;
   top: 15px;
   right: 15px;
+  width: 15px;
+  height: 15px;
 }
 
 .history__close:hover .close-button {
