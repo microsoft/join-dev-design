@@ -136,10 +136,16 @@ hr {
   margin: -4px -9px;
 }
 
-.history__controller > button:hover {
+.history__controller > button:hover:not(:disabled) {
   border-color: rgba(255, 255, 255, 0.1);
   box-shadow: 2px 3px #000;
   transform: translateY(-1px);
+}
+
+.history__controller > button:disabled {
+  background: #232323;
+  color: #232323;
+  cursor: not-allowed;
 }
 
 .history__controller > button:active {
@@ -206,31 +212,59 @@ hr {
   color: #05a6f0;
 }
 
-.history__exit {
+.close {
   position: absolute;
-  font-size: 1rem;
-  padding: 0.25rem 0.75rem;
-  top: 2.1rem;
-  right: 1.5rem;
+  right: 36px;
+  top: 30px;
+  width: 24px;
+  height: 24px;
+  opacity: 0.3;
+}
+
+.close:hover {
+  opacity: 1;
+  /* background-color: rgba(#333, 0.2); */
+}
+
+.close:before,
+.close:after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 33px;
+  width: 2px;
+  background-color: #ffba08;
+}
+
+.close:before {
+  transform: rotate(45deg);
+}
+
+.close:after {
+  transform: rotate(-45deg);
 }
 
 @media only screen and (max-width: 640px) {
   .container {
     flex-flow: column nowrap;
   }
+
   .display-wrapper {
     height: calc(100%-5.5rem);
     overflow-y: scroll;
   }
+
   .history__count {
     font-size: 1rem;
   }
+
   .pr__title {
     font-size: 1.25rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
   .people--editor {
     display: none;
   }

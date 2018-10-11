@@ -36,7 +36,10 @@ const timeTravel = async () => {
       if (!!this.currentTimer) clearTimeout(this.currentTimer);
 
       const _options = Object.assign(
-        { duration: 2000, type: "default" },
+        {
+          duration: 2000,
+          type: "default"
+        },
         options
       );
       const { msg, type, duration } = _options;
@@ -209,6 +212,26 @@ const timeTravel = async () => {
   const updateView = currentCount => {
     updateHashURL(currentCount);
     updateDisplay(currentCount);
+    console.log("current count: ", currentCount);
+    console.log("max count: ", count.max);
+    console.log(count);
+
+    if (currentCount == 0) {
+      $buttonFirst.setAttribute("disabled", "true");
+      $buttonPrevious.setAttribute("disabled", "true");
+      $buttonNext.removeAttribute("disabled");
+      $buttonLast.removeAttribute("disabled");
+    } else if (currentCount == count.max) {
+      $buttonLast.setAttribute("disabled", "true");
+      $buttonNext.setAttribute("disabled", "true");
+      $buttonFirst.removeAttribute("disabled");
+      $buttonPrevious.removeAttribute("disabled");
+    } else {
+      $buttonFirst.removeAttribute("disabled");
+      $buttonPrevious.removeAttribute("disabled");
+      $buttonNext.removeAttribute("disabled");
+      $buttonLast.removeAttribute("disabled");
+    }
   };
 
   const pullRequests = await getPullRequests();
