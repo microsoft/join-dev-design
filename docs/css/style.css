@@ -138,6 +138,7 @@ html:before {
     var(--brand-yellow) 33%,
     var(--brand-blue) 67%
   );
+  animation: var(--root-gradient-animation);
 }
 
 body {
