@@ -411,6 +411,10 @@ footer [href*="github"]:focus {
 
 /* Reduced motion animation and transition fixes */
 @media screen and (prefers-reduced-motion: reduce) {
+  html::before {
+    animation: none;
+  }
+
   .logo-tile,
   main h1,
   main p,
