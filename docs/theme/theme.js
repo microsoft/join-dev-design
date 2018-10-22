@@ -24,6 +24,7 @@ var theme = {
   },
   changeTo: function(theme) {
     if (["light", "dark"].indexOf(theme) === -1) {
+      console.log("this runs");
       this.load(theme);
     } else {
       window.ls.setItem(USER_THEME, theme);
@@ -39,6 +40,6 @@ document.querySelector(".theme").onclick = function(e) {
   theme.changeTo(nextTheme);
 };
 
-if (storedTheme) {
+if (storedTheme && storedTheme !== "dark") {
   theme.changeTo(storedTheme);
 }

@@ -5,7 +5,7 @@
   --brand-yellow: #ffba08;
   --brand-red: #f35325;
   --brand-green: #81bc06;
-  --white: #ffffff;
+  --white: #fff;
   --off-white: #bbb;
   --dark-grey: #121212;
   /* typeface defaults */
@@ -218,18 +218,6 @@ h1 {
   }
 }
 
-main p:nth-child(2) {
-  animation-delay: calc(var(--move-in-base-delay) * 6);
-}
-
-main p:nth-child(3) {
-  animation-delay: calc(var(--move-in-base-delay) * 7);
-}
-
-main p:nth-child(4) {
-  animation-delay: calc(var(--move-in-base-delay) * 8);
-}
-
 /* Logo */
 
 .logo-link {
@@ -237,12 +225,6 @@ main p:nth-child(4) {
   width: 4rem;
   height: 4rem;
   margin: var(--large-space) auto;
-}
-
-.logo-image {
-  display: block;
-  width: 100%;
-  height: auto;
 }
 
 .logo {
@@ -260,78 +242,44 @@ main p:nth-child(4) {
   margin: 2.5%;
   outline: 1px solid transparent;
   animation: var(--logo-tiles-in-animation);
+  transition: 150ms;
 }
 
-.winner {
-  display: block;
-  margin: auto;
-  text-align: center;
+.logo-tile.large {
+  transform: scale(1.2) translateY(-3px);
+}
+
+.logo-tile:active {
+  transform: scale(0.8);
 }
 
 .logo-tile--red {
   background-color: var(--brand-red);
-  transition: 150ms;
-}
-
-.logo-tile--largered {
-  background-color: var(--brand-red);
-  transform: scale(1.2) translateY(-3px);
-  transition: 150ms;
-}
-
-.logo-tile--red:active {
-  transform: scale(0.8);
 }
 
 .logo-tile--green {
   background-color: var(--brand-green);
   animation-delay: var(--logo-tiles-in-delay);
-  transition: 150ms;
-}
-
-.logo-tile--largegreen {
-  background-color: var(--brand-green);
-  transform: scale(1.2) translateY(-3px);
-  animation-delay: var(--logo-tiles-in-delay);
-  transition: 150ms;
-}
-
-.logo-tile--green:active {
-  transform: scale(0.8);
 }
 
 .logo-tile--blue {
   background-color: var(--brand-blue);
   animation-delay: calc(var(--logo-tiles-in-delay) * 2);
-  transition: 150ms;
-}
-
-.logo-tile--largeblue {
-  background-color: var(--brand-blue);
-  transform: scale(1.2) translateY(-3px);
-  animation-delay: calc(var(--logo-tiles-in-delay) * 2);
-  transition: 150ms;
-}
-
-.logo-tile--blue:active {
-  transform: scale(0.8);
 }
 
 .logo-tile--yellow {
   background-color: var(--brand-yellow);
   animation-delay: calc(var(--logo-tiles-in-delay) * 3);
-  transition: 150ms;
 }
 
-.logo-tile--largeyellow {
-  background-color: var(--brand-yellow);
-  transform: scale(1.2) translateY(-3px);
-  animation-delay: calc(var(--logo-tiles-in-delay) * 3);
-  transition: 150ms;
+.winner {
+  display: none;
+  margin: auto;
+  text-align: center;
 }
 
-.logo-tile--yellow:active {
-  transform: scale(0.8);
+.winner.show {
+  display: block;
 }
 
 /* Main */

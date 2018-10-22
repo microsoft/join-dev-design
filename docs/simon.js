@@ -1,147 +1,146 @@
-new Vue({
-  el: "#app",
-  data: {
-    colors: ["red", "green", "yellow", "blue"],
-    currentSequence: [],
-    colorStatus: {
-      red: false,
-      green: false,
-      yellow: false,
-      blue: false
-    },
-    colorSymbols: {
-      red: "❤️",
-      green: "💚",
-      yellow: "💛",
-      blue: "💙"
-    },
-    userClicks: [],
-    currentScore: 0,
-    difficulty: 1000
-  },
-  created() {
-    this.generateSequence();
-  },
-  watch: {
-    winner: function(isWinner) {
-      if (isWinner) {
-        this.changeTheme();
-      }
+/* Logo related elements */
+const winner = document.querySelector(".winner");
+
+/* Constants */
+const COLORS = ["red", "green", "blue", "yellow"];
+const COLOR_SYMBOLS = {
+  red: "❤️",
+  green: "💚",
+  yellow: "💛",
+  blue: "💙"
+};
+const MAX_SCORE = 10;
+let isFirstTime = true;
+
+/* Game states */
+let currentSequence = [];
+let userClicks = [];
+let currentScore = 0;
+let difficulty = 1000;
+const logoTiles = {};
+
+const getRandomInt = max => Math.floor(Math.random() * Math.floor(max));
+
+const timer = ms => new Promise(res => setTimeout(res, ms));
+
+const changeTheme = () => {
+  if (theme && theme.changeTo) {
+    theme.changeTo("msdos");
+  }
+};
+
+const generateSequence = () => {
+  currentSequence.push(COLORS[getRandomInt(COLORS.length)]);
+
+  if (currentScore > 0) {
+    play();
+  } else {
+    console.log(
+      `🕵️‍♂️🕵️‍♀️ PSSST! There is a game inside this webpage...\nClick the ${
+        COLOR_SYMBOLS[currentSequence[0]]
+      } tile on the Microsoft logo to play!`
+    );
+  }
+};
+
+const clickColor = color => {
+  userClicks.push(color);
+
+  if (checkCorrect()) {
+    userClicks = [];
+
+    if (difficulty > 100) {
+      difficulty -= 100;
     }
-  },
-  computed: {
-    logoTitleRed: function() {
-      return this.colorStatus.red ? "logo-tile--largered" : "logo-tile--red";
-    },
-    logoTitleGreen: function() {
-      return this.colorStatus.green
-        ? "logo-tile--largegreen"
-        : "logo-tile--green";
-    },
-    logoTitleYellow: function() {
-      return this.colorStatus.yellow
-        ? "logo-tile--largeyellow"
-        : "logo-tile--yellow";
-    },
-    logoTitleBlue: function() {
-      return this.colorStatus.blue ? "logo-tile--largeblue" : "logo-tile--blue";
-    },
-    winner: function() {
-      return this.currentScore >= 10 ? true : false;
+
+    currentScore++;
+
+    console.log(`Simon says..."correct!" 🎉 Your score is`, currentScore);
+
+    if (currentScore >= MAX_SCORE) {
+      winner.classList.add("show");
+      changeTheme();
+      return;
     }
-  },
-  methods: {
-    generateSequence: function() {
-      this.currentSequence.push(
-        this.colors[this.getRandomInt(this.colors.length)]
-      );
-      if (this.currentScore > 0) {
-        this.play();
-      } else {
-        console.log(
-          `🕵️‍♂️🕵️‍♀️ PSSST! There is a game inside this webpage...\nClick the ${
-            this.colorSymbols[this.currentSequence[0]]
-          } tile on the Microsoft logo to play!`
-        );
-      }
-    },
-    clickColor: function(color) {
-      this.userClicks.push(color);
-      if (this.checkCorrect()) {
-        this.userClicks = [];
-        if (this.difficulty > 100) {
-          this.difficulty -= 100;
-        }
-        this.currentScore++;
-        console.log(
-          `Simon says..."correct!" 🎉 Your score is`,
-          this.currentScore
-        );
-        this.lightUp();
-        this.generateSequence();
-      }
-    },
-    getRandomInt: function(max) {
-      return Math.floor(Math.random() * Math.floor(max));
-    },
-    timer: function(ms) {
-      return new Promise(res => setTimeout(res, ms));
-    },
-    checkCorrect: function() {
-      let matching = true;
-      let sequence =
-        this.userClicks[this.userClicks.length - 1] ===
-        this.currentSequence[this.userClicks.length - 1];
-      if (!sequence) {
-        this.reset();
-      }
-      for (let i = 0; i < this.currentSequence.length; i++) {
-        if (this.userClicks[i] !== this.currentSequence[i]) {
-          matching = false;
-          break;
-        }
-      }
-      return matching;
-    },
-    reset: function() {
-      console.log(`😢 Game Over! Refresh to play again.`);
-      this.currentSequence = [];
-      this.userClicks = [];
-      this.currentScore = 0;
-      this.difficulty = 1000;
-      this.generateSequence();
-    },
-    play: async function() {
-      await this.timer(2000);
-      for (var i = 0; i < this.currentSequence.length; i++) {
-        this.colorStatus[this.currentSequence[i]] = true;
-        await this.timer(this.difficulty);
-        this.colorStatus[this.currentSequence[i]] = false;
-        await this.timer(this.difficulty / 2);
-      }
-    },
-    lightUp: async function() {
-      let t = 150;
-      this.colorStatus.red = true;
-      await this.timer(t);
-      this.colorStatus.red = false;
-      this.colorStatus.green = true;
-      await this.timer(t);
-      this.colorStatus.green = false;
-      this.colorStatus.yellow = true;
-      await this.timer(t);
-      this.colorStatus.yellow = false;
-      this.colorStatus.blue = true;
-      await this.timer(t);
-      this.colorStatus.blue = false;
-      this.colorStatus.red = true;
-      await this.timer(t);
-      this.colorStatus.red = false;
-    },
-    changeTheme: function() {
-      if (theme && theme.changeTo) {
-        theme.changeTo("msdos");
-      }
+
+    lightUp();
+    generateSequence();
+  }
+};
+
+function reset() {
+  console.log(`😢 Game Over! Refresh to play again.`);
+  currentSequence = [];
+  userClicks = [];
+  currentScore = 0;
+  difficulty = 1000;
+  generateSequence();
+  winner.classList.remove("show");
+}
+
+function checkCorrect() {
+  let matching = true;
+  const lastClick = userClicks.length - 1;
+  let sequence = userClicks[lastClick] === currentSequence[lastClick];
+
+  if (!sequence) {
+    reset();
+  }
+
+  for (let i = 0; i < currentSequence.length; i++) {
+    if (userClicks[i] !== currentSequence[i]) {
+      matching = false;
+      break;
     }
   }
-});
+
+  return matching;
+}
+
+async function play() {
+  await timer(2000);
+
+  for (let i = 0; i < currentSequence.length; i++) {
+    const sequence = currentSequence[i];
+
+    logoTiles[sequence].classList.add("large");
+    await timer(difficulty);
+    logoTiles[sequence].classList.remove("large");
+    await timer(difficulty / 2);
+  }
+}
+
+async function lightUp() {
+  const t = 150;
+
+  logoTiles.red.classList.add("large");
+  await timer(t);
+  logoTiles.red.classList.remove("large");
+  logoTiles.green.classList.add("large");
+  await timer(t);
+  logoTiles.green.classList.remove("large");
+  logoTiles.yellow.classList.add("large");
+  await timer(t);
+  logoTiles.yellow.classList.remove("large");
+  logoTiles.blue.classList.add("large");
+  await timer(t);
+  logoTiles.blue.classList.remove("large");
+  logoTiles.red.classList.add("large");
+  await timer(t);
+  logoTiles.red.classList.remove("large");
+}
+
+if (isFirstTime) {
+  generateSequence();
+
+  const $logoTiles = document.querySelectorAll(".logo-tile");
+
+  $logoTiles.forEach(tile => {
+    const { color } = tile.dataset;
+    logoTiles[color] = tile;
+
+    tile.addEventListener("click", () => clickColor(color));
+  });
+}
+
+isFirstTime = false;
