@@ -1,3 +1,6 @@
+const USER_THEME = "ms-tt-user-theme";
+const storedTheme = window.ls.getItem(USER_THEME);
+
 var theme = {
   activeTheme: "dark",
   load: function(theme, cb) {
@@ -20,8 +23,11 @@ var theme = {
     }
   },
   changeTo: function(theme) {
-    if (["light", "dark"].indexOf(theme) === -1) this.load(theme);
-
+    if (["light", "dark"].indexOf(theme) === -1) {
+      this.load(theme);
+    } else {
+      window.ls.setItem(USER_THEME, theme);
+    }
     document.body.classList.remove("js-theme-" + this.activeTheme);
     this.activeTheme = theme;
     document.body.classList.add("js-theme-" + this.activeTheme);
@@ -32,3 +38,7 @@ document.querySelector(".theme").onclick = function(e) {
   var nextTheme = theme.activeTheme === "dark" ? "light" : "dark";
   theme.changeTo(nextTheme);
 };
+
+if (storedTheme) {
+  theme.changeTo(storedTheme);
+}

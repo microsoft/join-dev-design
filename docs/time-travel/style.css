@@ -29,6 +29,37 @@ body {
   color: var(--off-white);
 }
 
+/* components */
+
+.toast {
+  position: absolute;
+  bottom: 1rem;
+  right: 2rem;
+  font-size: 1rem;
+  padding: 0.75em 1em;
+  max-width: calc(100% - 4rem);
+  border-radius: 0.25rem;
+  color: #bbb;
+  background: #2e2e2e;
+  opacity: 0;
+  transform: translateY(4rem);
+  transition: all 0.3s ease;
+}
+
+.toast.js-inactive {
+  display: none;
+}
+
+.toast--warning {
+  background: #2e2e2e;
+  color: #ffba08;
+}
+
+.toast.js-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .container {
   position: relative;
   display: flex;
@@ -46,10 +77,12 @@ body {
 }
 
 .history {
+  position: relative;
   flex: 1 1 10rem;
   background: rgba(18, 18, 18, 1);
   color: var(--off-white);
   border-left: 1px solid rgba(255, 255, 255, 0.12);
+  overflow: hidden;
 }
 
 .history > div {
