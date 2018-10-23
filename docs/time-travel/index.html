@@ -22,35 +22,31 @@
     <main class="display-wrapper">
       <iframe id="js-display" class="display" src="" frameborder="0"></iframe>
     </main>
-    <div id="js-history" class="history">
-      <h2 class="history__count">
-        <span id="js-history-id">1</span>
-        <span class="-text--fade">/</span>
-        <span id="js-history-max" class="-text-fade">-</span>
-      </h2>
+    <div class="history">
+      <div class="pr">
+        <div class="pr__avatar-wrapper">
+          <img id="js-pr-author-avatar" class="pr__avatar" src="">
+        </div>
+        <div class="pr__meta-data-wrapper">
+          <p id="js-pr-author" class="pr__author"></p>
+          <p id="js-pr-mergedAt" class="pr__mergedAt" title="Merge date and time"></p>
+          <a id="js-pr-url" class="history__link" title="See pull request" href="#" target="_blank">→ Pull request</a>
+        </div>
+        <h1 id="js-pr-title" class="pr__title" class="history__header"></h1>
+      </div>
       <div class="history__controller">
         <button id="js-button-first"><span tabindex="-1">First</span></button>
         <button id="js-button-previous"><span tabindex="-1">Previous</span></button>
         <button id="js-button-next"><span tabindex="-1">Next</span></button>
         <button id="js-button-last"><span tabindex="-1">Latest</span></button>
       </div>
-      <hr>
-      <div class="pr">
-        <div class="pr__people-wrapper">
-          <div class="pr__people people--author">
-            <img id="js-pr-author-avatar" class="pr__avatar" src="">
-            <p id="js-pr-author"></p>
-          </div>
-          <div class="pr__people people--editor">
-            <img id="js-pr-editor-avatar" class="pr__avatar" src="">
-            <p id="js-pr-editor"></p>
-          </div>
-        </div>
-        <h1 id="js-pr-title" class="pr__title" class="history__header"></h1>
-        <a id="js-pr-url" class="history__link" title="See pull request" href="#" target="_blank">See pull request</a>
-        <p id="js-pr-mergedAt" class="pr__mergedAt"></p>
-      </div>
-      <a class="history__exit" href=".." title="Exit to main page">Exit</a>
+      <div id="history-overview"></div>
+      <a class="history__close" href=".." title="stop time travelling">
+        <svg viewPort="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <line class="close-button" x1="1" y1="14" x2="14" y2="1" stroke="white" stroke-width="2" />
+          <line class="close-button" x1="1" y1="1" x2="14" y2="14" stroke="white" stroke-width="2" />
+        </svg>
+      </a>
     </div>
   </div>
 </body>
