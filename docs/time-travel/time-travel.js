@@ -132,6 +132,8 @@ const timeTravel = async () => {
   const $prAuthorAvatar = getEl("js-pr-author-avatar");
   const $prEditor = getEl("js-pr-editor");
   const $prEditorAvatar = getEl("js-pr-editor-avatar");
+  const $prPullRequest = getEl("js-pr-url");
+  const $prChangedFiles = getEl("js-pr-changedFiles");
   const $prMergedAt = getEl("js-pr-mergedAt");
   const $prUrl = getEl("js-pr-url");
 
@@ -175,7 +177,16 @@ const timeTravel = async () => {
 
   const updateDisplay = count => {
     const pr = pullRequests[count];
-    const { id, title, author, editor, mergedAt, url } = pr.node;
+    const {
+      id,
+      title,
+      author,
+      editor,
+      number,
+      changedFiles,
+      mergedAt,
+      url
+    } = pr.node;
 
     // https://stackoverflow.com/a/2257295
     $display.contentWindow.location.replace(`./history/${id}/docs/`);
@@ -196,6 +207,13 @@ const timeTravel = async () => {
       $prEditor.textContent = "No editor";
       $prEditorAvatar.src = "";
       $prAuthorAvatar.setAttribute("alt", `No editor`);
+    }
+
+    $prPullRequest.textContent = `See pull request #${number}`;
+    if (changedFiles == 1) {
+      $prChangedFiles.textContent = `${changedFiles} file changed`;
+    } else {
+      $prChangedFiles.textContent = `${changedFiles} files changed`;
     }
 
     $prMergedAt.textContent = `Merged at ${mergedAt}`;
