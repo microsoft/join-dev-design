@@ -198,7 +198,8 @@ const timeTravel = async () => {
       $prAuthorAvatar.setAttribute("alt", `No editor`);
     }
 
-    $prMergedAt.textContent = `Merged at ${mergedAt}`;
+    const d = new Date(mergedAt);
+    $prMergedAt.textContent = `Merged on ${d.toLocaleDateString()} at ${d.toLocaleTimeString()}`;
     $prUrl.href = url;
   };
 
