@@ -18,6 +18,8 @@ const query = `
           id
           title
           url
+          number
+          changedFiles
           mergedAt
           author {
             login
