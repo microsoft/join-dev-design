@@ -218,6 +218,12 @@ h1 {
   }
 }
 
+@media only screen and (min-height: 860px) {
+  .container {
+    margin: auto;
+  }
+}
+
 main p:nth-child(2) {
   animation-delay: calc(var(--move-in-base-delay) * 6);
 }
