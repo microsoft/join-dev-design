@@ -80,13 +80,14 @@ hr {
 }
 
 .display {
+  display: block;
   width: 100%;
-  height: 100%;
+  height: 100vh;
 }
 
 .history {
   position: relative;
-  flex: 1 1 10rem;
+  width: 20em;
   padding: 2rem;
   background: rgba(18, 18, 18, 1);
   color: #bbb;
@@ -218,20 +219,28 @@ hr {
   .container {
     flex-flow: column nowrap;
   }
+
   .display-wrapper {
     height: calc(100%-5.5rem);
     overflow-y: scroll;
   }
+
   .history__count {
     font-size: 1rem;
   }
+
   .pr__title {
     font-size: 1.25rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
   .people--editor {
     display: none;
+  }
+
+  .history {
+    width: 100%;
   }
 }
