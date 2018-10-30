@@ -200,6 +200,7 @@ p,
 h1 {
   margin: 0;
   padding: var(--text-block-spacing) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Container */
@@ -407,4 +408,117 @@ footer [href*="github"]:focus {
 
 .time-travel a {
   cursor: pointer;
+}
+
+.locations {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.locations .link1,
+.link2 {
+  position: absolute;
+  cursor: pointer;
+  z-index: 2;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.locations .link1 {
+  top: 0px;
+  left: 20px;
+  padding-left: 20px;
+  color: transparent;
+}
+
+.locations .link2 {
+  top: 69px;
+  padding-left: 25px;
+  color: transparent;
+}
+
+.locations a:hover {
+  visibility: visible;
+}
+
+.locations img {
+  width: 100%;
+}
+
+.hideme #usa,
+.hideme .link1,
+.hideme .link2 {
+  animation: flipdown 0.5s forwards;
+}
+
+.locations:not(.hideme) #usa {
+  animation: flipup 0.5s forwards;
+}
+
+.locations:not(.hideme) #seatle {
+  animation: flipdown 0.5s forwards;
+}
+#sanfran {
+  width: 150px;
+  padding-left: 60px;
+}
+#seatle {
+  width: 250px;
+}
+.statetext {
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  font-weight: 800;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+#seatle,
+#sanfran {
+  position: absolute;
+  display: none;
+  top: 0px;
+  cursor: pointer;
+  transition: 1s;
+}
+#seatle:not(.show),
+#sanfran:not(.show) {
+  width: 0px;
+  height: 0px;
+  transition: 1s;
+}
+#seatle.show,
+#sanfran.show {
+  display: block;
+  animation: flipup 0.5s forwards;
+  transition: 1s;
+}
+
+@keyframes flipdown {
+  0% {
+    -webkit-transform: translateY(0) rotateX(0deg);
+    transform: translateY(0) rotateX(0deg);
+  }
+  100% {
+    -webkit-transform: translateY(150px) rotateX(90deg);
+    transform: translateY(150px) rotateX(90deg);
+  }
+}
+
+@keyframes flipup {
+  0% {
+    -webkit-transform: translateY(150px) rotateX(90deg);
+    transform: translateY(150px) rotateX(90deg);
+  }
+
+  100% {
+    -webkit-transform: translateY(0) rotateX(0deg);
+    transform: translateY(0) rotateX(0deg);
+  }
 }

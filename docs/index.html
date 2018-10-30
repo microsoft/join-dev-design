@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="theme/theme.css">
   <link rel="shortcut icon" href="https://c.s-microsoft.com/favicon.ico?v2" type="image/x-icon">
+  <script src="js/state.js"></script>
 </head>
 
 <body class="js-theme-dark">
@@ -34,22 +35,36 @@
     </header>
     <main>
       <h1>
-        Microsoft is looking for designers who code to help create the most compelling developer tools&nbsp;&amp;&nbsp;services on
+        Microsoft is looking for designers who code to help create the most compelling developer
+        tools&nbsp;&amp;&nbsp;services on
         the planet.
       </h1>
+
+      <section id="map" class="locations">
+        <div class="select"><img id="usa" src="images/usa.svg">
+          <a class="link1" onclick="state('seatle', 'sanfran')">Seatle</a>
+          <a class="link2" onclick="state('sanfran', 'seatle')">San Francisco</a>
+          <span id="seatle"><img src="images/seatle.svg"><span class="statetext">Seatle</span></span>
+          <span id="sanfran"><img src="images/san_fran.svg"><span class="statetext">San Francisco</span></span>
+        </div>
+        <p>
+          We have open positions for technical product designers &amp; design leaders in San Francisco, Seattle, and
+          elsewhere.
+        </p>
+      </section>
       <p>
-        We have open positions for technical product designers &amp; design leaders in San Francisco, Seattle, and elsewhere.
-      </p>
-      <p>
-        We use PCs, Macs, Figma, Sketch, GitHub, JavaScript, ZEIT, and other modern tools to design, prototype, and build the future
+        We use PCs, Macs, Figma, Sketch, GitHub, JavaScript, ZEIT, and other modern tools to design, prototype, and
+        build the future
         of software development.
       </p>
       <p>
-        We believe in diversity, openness, and building delightful tools that empower every person and organization to achieve more.
+        We believe in diversity, openness, and building delightful tools that empower every person and organization to
+        achieve more.
       </p>
       <p>
         Interested? Send a PR with any improvement to
-        <a href="https://github.com/Microsoft/join-dev-design" title="GitHub repository join-dev-design by the Microsoft organization">microsoft/join-dev-design</a> or
+        <a href="https://github.com/Microsoft/join-dev-design" title="GitHub repository join-dev-design by the Microsoft organization">microsoft/join-dev-design</a>
+        or
         <a href="mailto:mmuno@microsoft.com" title="Email address for mmuno@microsoft.com">email us</a>.
       </p>
     </main>
@@ -81,7 +96,8 @@
       </span>
       <span class="footer-piece footer-piece--separate">
         Created by
-        <a href="https://github.com/Microsoft/join-dev-design/graphs/contributors" id="contributors" title="Contributors to the GitHub repository join-dev-design by the Microsoft organization">10</a> contributors on
+        <a href="https://github.com/Microsoft/join-dev-design/graphs/contributors" id="contributors" title="Contributors to the GitHub repository join-dev-design by the Microsoft organization">10</a>
+        contributors on
         <a href="https://github.com/Microsoft/join-dev-design" title="GitHub repository join-dev-design by the Microsoft organization">GitHub</a>.
       </span>
     </p>
