@@ -12,13 +12,16 @@ $ npm start
 ### Time Travel
 
 Time travel displays past versions of the repo based on merged pull requests.
-The build script in `time-travel` folder fetchs each merged pull request's `docs` folder content (except for `docs/time-travel/`) and store them in `docs/time-travel/history`, then writes data to `docs/time-travel/index.json` for later use. Currently this process has to be done manually.
+The build script in `time-travel` folder fetchs each merged pull request's `docs` folder content (except for `docs/time-travel/`) and store them in `docs/time-travel/history`, then writes data to `docs/time-travel/index.json` for later use. Currently this process has to be done manually. The script will only build missing PR history. To do a full rebuild of the all PRs pass the environment variable `FULL_REBUILD=true`.
 
 **Note**: Create a `.env` with your github's access token in order to fetch data from Github API.
 
 ```shell
 # update build
 $ npm run build-timetravel
+
+# full history rebuild
+$ FULL_REBUILD=true npm run build-timetravel
 ```
 
 The page for time-travel is intentionally kept separated from `docs/` (not reusing `docs/css/style.css`) so it's easier to maintain.

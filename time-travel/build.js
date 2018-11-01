@@ -3,10 +3,7 @@ require("dotenv").config();
 const fs = require("fs-extra");
 const path = require("path");
 const fetch = require("node-fetch");
-// const unzip = require("unzipper");
-// const extract = require('tar-stream').extract();
 const tar = require("tar");
-// const gunzip = require('gunzip-maybe');
 
 const accessToken = process.env.ACCESS_TOKEN;
 const query = `
@@ -41,7 +38,7 @@ const query = `
 
 const historyFolderPath = path.resolve(
   __dirname,
-  `../docs/time-travel/history`
+  "../docs/time-travel/history"
 );
 
 /**
@@ -49,9 +46,16 @@ const historyFolderPath = path.resolve(
  */
 const flushFolders = async data => {
   try {
-    await fs.remove(historyFolderPath);
-    await fs.ensureDir(historyFolderPath);
-    console.log("`docs/time-travel/history` is flushed.");
+    if (process.env.FULL_REBUILD) {
+      await fs.remove(historyFolderPath);
+      await fs.ensureDir(historyFolderPath);
+      console.log("`docs/time-travel/history` is flushed.");
+    } else {
+      console.log(
+        "Skipping flush. Set env FULL_REBUILD=true to fully rebuild history"
+      );
+    }
+
     return data;
   } catch (err) {
     console.error(err);
@@ -83,7 +87,7 @@ const writeJSONToDocs = data => {
   return fs
     .writeFile(
       path.resolve(__dirname, `../docs/time-travel/index.json`),
-      JSON.stringify(data)
+      JSON.stringify(data, null, 2)
     )
     .then(() => data)
     .catch(console.error);
@@ -92,7 +96,7 @@ const writeJSONToDocs = data => {
 /**
  * Parse tar, keep 'docs/', remove 'docs/time-travel' and everything else
  * @param {String} options.url tarball url
- * @param {String} oprions.id id of merged pull request
+ * @param {String} options.id id of merged pull request
  */
 const parseTarball = async options => {
   const { url, id } = options;
@@ -140,8 +144,15 @@ const parseTarball = async options => {
 getDataFromGithub()
   .then(flushFolders)
   .then(writeJSONToDocs)
-  .then(res => {
-    const tarPromises = res.data.repository.pullRequests.edges.map(edge => {
+  .then(async res => {
+    const existingHistory = await fs.readdir(historyFolderPath);
+    const pullRequestsToProcess = res.data.repository.pullRequests.edges.filter(
+      edge => {
+        return !existingHistory.includes(edge.node.id);
+      }
+    );
+
+    const tarPromises = pullRequestsToProcess.map(edge => {
       const url = edge.node.mergeCommit.tarballUrl;
       const id = edge.node.id;
 
@@ -157,6 +168,6 @@ getDataFromGithub()
     console.log(
       `build complete. ${
         paths.length
-      } folders has been written to ${historyFolderPath}.`
+      } folders have been written to ${historyFolderPath}.`
     );
   });
