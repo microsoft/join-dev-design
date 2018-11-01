@@ -501,6 +501,27 @@
           },
           {
             "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjAyNzU2NzA1",
+              "title": "Added a simon game",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/41",
+              "mergedAt": "2018-08-07T01:51:41Z",
+              "author": {
+                "login": "makeupsomething",
+                "avatarUrl":
+                  "https://avatars1.githubusercontent.com/u/7676733?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-08-07T01:51:41Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjlhYmVlN2YzOTYyZGFkMmU2ZmY3OTRiNmI2ZGE1OTI5YWVmMDhhODk=",
+                "tarballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.tar.gz/9abee7f3962dad2e6ff794b6b6da5929aef08a89"
+              }
+            }
+          },
+          {
+            "node": {
               "id": "MDExOlB1bGxSZXF1ZXN0MjAyNzU3MjE0",
               "title": "Add the footer to the animation flow",
               "url": "https://github.com/Microsoft/join-dev-design/pull/42",
@@ -1531,6 +1552,27 @@
           },
           {
             "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjA0NDk3OTYx",
+              "title": "Disable time travel button in time travel mode",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/136",
+              "mergedAt": "2018-10-10T18:00:42Z",
+              "author": {
+                "login": "d4rekanguok",
+                "avatarUrl":
+                  "https://avatars2.githubusercontent.com/u/3383539?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-10-10T18:00:41Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOmI3ZDM3MzMwYWUxZGI5NGE5N2Q4NTNlMThmMTdhY2RhZmI4NTUyMzA=",
+                "tarballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.tar.gz/b7d37330ae1db94a97d853e18f17acdafb855230"
+              }
+            }
+          },
+          {
+            "node": {
               "id": "MDExOlB1bGxSZXF1ZXN0MjA1OTA3ODAz",
               "title": "Fix incorrect link color in light theme",
               "url": "https://github.com/Microsoft/join-dev-design/pull/147",
@@ -1547,6 +1589,69 @@
                   "MDY6Q29tbWl0MTQxNTAzNjgzOjQxMzgyYzdiODc2YjI2MTViNzZiZGM3NDM1NGRkN2IzMTk0YTAyMTc=",
                 "tarballUrl":
                   "https://codeload.github.com/Microsoft/join-dev-design/legacy.tar.gz/41382c7b876b2615b76bdc74354dd7b3194a0217"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjA2NzExMDU4",
+              "title": "fix absolute link in theme.js",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/149",
+              "mergedAt": "2018-08-07T14:48:33Z",
+              "author": {
+                "login": "d4rekanguok",
+                "avatarUrl":
+                  "https://avatars2.githubusercontent.com/u/3383539?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-08-07T14:48:33Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjRmZmZiZWY5NGY2NWQ3ZThlMjdiNWE5MmRiZjllNThlZTZkMDViZmE=",
+                "tarballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.tar.gz/4fffbef94f65d7e8e27b5a92dbf9e58ee6d05bfa"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjE3MTQ0MDk0",
+              "title": "Updated contact info",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/157",
+              "mergedAt": "2018-09-21T02:00:54Z",
+              "author": {
+                "login": "adrianmg",
+                "avatarUrl":
+                  "https://avatars0.githubusercontent.com/u/589285?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-09-21T02:00:54Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOjI4ZWEwMGFjYzVmNmJlYTExM2RkNmQyODhiZGZhNGM0YzgyNzI1NjQ=",
+                "tarballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.tar.gz/28ea00acc5f6bea113dd6d288bdfa4c4c8272564"
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "MDExOlB1bGxSZXF1ZXN0MjE5NTQ5Mzg5",
+              "title": "Remember last theme selection.",
+              "url": "https://github.com/Microsoft/join-dev-design/pull/163",
+              "mergedAt": "2018-10-09T22:36:02Z",
+              "author": {
+                "login": "aamay001",
+                "avatarUrl":
+                  "https://avatars0.githubusercontent.com/u/28788253?v=4"
+              },
+              "editor": null,
+              "mergeCommit": {
+                "committedDate": "2018-10-09T22:36:01Z",
+                "id":
+                  "MDY6Q29tbWl0MTQxNTAzNjgzOmFkN2ExMjIzNGQ4YTJhYzExMjQ1MzMzZWE1YTcyYTkyZTQ5YWRlOTQ=",
+                "tarballUrl":
+                  "https://codeload.github.com/Microsoft/join-dev-design/legacy.tar.gz/ad7a12234d8a2ac11245333ea5a72a92e49ade94"
               }
             }
           }

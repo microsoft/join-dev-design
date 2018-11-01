@@ -1,0 +1,122 @@
+@font-face {
+  font-family: "vga";
+  src: url("moreperfectdosvga.woff2") format("woff2"),
+    url("moreperfectdosvga.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* MSDOS Font: 'More Perfect DOS VGA' by Adam Moore http://laemeur.sdf.org/fonts/ */
+
+body.js-theme-msdos {
+  color: #4bffff;
+  background: #0000ab;
+  font-family: "vga", "Courier New", Courier, monospace;
+  margin: 0;
+}
+
+.js-theme-msdos:before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 6px double #4bffff;
+}
+
+.js-theme-msdos:after {
+  content: "C:\\";
+  position: absolute;
+  top: 4px;
+  padding: 0 6px;
+  color: #0000ab;
+  background: #4bffff;
+  line-height: 0.9;
+  font-size: 1.2rem;
+}
+
+.js-theme-msdos .logo-link {
+  animation: none;
+}
+
+.js-theme-msdos .logo {
+  position: relative;
+}
+
+.js-theme-msdos .logo > span {
+  display: none;
+}
+
+.js-theme-msdos .logo:before {
+  content: "";
+  position: absolute;
+  top: 66%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 226px;
+  height: 32px;
+  z-index: 100;
+  background: url("blibbet.png") center/cover no-repeat;
+}
+
+.js-theme-msdos main h1 {
+  border-bottom: 2px solid #4bffff;
+}
+
+.js-theme-msdos a:not(.logo-link) {
+  color: #ffff44;
+  animation: none;
+}
+
+.js-theme-msdos a:not(.logo-link):hover,
+.js-theme-msdos a:not(.logo-link):focus {
+  color: #0e0e0e;
+  -webkit-text-fill-color: #000 !important;
+  padding: 0.2rem;
+  background: #ffff44;
+  position: relative;
+}
+
+.js-theme-msdos a:not(.logo-link):hover:after,
+.js-theme-msdos a:not(.logo-link):focus:after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: -1;
+}
+
+.js-theme-msdos .theme {
+  opacity: 1;
+}
+
+.js-theme-msdos .theme__item + .theme__item {
+  margin-left: 0.5rem;
+}
+
+.js-theme-msdos .theme__button:before {
+  content: "Theme";
+  padding-right: 5px;
+}
+
+.js-theme-msdos .theme__button {
+  text-indent: 0;
+  width: auto;
+  height: 1rem;
+  font-size: 0.8rem;
+  padding-right: 10px;
+  font-family: "vga", "Courier New", Courier, monospace;
+  background: #00a8a8;
+  border-radius: 0;
+  color: #0e0e0e;
+}
+
+.js-theme-msdos .theme__button:hover,
+.js-theme-msdos .theme__button:focus {
+  background: #ffff44;
+  color: #0e0e0e;
+}
